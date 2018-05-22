@@ -82,6 +82,14 @@ DATABASES = {
 		'PASSWORD': 'tarsys',
         'HOST': 'oselimw0206v.int.msdp.ericsson.se',
         'PORT': '3306'
+    },
+	'optimi_xdimension_internal': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'optimi_xdimension_internal',
+		'USER': 'tarsys',
+		'PASSWORD': 'tarsys',
+        'HOST': 'oselimw0206v.int.msdp.ericsson.se',
+        'PORT': '3306'
     }
 }
 
