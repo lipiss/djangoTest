@@ -38,3 +38,8 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+        # return HttpResponseRedirect(reverse('polls:index'))
+
+        # latest_question_list = Question.objects.order_by('-pub_date')[:5]
+        # context = {'latest_question_list': latest_question_list}
+        # return render(request, 'polls/index.html')
