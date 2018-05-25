@@ -35,7 +35,7 @@ for p in Person.objects.raw('SELECT choice_text,votes FROM polls_choice'):
 from polls.models import  Choice, Question,Person
 Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
 ```
-[Performing raw SQL queries](https://docs.djangoproject.com/en/2.0/topics/db/sql/)
+Check this section at Django documentation: [Performing raw SQL queries](https://docs.djangoproject.com/en/2.0/topics/db/sql/)
 
 End with an example of getting some data out of the system or using it for a little demo
 
