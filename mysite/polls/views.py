@@ -3,21 +3,36 @@ from django.http import Http404
 from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
-from .models import Choice, Question
+from .models import Choice, Question,Person
+from django.db import connection
 
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
 
+
+def myownview(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    context = {'latest_question_list': latest_question_list}
+    # return render(request, 'polls/myownview.html', context)
+    # cursor = connection.cursor()
+    # cursor.execute(''' SELECT * FROM polls_choice ''')
+    # cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
+    # row = cursor.fetchall()
+    Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
+    return render(request, 'polls/myownview.html', {'person': person})
+    # return HttpResponse(row)
+
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
-	
 
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question': question})
+
+
 
 	
 	

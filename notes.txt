@@ -1,4 +1,14 @@
 from django.db import connection
 cursor = connection.cursor()
 cursor.execute(''' SELECT * FROM polls_choice''')
+cursor.execute(''' SELECT choice_text,votes FROM polls_choice''')
 row = cursor.fetchone()
+
+
+for p in Person.objects.raw('SELECT choice_text,votes FROM polls_choice'):
+from polls.models import  Choice, Question,Person
+Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
+Raw query must include the primary key (id field at the query)
+Passing parameters into raw()
+    Person.objects.raw('SELECT * FROM myapp_person WHERE last_name = %s', [lname])
+
