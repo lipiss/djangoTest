@@ -1,6 +1,6 @@
 # Project Title
 
-One Paragraph of project description goes here
+Django tests.
 
 ## Getting Started
 
@@ -21,7 +21,11 @@ A step by step series of examples that tell you have to get a development env ru
 Say what the step will be
 
 ```
-Give the example
+from django.db import connection
+cursor = connection.cursor()
+cursor.execute(''' SELECT * FROM polls_choice''')
+cursor.execute(''' SELECT choice_text,votes FROM polls_choice''')
+row = cursor.fetchone()
 ```
 
 And repeat
