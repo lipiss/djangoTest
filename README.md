@@ -14,7 +14,7 @@ What things you need to install the software and how to install them
 Give examples
 ```
 
-### Installing
+### Doing Raw SQL queries
 
 A step by step series of examples that tell you have to get a development env running
 
@@ -28,11 +28,14 @@ cursor.execute(''' SELECT choice_text,votes FROM polls_choice''')
 row = cursor.fetchone()
 ```
 
-And repeat
+You can bind 
 
 ```
-until finished
+for p in Person.objects.raw('SELECT choice_text,votes FROM polls_choice'):
+from polls.models import  Choice, Question,Person
+Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
 ```
+[Performing raw SQL queries](https://docs.djangoproject.com/en/2.0/topics/db/sql/)
 
 End with an example of getting some data out of the system or using it for a little demo
 
