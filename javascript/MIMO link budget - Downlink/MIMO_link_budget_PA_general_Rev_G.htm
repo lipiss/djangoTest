@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" >
+
+
+<head>
+	<title>MIMO link budget - Downlink</title>
+	<style>
+		div.card {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			padding-top: 5px;
+			padding-right: 5px;
+			padding-bottom: 10px;
+			padding-left: 5px;
+			width: 500px;
+		}
+	</style>
+	<script src="plotly-latest.min.js"></script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:EriCOLLCategoryTaxHTField0 msdt:dt="string">Development|053fcc88-ab49-4f69-87df-fc64cb0bf305</mso:EriCOLLCategoryTaxHTField0>
+<mso:EriCOLLOrganizationUnitTaxHTField0 msdt:dt="string">BURA DURA S&#65286;T Systems &#65286; Technology (Old)|37325608-7ffd-4556-bb5f-522048bbed7f</mso:EriCOLLOrganizationUnitTaxHTField0>
+<mso:TaxCatchAll msdt:dt="string">2;#BURA DURA S&#65286;T Systems &#65286; Technology (Old)|37325608-7ffd-4556-bb5f-522048bbed7f;#1;#Development|053fcc88-ab49-4f69-87df-fc64cb0bf305</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">PJ2RCW546RDY-2-4073</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">c0253346-3547-4680-92e4-8aa38f0c04c7</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://ericoll.internal.ericsson.com/sites/5G_Radio_Testbed/_layouts/DocIdRedir.aspx?ID=PJ2RCW546RDY-2-4073, PJ2RCW546RDY-2-4073</mso:_dlc_DocIdUrl>
+<mso:TaxKeywordTaxHTField msdt:dt="string"></mso:TaxKeywordTaxHTField>
+<mso:EriCOLLCategory msdt:dt="string">1;#Development|053fcc88-ab49-4f69-87df-fc64cb0bf305</mso:EriCOLLCategory>
+<mso:EriCOLLOrganizationUnit msdt:dt="string">2;#BURA DURA S&#65286;T Systems &#65286; Technology (Old)|37325608-7ffd-4556-bb5f-522048bbed7f</mso:EriCOLLOrganizationUnit>
+<mso:EriCOLLProjects msdt:dt="string"></mso:EriCOLLProjects>
+<mso:Prepared. msdt:dt="string"></mso:Prepared.>
+<mso:AbstractOrSummary. msdt:dt="string">This Web Application plots basically the cross-over lines of the SNR vs distance and the needed SNR for a certain modulation scheme, i.e. 64-QAM for example.</mso:AbstractOrSummary.>
+<mso:TaxKeyword msdt:dt="string"></mso:TaxKeyword>
+<mso:EriCOLLProcess msdt:dt="string"></mso:EriCOLLProcess>
+<mso:EriCOLLProjectsTaxHTField0 msdt:dt="string"></mso:EriCOLLProjectsTaxHTField0>
+<mso:EriCOLLDate. msdt:dt="string"></mso:EriCOLLDate.>
+<mso:EriCOLLProducts msdt:dt="string"></mso:EriCOLLProducts>
+<mso:EriCOLLCompetenceTaxHTField0 msdt:dt="string"></mso:EriCOLLCompetenceTaxHTField0>
+<mso:EriCOLLCustomer msdt:dt="string"></mso:EriCOLLCustomer>
+<mso:EriCOLLCountryTaxHTField0 msdt:dt="string"></mso:EriCOLLCountryTaxHTField0>
+<mso:EriCOLLCountry msdt:dt="string"></mso:EriCOLLCountry>
+<mso:EriCOLLCustomerTaxHTField0 msdt:dt="string"></mso:EriCOLLCustomerTaxHTField0>
+<mso:EriCOLLProcessTaxHTField0 msdt:dt="string"></mso:EriCOLLProcessTaxHTField0>
+<mso:EriCOLLProductsTaxHTField0 msdt:dt="string"></mso:EriCOLLProductsTaxHTField0>
+<mso:EriCOLLCompetence msdt:dt="string"></mso:EriCOLLCompetence>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+ 
+
+<body style="background-color:powderblue;" onload = "read_inputs()"  >
+ 
+
+<h1>MIMO link budget - Downlink</h1>
+
+
+<br><br>
+
+<h1 STYLE="margin-left:100px"> Input pane  </h1>
+
+
+
+
+<div id="RBS_parameters" style="position: absolute; left: 100px; top: 220px;" class="card">
+	<!-- RBS input pane -->
+	<h2 > RBS parameters  </h2>
+	<form  name="myForm_RBS"  onchange="read_inputs(); plot_SNR()">
+	<font style="line-height:150%">
+		Bandwidth   [MHz]:           					<input type="number"  id="B" STYLE="position:absolute; left:420px; width:60px" VALUE="200" STEP="10" 
+														title="Give the bandwidth of the signal in MHz"><br>
+		Carrier frequency   [MHz]:           			<input type="number"  id="f" STYLE="position:absolute; left:420px; width:60px" VALUE="4000" STEP="10"><br>
+		M-QAM (4,16,64,256, etc):           		  		<input type="number"  id="M_QAM" STYLE="position:absolute; left:420px; width:60px" VALUE="64"><br>
+		
+		Propagation factor (1/R<sup>n</sup>):           	<input type="number"  id="n" STYLE="position:absolute; left:420px; width:60px" VALUE="2" STEP="0.1" min="2"
+															title="n = 2 means Line of Sight (LOS). &#010;Higher numbers reflect a more reflective environment."><br>
+		Number of layers:	      							<input type="number"  id="NL" STYLE="position:absolute; left:420px; width:60px" VALUE="8"><br>
+		Number of RBS antenna ports:						<input type="number"  id="N_RBS" STYLE="position:absolute; left:420px; width:60px" VALUE="64"><br>
+		
+		RBS Antenna gain [dB]:								<input type="number"  id="Ga" STYLE="position:absolute; left:420px; width:60px" VALUE="24" STEP="1"><br>
+		Cell size [meter]:    								<input type="number"  id="R" STYLE="position:absolute; left:420px; width:60px" VALUE="100" STEP="10"><br>
+		
+		PA power   [dBm]:    								<input type="number"  id="P_PA" STYLE="position:absolute; left:420px; width:60px" VALUE="18"
+															title="This means the output power per radio branch including losses. &#010;Further path losses may also be included in Wall/Window losses."><br>
+		Wall/Window loss  [dB]:    							<input type="number"  id="Wall_loss" STYLE="position:absolute; left:420px; width:60px" VALUE="0"><br>
+
+	</font>
+	</form>
+</div>
+
+
+<div id="UE_parameters" style="position: absolute; left: 700px; top: 220px;" class="card">
+	<!-- UE input pane -->
+	<h2 > UE parameters  </h2>
+	<form  name="myForm_UE" STYLE="margin-left:0px" onchange="read_inputs(); plot_SNR()">
+	<font style="line-height:150%">
+		UE Noise Figure [dB]:    							<input type="number"  id="NF_UE" STYLE="position:absolute; left:220px; width:60px" VALUE="7"><br>
+		UE gain    [dB]:    							<input type="number"  id="GUE" STYLE="position:absolute; left:220px; width:60px" VALUE="11"><br>
+	</font>
+	</form>
+</div>
+
+
+
+	<br>
+
+
+<div id="Define_RBS_and_UE" style="position: absolute; left: 700px; top: 70px;" class="card"> 
+	<h2 > Select pre-defined RBS and UE  </h2>
+	<form  name="paramForm">
+	<font style="line-height:150%">
+	Select RBS: 
+		<select id="RBS"  style="position: absolute; left: 100px; width: 200px;" onchange="define_RBS()"> 
+			  <option value="default">       </option>
+			  <option value="PAAM-28">PAAM-28</option>
+			  <option value="Brick-28">Brick-28</option>
+			  <option value="Sub-6-V1:3500">Sub-6-V1:3500</option>
+			  <option value="Sub-6-V1:4700">Sub-6-V1:4700</option>
+			  <option value="Sub-6-V2:3500">Sub-6-V2:3500</option>
+			  <option value="Sub-6-V2:3700">Sub-6-V2:3700</option>
+			  <option value="Sub-6-V2:4000">Sub-6-V2:4000</option>
+			  <option value="Sub-6-V2:4700">Sub-6-V2:4700</option>
+		</select>
+		<br>
+	Select UE: 
+		<select id="UE" style="position: absolute; left: 100px; width: 200px;" onchange="define_UE()"> 
+				<option value="default">                   </option>
+			  <option value="Ericsson-UE-28">Ericsson-UE-28</option>
+			  <option value="Ericsson-UE-28-Booster">Ericsson-UE-28-Booster</option>
+			  <option value="Intel-UE-28:MTP-2-port">Intel-UE-28:MTP-2-port</option>
+			  <option value="Intel-UE-28:ATP">Intel-UE-28:ATP</option>
+			  <option value="Sub-6-V1-UE">Sub-6-V1-UE</option>  
+			  <option value="Sub-6-V2-UE">Sub-6-V2-UE</option> 			  
+		</select>
+		<br>
+	</font>	
+	</form>
+</div>
+
+
+<br>
+
+
+<div id="Results_output_downlink" style="position: absolute; left: 100px; top: 600px;" class="card">
+<h1 > Results output downlink pane</h1>
+
+	<font style="line-height:100%">
+	<table>
+		<tr>   <td style="width:250px">Calculated SNR at UE per layer:</td>    	<td id="Sum"></td>     				<td>dB</td>    	</tr>
+		<tr>   <td>SNR needed per layer:</td>    								<td id="SNR"></td>     				<td>dB</td>    	</tr>
+		<tr>   <td>Estimated total Gross bitrate:</td>    						<td id="bitrate"></td>     			<td>Mbps</td>   </tr>
+		<tr>   <td>EIRP total: </td>    										<td id="EIRP"></td>     			<td>dBm</td>    </tr>
+		<tr>   <td>EIRP per layer: </td>    									<td id="EIRP_layer"></td>     		<td>dBm</td>    </tr>
+		<tr>   <td>Total power: </td>    										<td id="P_tot"></td>     			<td>dBm</td>    </tr>
+	</table>	
+	</font>
+</div>
+																	
+
+		
+<div id="myDiv" style="position:absolute;left:700px;top:400px;width:800px;height:600px;" style="background-color:white;" class="card">
+	<div> 
+		<br>
+		New plot? <input type="checkbox"  id="newplot_DL" onchange="set_M_QAM()"> 
+	</div>
+</div>	
+
+
+
+<div id="internal_ericsson" style="position:absolute;left:1500px;top:20px;width:200px;height:50px;">
+<h4>For Ericsson internal use</h4>
+</div>
+
+<div id="explaining_text" style="position:absolute;left:1300px;top:110px;width:600px;height:250px;" class="card">
+	<h4>Explanation</h4>
+	<p>
+		This webpage lets one calculate the so-called Friis formula for radio propagation. A number of input parameters 
+		are given and based on an estimated SNR that is required to de-modulate a certain QAM-signal, the coverage may be computed.
+	</p>
+	<p>
+		Moreover, the web page also plots the SNR as a function of distance from the RBS. The curve can be locked by the check-box below the diagram. 
+		Next changes to any parameter gives a new curve in the diagram. The diagram is of type 'lin-log', so propagation decay curves show up 
+		as linear curves. The slant of the curves is controlled by the propagation factor as indicated by 1/R<sup>n</sup>, where n=2 gives Line-of-Sight propagation (LOS).
+	</p>
+</div>
+	
+
+
+<script>
+
+	// first layout for the filter plot
+		layout = {
+			title:'SNR coverage',
+			yaxis: {range: [0, 80],
+			linecolor: 'black', title: 'SNR [dB]'},
+			xaxis: { linecolor: 'black', title: 'Coverage [meter]', type: 'log', nticks:10}   // range: [0, 200],
+		};
+		
+		// prepair for second plot, but initiate the check-variable first
+		second = 0;   // not used here ....
+
+		read_inputs();
+		plot_SNR();
+
+		function define_RBS(){
+		
+			//var RBS;     // make the variable global
+			var pi=3.1415926;
+			var lambda;
+			var Ga;
+			var AE;
+			var choice = document.getElementById('RBS').value; 
+			
+			switch(choice) {
+				case "PAAM-28":
+					
+					RBS = {B:800, N:64, Ga:0, PA:3, f:28000, NL:1, dx:6.0e-3, dy:6.0e-3};  // dx,dy in [m]
+					lambda = 300/RBS.f;
+					AE = 1;
+					Ga = 10*log10(4*pi*(RBS.N*AE)*RBS.dx*RBS.dy/Math.pow(lambda,2));
+					RBS.Ga = Math.floor(10*Ga)/10; // calc real element gain
+					
+					// PA:5 but including expected losses 2 dB
+
+					break;
+					
+				case "Brick-28":
+			
+					RBS = {B:800, N:2*16, Ga:0, PA:5, f:28000, NL:1, dx:6.0e-3, dy:6.0e-3};
+					lambda = 300/RBS.f;
+					AE = 2;
+					Ga = 10*log10(4*pi*(RBS.N*AE)*RBS.dx*RBS.dy/Math.pow(lambda,2));
+					RBS.Ga = Math.floor(10*Ga)/10;; // calc real element gain
+			
+					break;
+					
+
+					
+				case "Sub-6-V1:3500":   
+			
+					RBS = {B:100, N:64, Ga:0, PA:16, f:3500, NL:8, dx:40.5e-3, dy:56.7e-3};
+					lambda = 300/RBS.f;
+					AE = 2;
+					Ga = 10*log10(4*pi*(RBS.N*AE)*RBS.dx*RBS.dy/Math.pow(lambda,2));
+					RBS.Ga = Math.floor(10*Ga)/10; // calc real element gain
+
+					break;
+					
+				case "Sub-6-V1:4700":   
+			
+					RBS = {B:100, N:64, Ga:0, PA:16, f:4700, NL:8, dx:30.6e-3, dy:42.8e-3};
+					lambda = 300/RBS.f;
+					AE = 2;
+					Ga = 10*log10(4*pi*(RBS.N*AE)*RBS.dx*RBS.dy/Math.pow(lambda,2));
+					RBS.Ga = Math.floor(10*Ga)/10; // calc real element gain
+
+					break;
+					
+					
+				case "Sub-6-V2:3500":
+			
+					RBS = {B:200, N:32, Ga:0, PA:35, f:3500, NL:16, dx:40.5e-3, dy:56.7e-3};
+					lambda = 300/RBS.f;
+					AE = 2;
+					Ga = 10*log10(4*pi*(RBS.N*AE)*RBS.dx*RBS.dy/Math.pow(lambda,2));
+					RBS.Ga = Math.floor(10*Ga)/10; // calc real element gain
+
+					break;
+					
+				case "Sub-6-V2:3700":
+			
+					RBS = {B:200, N:32, Ga:0, PA:35, f:3700, NL:16, dx:40.5e-3, dy:56.7e-3};
+					lambda = 300/RBS.f;
+					AE = 2;
+					Ga = 10*log10(4*pi*(RBS.N*AE)*RBS.dx*RBS.dy/Math.pow(lambda,2));
+					RBS.Ga = Math.floor(10*Ga)/10; // calc real element gain
+
+					break;
+					
+					
+				case "Sub-6-V2:4000":
+			
+					RBS = {B:200, N:32, Ga:0, PA:35, f:4000, NL:16, dx:35.4e-3, dy:49.6e-3};
+					lambda = 300/RBS.f;
+					AE = 2;
+					Ga = 10*log10(4*pi*(RBS.N*AE)*RBS.dx*RBS.dy/Math.pow(lambda,2));
+					RBS.Ga = Math.floor(10*Ga)/10; // calc real element gain
+
+					break;
+					
+					
+				case "Sub-6-V2:4700":
+			
+					RBS = {B:200, N:32, Ga:0, PA:35, f:4700, NL:16, dx:30.1e-3, dy:42.2e-3};
+					lambda = 300/RBS.f;
+					AE = 2;
+					Ga = 10*log10(4*pi*(RBS.N*AE)*RBS.dx*RBS.dy/Math.pow(lambda,2));
+					RBS.Ga = Math.floor(10*Ga)/10; // calc real element gain
+
+					break;
+					
+					
+					
+			}
+					// write new values to the input pane
+					document.getElementById('B').value = RBS.B;  		document.getElementById('B').style.backgroundColor = "#ffeecc"; //document.getElementById('B').disabled=true;
+					document.getElementById('N_RBS').value = RBS.N;  	document.getElementById('N_RBS').style.backgroundColor = "#ffeecc"; //document.getElementById('N_RBS').disabled=true;
+					document.getElementById('Ga').value = RBS.Ga;    	document.getElementById('Ga').style.backgroundColor = "#ffeecc"; // document.getElementById('Ga').disabled=true;
+					document.getElementById('P_PA').value = RBS.PA;  	document.getElementById('P_PA').style.backgroundColor = "#ffeecc";// document.getElementById('P_PA').disabled=true;
+					document.getElementById('f').value = RBS.f;  		document.getElementById('f').style.backgroundColor = "#ffeecc";;
+					document.getElementById('NL').value = RBS.NL;  		document.getElementById('NL').style.backgroundColor = "#ffeecc"; //document.getElementById('NL').disabled=true;
+		
+			read_inputs();
+			plot_SNR();
+		
+		}
+		
+		
+		function define_UE(){
+				
+				var UE;
+				var pi=3.1415926;
+				var lambda;
+				var GUE;
+				var choice = document.getElementById('UE').value; 
+				
+				switch(choice) {
+					case "Ericsson-UE-28":
+						UE = {B:800, GUE:7, PA:10.4, NF:10};					
+						break;
+						
+					case "Ericsson-UE-28-Booster":
+						UE = {B:800, GUE:7, PA:19, NF:10};
+						break;
+						
+						
+					case "Intel-UE-28:MTP-2-port":   // planar antenna				
+						UE = {B:800, GUE:15, PA:11+10*log10(16), NF:10};				
+						break;
+						
+						
+					case "Intel-UE-28:ATP":   // shark-fin				
+						UE = {B:800, GUE:15+1, PA:11+10*log10(16), NF:10};				
+						break;
+						
+						
+						
+					case "Sub-6-V1-UE":  // cube				
+						UE = {B:100, GUE:7, PA:16-3, NF:7};   // cable losses (-3)
+						break;
+						
+						
+					case "Sub-6-V2-UE":  // cube				
+						UE = {B:200, GUE:7, PA:35-3, NF:7};   // cable losses (-3)
+						break;
+						
+	
+				}
+				// write new values to the input pane
+				document.getElementById('GUE').value = Math.floor(UE.GUE*10)/10;    	document.getElementById('GUE').style.backgroundColor = "#ffeecc";
+				document.getElementById('NF_UE').value = UE.NF;    						document.getElementById('NF_UE').style.backgroundColor = "#ffeecc";
+				
+				read_inputs();
+				plot_SNR();
+		}
+
+
+		function read_inputs(){
+		
+			var SNR;
+		
+			// these parameters will be global to all script functions
+		
+			B = parseFloat(document.getElementById('B').value);
+			f = parseFloat(document.getElementById('f').value);
+			M_QAM = parseFloat(document.getElementById('M_QAM').value);
+			
+			n = parseFloat(document.getElementById('n').value);
+			NL = parseFloat(document.getElementById('NL').value);
+			N_RBS = parseFloat(document.getElementById('N_RBS').value);
+			
+			Ga = parseFloat(document.getElementById('Ga').value);
+			R = parseFloat(document.getElementById('R').value),
+			NF_UE = parseFloat(document.getElementById('NF_UE').value);
+			
+			P_PA = parseFloat(document.getElementById('P_PA').value);
+			Wall_loss = parseFloat(document.getElementById('Wall_loss').value);
+			GUE = parseFloat(document.getElementById('GUE').value);
+			
+			
+			
+			// excecute SNR calculations
+			SNR = calc_SNR();
+		
+		}
+
+
+	  function calc_SNR() {
+			
+		 var result=0;
+		 var x = 0.0;
+		 var k=1.38e-23;
+		 var T=290;
+		 var c=300;
+		 var pi=3.1415926;
+
+		 var kTB = -114;
+		 var SNR;
+		 
+		 var EIRP;
+		 var P_tot;
+
+  
+		  with (Math){			  
+			 SNR = 	P_PA -
+					10*log10(NL) + 
+					10*log10(N_RBS) + 
+					Ga  +  
+					GUE +
+					10*log10(pow(300/4/pi/f,2)) + 
+					10*log10(1/pow(R,n)) - 
+					Wall_loss -
+					NF_UE - 
+					kTB - 
+					10*log10(B);
+		  }
+		  
+		  
+		  // reduce number of significant digits.
+		  SNR = Math.floor(10*SNR)/10;
+		 		  
+		  document.getElementById("Sum").innerHTML = SNR ;
+		  document.getElementById("bitrate").innerHTML = grossbitrate(NL,B,M_QAM);
+		  document.getElementById("SNR").innerHTML = SNR_goal(M_QAM);
+		    
+		  
+		  //P_Loss=10*log10(P_Loss);
+		  EIRP = P_PA + 10*log10(N_RBS) + Ga;
+		  EIRP = Math.floor(10*EIRP)/10;
+		  document.getElementById("EIRP").innerHTML = EIRP;
+
+
+		  EIRP_layer = P_PA + 10*log10(N_RBS) + Ga -10*log10(NL);
+		  EIRP_layer = Math.floor(10*EIRP_layer)/10;
+		  document.getElementById("EIRP_layer").innerHTML = EIRP_layer;
+		  
+
+		  P_tot = P_PA + 10*log10(N_RBS);
+		  P_tot = Math.floor(10*P_tot)/10;
+		  document.getElementById("P_tot").innerHTML = P_tot;
+		  
+		  //document.getElementById('Sum').style.backgroundColor = "green";
+		  
+			return SNR;
+		  
+	  }
+	  
+	  
+	  function grossbitrate(NL,B,M_QAM){
+	  
+	  var bitrate;
+	  var nbit;
+			
+			nbit=Math.log(M_QAM)/Math.log(2);
+			bitrate=NL*B*nbit;
+			
+			return bitrate;
+
+	  
+	  }
+	  	  
+
+	  function SNR_goal(M_QAM){
+	  
+		  var SNR=0;
+		  
+		  M_QAM=parseFloat(M_QAM);
+		  
+		  SNR=-20*log10(0.5/(Math.sqrt(M_QAM)-1));
+		  SNR=Math.round(SNR*10)/10; 
+		  
+		  return SNR;
+		  
+	  }
+	  	  
+	  
+	  function log10(x) {
+		return Math.log(x)/Math.log(10.0);
+	  }
+	  
+
+
+	function plot_SNR(){
+		var k;
+		var angle;
+		var x=[];
+		var y;
+		var output = [];
+		var Ph_err=[];
+		var n;
+		var is_newplot_DL=document.getElementById('newplot_DL').checked;
+
+
+		// fill radiation pattern  characteristics vector
+		var IT = 15000
+		for (n= 0; n< IT; n++) {
+			x[n] = 0.00+(n+1)*15000/IT; 
+			output[n] = SNR_calc(x[n]);
+			
+		}
+		
+		// plot filter characteristic
+		var trace1 = {
+			x: x,
+			y: output,
+			mode: 'lines',
+			name: 'SNR at UE',
+			line: { width: 4}
+		};
+		
+		// add the SNR-goal as a line also
+		var trace2 = {
+						x: [x[0],  x[IT-1]],
+						y: [SNR_goal(M_QAM), SNR_goal(M_QAM)],
+						mode: 'lines',
+						name: 'SNR limit',   
+						  line: {dash: 'dot'}
+		};
+		
+
+		
+		//var data = [trace1, trace2];
+
+		
+		// plot the actual data.
+		if(is_newplot_DL==false){
+		Plotly.newPlot('myDiv', [trace1, trace2], layout);}
+		
+		// add another plot .....
+		else {
+		Plotly.addTraces('myDiv', [trace1]);
+		}
+		
+		
+		}
+
+
+
+		function deleteTrace(divId){
+			Plotly.deleteTraces('myDiv', 0);
+		};
+
+
+
+		function SNR_calc(R){
+		var SNR;
+		var pi=3.1415926;
+		var kTB = -114;
+		
+		with (Math){			  
+			 SNR = 	P_PA -
+					10*log10(NL) + 
+					10*log10(N_RBS) + 
+					Ga  +  
+					GUE +
+					10*log10(pow(300/4/pi/f,2)) + 
+					10*log10(1/pow(R,n)) - 
+					Wall_loss -
+					NF_UE - 
+					kTB - 
+					10*log10(B);
+		  }
+		  
+		  return SNR;
+		
+		}
+		
+		
+		function set_M_QAM(){
+		var is_newplot_DL=document.getElementById('newplot_DL').checked;
+			if(is_newplot_DL==true){
+				document.getElementById('M_QAM').disabled=true;
+			}
+			else{
+				document.getElementById('M_QAM').disabled=false;
+			}
+		}
+	  
+
+
+</script>
+
+
+<div class="card" style="position:absolute; top:10px; width:70px; height:70px; left:1800px; background-color:white">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.05646 56.09162">
+<title></title>
+<path d="M22.89539,14.92337a3.78649,3.78649,0,1,1-2.6048-7.1109L41.04425.2313a3.744,3.744,0,0,1,4.86621,2.256,3.64463,3.64463,0,0,1-2.2533,4.73932Z" fill="#00285e"/>
+<path d="M22.89539,26.17478a3.78643,3.78643,0,1,1-2.6048-7.11078l20.75366-7.57251a3.73082,3.73082,0,0,1,4.86621,2.248,3.63723,3.63723,0,0,1-2.2533,4.73611Z" fill="#00285e"/>
+<path d="M22.89539,37.42429a3.78631,3.78631,0,1,1-2.6048-7.1105L41.04425,22.7421a3.72937,3.72937,0,0,1,4.86621,2.2457,3.63853,3.63853,0,0,1-2.2533,4.7373Z" fill="#00285e"/>
+<polygon points="0 46.781 6.882 46.781 6.882 48.674 2.379 48.674 2.379 50.214 6.763 50.214 6.763 52.224 2.379 52.224 2.379 53.882 6.999 53.882 6.999 55.902 0 55.902 0 46.781" fill="#00285e"/>
+<rect x="17.79358" y="46.78119" width="2.49701" height="9.12119" fill="#00285e"/>
+<path d="M29.3053,47.01639,29.187,48.90928c-2.0152-1.05908-5.10175-.7063-5.10175,2.256-.11835,3.0795,3.08655,3.55029,5.22009,2.4812l.1178,2.01071c-3.6767,1.069-7.95325,0-7.95325-4.49191C21.46985,46.89878,25.8642,45.7118,29.3053,47.01639Z" fill="#00285e"/>
+<path d="M36.65839,46.89878l-.1178,1.89291c-1.30774-.7063-3.67682-.7063-3.67682.35321,0,1.65729,4.26648.48029,4.26648,3.91318,0,3.315-4.0304,3.43271-6.64569,2.59912l.12793-2.01071c1.65161.716,4.03076.95139,4.03076-.353,0-1.53992-4.27649-.70621-4.27649-3.91351C30.36676,46.66318,33.68958,45.9473,36.65839,46.89878Z" fill="#00285e"/>
+<path d="M44.1286,46.89878l-.11584,1.89291c-1.30646-.7063-3.67957-.7063-3.67957.35321,0,1.65729,4.26691.48029,4.26691,3.91318,0,3.315-4.02722,3.43271-6.63409,2.59912l.11786-2.01071c1.66162.716,4.03113.95139,4.03113-.353,0-1.53992-4.26678-.70621-4.26678-3.91351C37.84821,46.66318,41.16016,45.9473,44.1286,46.89878Z" fill="#00285e"/>
+<polygon points="55.643 46.781 58.719 46.781 61.687 52.587 61.687 46.781 64.056 46.781 64.056 55.902 61.096 55.902 57.892 49.861 57.892 55.902 55.643 55.902 55.643 46.781" fill="#00285e"/>
+<path d="M47.924,51.2829c0,1.42209.5993,2.96188,1.89771,2.96188,1.42633,0,2.01361-1.53979,2.01361-2.96188,0-1.18661-.58728-2.96191-2.01361-2.96191C48.52325,48.321,47.924,49.86069,47.924,51.2829Zm1.89771-4.7373c2.61694,0,4.63049,1.42218,4.63049,4.7373,0,3.1973-2.01355,4.73709-4.63049,4.73709-2.489,0-4.5025-1.53979-4.5025-4.73709C45.31915,47.96778,47.3327,46.5456,49.82166,46.5456Z" fill="#00285e"/>
+<path d="M8.77875,46.78119h4.39441c1.29761,0,2.9588.4707,2.9588,2.36371a2.1819,2.1819,0,0,1-1.66119,2.25558,1.28353,1.28353,0,0,1,.83539.82391c0,.11768,1.30762,3.56027,1.30762,3.678H13.9989l-.944-2.8443a.90869.90869,0,0,0-.83539-.5983c-.47192,0-1.06189-.11771-1.06189,0v3.4426H8.77875Zm2.37885,3.7858H12.4552A1.08689,1.08689,0,0,0,13.645,49.50757c0-.5983-.4718-.95148-1.18976-.95148H11.15759Z" fill="#00285e"/></svg>
+</div>
+ 
+
+ 
+
+</body>
+
+</html> 
+
+ 
+
+ 
+
+ 

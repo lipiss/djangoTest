@@ -1,0 +1,829 @@
+
+
+
+
+<!DOCTYPE html>
+
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" >
+<head>
+<title> MU MIMO 6</title>
+	<script src="plotly-latest.min.js"></script>
+	<script src="math.js"></script>
+	
+	
+	  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    
+      <script>
+         
+         $(function() {
+            $( "#EVM_Div" ).draggable();
+         });
+		 
+		 
+		 $(function() {
+            $( "#Beam_Div" ).draggable();
+         });
+		 
+		 
+		 
+		 $(function() {  // not used yet ...
+            $( "#MU_MIMO_picture" ).draggable();
+         });
+		 
+		 
+         
+         function myFunction() {
+            document.getElementById("EVM_Div").style.resize = "both";
+        }
+         
+      </script>
+
+	
+	
+	<style>
+		div.card {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			padding-top: 5px;
+			padding-right: 5px;
+			padding-bottom: 10px;
+			padding-left: 5px;
+			width: 500px;
+		}
+		div.plot {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			padding-top: 5px;
+			padding-right: 5px;
+			padding-bottom: 10px;
+			padding-left: 5px;
+			width: 700px;
+		}
+		table, td {
+			border: 1px solid black;
+		}
+		td, th{
+			padding-left: 5px;
+			padding-right: 10px;
+		}
+		th{
+			padding-bottom: 10px;
+			border: 1px solid black;
+		}
+		caption{
+			padding-bottom: 10px;
+		}
+	</style>
+	
+	
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:EriCOLLCategoryTaxHTField0 msdt:dt="string">Development|053fcc88-ab49-4f69-87df-fc64cb0bf305</mso:EriCOLLCategoryTaxHTField0>
+<mso:EriCOLLOrganizationUnitTaxHTField0 msdt:dt="string">BURA DURA S&#65286;T Systems &#65286; Technology (Old)|37325608-7ffd-4556-bb5f-522048bbed7f</mso:EriCOLLOrganizationUnitTaxHTField0>
+<mso:TaxCatchAll msdt:dt="string">2;#BURA DURA S&#65286;T Systems &#65286; Technology (Old)|37325608-7ffd-4556-bb5f-522048bbed7f;#1;#Development|053fcc88-ab49-4f69-87df-fc64cb0bf305</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">PJ2RCW546RDY-2-4118</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">19585c02-ecb6-4efc-afc6-8b4963dc5acf</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://ericoll.internal.ericsson.com/sites/5G_Radio_Testbed/_layouts/DocIdRedir.aspx?ID=PJ2RCW546RDY-2-4118, PJ2RCW546RDY-2-4118</mso:_dlc_DocIdUrl>
+<mso:TaxKeywordTaxHTField msdt:dt="string"></mso:TaxKeywordTaxHTField>
+<mso:EriCOLLCategory msdt:dt="string">1;#Development|053fcc88-ab49-4f69-87df-fc64cb0bf305</mso:EriCOLLCategory>
+<mso:EriCOLLOrganizationUnit msdt:dt="string">2;#BURA DURA S&#65286;T Systems &#65286; Technology (Old)|37325608-7ffd-4556-bb5f-522048bbed7f</mso:EriCOLLOrganizationUnit>
+<mso:EriCOLLProjects msdt:dt="string"></mso:EriCOLLProjects>
+<mso:Prepared. msdt:dt="string"></mso:Prepared.>
+<mso:AbstractOrSummary. msdt:dt="string"></mso:AbstractOrSummary.>
+<mso:TaxKeyword msdt:dt="string"></mso:TaxKeyword>
+<mso:EriCOLLProcess msdt:dt="string"></mso:EriCOLLProcess>
+<mso:EriCOLLProjectsTaxHTField0 msdt:dt="string"></mso:EriCOLLProjectsTaxHTField0>
+<mso:EriCOLLDate. msdt:dt="string"></mso:EriCOLLDate.>
+<mso:EriCOLLProducts msdt:dt="string"></mso:EriCOLLProducts>
+<mso:EriCOLLCompetenceTaxHTField0 msdt:dt="string"></mso:EriCOLLCompetenceTaxHTField0>
+<mso:EriCOLLCustomer msdt:dt="string"></mso:EriCOLLCustomer>
+<mso:EriCOLLCountryTaxHTField0 msdt:dt="string"></mso:EriCOLLCountryTaxHTField0>
+<mso:EriCOLLCountry msdt:dt="string"></mso:EriCOLLCountry>
+<mso:EriCOLLCustomerTaxHTField0 msdt:dt="string"></mso:EriCOLLCustomerTaxHTField0>
+<mso:EriCOLLProcessTaxHTField0 msdt:dt="string"></mso:EriCOLLProcessTaxHTField0>
+<mso:EriCOLLProductsTaxHTField0 msdt:dt="string"></mso:EriCOLLProductsTaxHTField0>
+<mso:EriCOLLCompetence msdt:dt="string"></mso:EriCOLLCompetence>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+
+<body onload="MU_MIMO(); hide_angle_inputs()" bgcolor="orange">
+
+
+<h1> MU MIMO </h1>
+
+<br>
+<br>
+
+
+<div class="card">
+
+<form  name="myForm" STYLE="margin-left:100px">
+
+<font style="line-height:150%">
+	Number of RBS antennas:           		<input type="number"  id="N_RBS" STYLE="position:absolute; left:420px; width:60px" 		VALUE="16" 	step="1" onchange="MU_MIMO()"><br> 
+	RBS element distance [&lambda;]:           <input type="number"  id="d_RBS" STYLE="position:absolute; left:420px; width:60px" 	VALUE="0.5" step="0.05" onchange="MU_MIMO()"><br> 
+	Side Lobe Level (SLL):           	<input type="number"  id="SLL" STYLE="position:absolute; left:420px; width:60px" VALUE="20" onchange="MU_MIMO()()">
+	          						    <input type="checkbox"  id="Cheb" STYLE="position:absolute; left:480px; width:60px" VALUE="20"  onchange="MU_MIMO()()"> <br>
+	Numbers of layers transmitted:           <input type="number"  id="N_TX" STYLE="position:absolute; left:420px; width:60px" 		VALUE="2" 	step="1" onchange="MU_MIMO(); show_angle_inputs()"><br> 
+	UE x-position [m]:           			<input type="number"  id="x_UE" STYLE="position:absolute; left:420px; width:60px" 		VALUE="1" 	step="1" onchange="MU_MIMO()"><br> 
+	UE y-position [m]:           			<input type="number"  id="y_UE" STYLE="position:absolute; left:420px; width:60px" 		VALUE="1" 	step="1" onchange="MU_MIMO()"><br>
+	Number of UE antennas:           		<input type="number"  id="N_UE" STYLE="position:absolute; left:420px; width:60px" 		VALUE="8" 	step="1" onchange="MU_MIMO()"><br>
+	UE element distance [&lambda;]:           <input type="number"  id="d_UE" STYLE="position:absolute; left:420px; width:60px" 		VALUE="0.5" step="0.05" onchange="MU_MIMO()"><br> 
+	Number of layers wanted:           		<input type="number"  id="N_RX" STYLE="position:absolute; left:420px; width:60px" 		VALUE="2" 	step="1" onchange="MU_MIMO()"><br> 
+	Frequency [MHz]:           				<input type="number"  id="freq" STYLE="position:absolute; left:420px; width:60px" 		VALUE="3500" step="10" onchange="MU_MIMO()"><br> 
+<br>
+</font>
+
+</div >
+
+
+	<img  src="MU_MIMO.svg" alt="Describing picture comes here" style="position:absolute;left:1000px;top:0px;width:700px;height:700px; ">
+
+
+<br>
+<br>
+
+
+<div id="extTraces" style="position:absolute;left:100px;top:420px;width:400px;height:20px;" style="background-color:white;" >
+	<div> 
+		<br>
+		<!-- Extend plot with new points? <input type="checkbox"  id="newPoints" onchange="" >  -->
+	</div>
+</div>
+
+
+<div id="EVM_Div" style="position: absolute; left: 350px; top: 500px;" alt="EVM plot comes here ..." class="plot">
+</div>
+
+
+<div id="Beam_Div" style="position: absolute; left: 1300px; top: 600px;" alt="Beam plot comes here ..." class="plot">
+</div>
+
+
+<!-- Print EVM vector -->
+<p id="EVM"> </p>
+
+<table id="EVM_table">
+<caption> EVM per beam </caption>
+	<th>Beam 0</th><th>Beam 1</th><th>Beam 2</th><th>Beam 3</th>
+</table>
+
+
+
+
+		<!-- Define an area where you can specify the beam directions  -->
+<div id="define_beam_directions" style="position:absolute;left:900px;top:30px;width:800px;height:600px;">
+		<h2> Specify beam directions </h2>
+		<font style="line-height:150%">
+		<!-- <form  name="twiggleForm" STYLE="margin-left:100px"> -->
+
+			Angles.: <input type="number"  id="beam_0" STYLE="position:absolute;   width:60px; left:70px" VALUE="-18" step="1" onchange="MU_MIMO()"> <br> 
+					 <input type="number"  id="beam_1" STYLE="position:absolute;  width:60px; left:70px" VALUE="42" step="1" onchange="MU_MIMO()"> <br> 
+					 <input type="number"  id="beam_2" STYLE="position:absolute;  width:60px; left:70px" VALUE="5" step="1" onchange="MU_MIMO()"> <br> 
+					 <input type="number"  id="beam_3" STYLE="position:absolute; width:60px; left:70px" VALUE="0" step="1" onchange="MU_MIMO()"> <br> 
+					 <input type="number"  id="beam_4" STYLE="position:absolute;  width:60px; left:70px" VALUE="-10" step="1" onchange="MU_MIMO()"> <br> 
+					 <input type="number"  id="beam_5" STYLE="position:absolute;  width:60px;left:70px" VALUE="-20" step="1" onchange="MU_MIMO()"> <br> 
+					 <input type="number"  id="beam_6" STYLE="position:absolute;  width:60px; left:70px" VALUE="-30" step="1" onchange="MU_MIMO()"> <br> 
+					 <input type="number"  id="beam_7" STYLE="position:absolute;  width:60px; left:70px" VALUE="-40" step="1" onchange="MU_MIMO()"><br>
+
+		<br>
+		</font>
+	<!-- </form> -->
+	</div>
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+<script>
+
+count=0;
+
+	var x_values = [];     // global .... to save them to the next update, if set "checked"
+	var y_values = [];	   // global .... to save them to the next update, if set "checked"
+
+	
+	var layout_EVM = {
+	  title: 'EVM versus param',
+	  xaxis: {
+		tickfont: {
+		size: 14,
+		color: 'rgb(107, 107, 107)'
+			},
+			range: [-2, 20]},
+	  yaxis: {
+	  		type: 'log', nticks:10,
+		title: 'EVM (%)',
+		titlefont: {
+		  size: 16,
+		  color: 'rgb(107, 107, 107)'
+		},
+		tickfont: {
+		  size: 14,
+		  color: 'rgb(107, 107, 107)'
+		},
+		range: [-1, 2]
+	  },
+	  legend: {
+		x: 10,
+		y: 5.0,
+		bgcolor: 'rgba(255, 255, 255, 0)',
+		bordercolor: 'rgba(255, 255, 255, 0)'
+	  },
+	  barmode: 'group',
+	  bargap: 0.15,
+	  bargroupgap: 0.1
+	};
+	
+	
+	
+	var layout_BEAM = {
+	  title: 'Beam plots',
+	  xaxis: {
+	  title: '[meter]',
+	  tickfont: {
+		  size: 14,
+		  color: 'rgb(107, 107, 107)'
+			},
+			range: [10, -10]},
+			
+	  yaxis: {
+	  color: 'blue',
+	  gridcolor: '#99ddff',
+		title: '[dB]',
+		titlefont: {
+		  size: 16,
+		  color: 'rgb(107, 107, 107)'
+		},
+		tickfont: {
+		  size: 14,
+		  color: 'rgb(107, 107, 107)'
+		},
+		range: [0, 50],
+	  },
+	  
+	  yaxis2: {
+	  color: 'red',
+	  gridcolor: '#ffd9b3',
+		title: '[meter]',
+		titlefont: {
+		  size: 16,
+		  color: 'rgb(107, 107, 107)'
+		},
+		tickfont: {
+		  size: 14,
+		  color: 'red'   // rgb(148, 103, 189)
+		},
+		range: [0, 20],
+		overlaying: 'y',
+		side: 'right'
+	  },
+
+	  legend: {
+		x: 14,
+		y: 1.0,
+		bgcolor: 'rgba(255, 255, 255, 0)',
+		bordercolor: 'rgba(255, 255, 255, 0)'
+	  },
+	};
+	
+	
+	
+	
+
+function hide_angle_inputs(){
+	var m;
+	var txt;
+	
+	for(m= 2; m< 8; m++) {
+		txt = 'beam_'+ m;
+		document.getElementById(txt).style.visibility = "hidden";    //visible
+	}
+
+}
+
+
+function show_angle_inputs(){
+	var m;
+	var txt;
+	var N_TX=parseFloat(document.getElementById('N_TX').value);
+	
+	for(m= 0; m< N_TX; m++) {
+		txt = 'beam_'+ m;
+		document.getElementById(txt).style.visibility = "visible";    //visible
+	}
+	for(m= N_TX; m< 8; m++) {
+		txt = 'beam_'+ m;
+		document.getElementById(txt).style.visibility = "hidden";    //visible
+	}
+
+}
+
+
+function MU_MIMO(){
+
+	var N_RBS=parseFloat(document.getElementById('N_RBS').value);
+	var d_RBS=parseFloat(document.getElementById('d_RBS').value);
+	var N_TX=parseFloat(document.getElementById('N_TX').value);
+	var x_UE=parseFloat(document.getElementById('x_UE').value);
+	var y_UE=parseFloat(document.getElementById('y_UE').value);
+	var N_UE=parseFloat(document.getElementById('N_UE').value);
+	var d_UE=parseFloat(document.getElementById('d_UE').value);
+	var N_RX=parseFloat(document.getElementById('N_RX').value);
+	var freq=parseFloat(document.getElementById('freq').value);
+	
+	var is_Cheb;
+	var SLL=parseFloat(document.getElementById('SLL').value);
+
+	
+	
+	var lambda = 300/freq*1000;  // in mm
+	var theta=[];
+	var pi = 3.1415926;
+	var dg = pi/180.0;
+	var H = [];
+	var E = [];
+	var Q = [];
+	var WH = [];
+	var W = [];
+	var dE = [];
+	var ERR = [];
+	var EVM2 = [];
+	var EVM = [];
+	
+	var n;
+	var m;
+	var txt;
+	
+	//var system;
+	
+	
+	is_Cheb=document.getElementById('Cheb').checked;
+	if (is_Cheb){
+		A=cheby_win(N_RBS,SLL);
+		document.getElementById('SLL').disabled=false;
+		}
+	else {
+		A=ULA_win(N_RBS);
+		document.getElementById('SLL').disabled=true;
+	}
+
+	
+	
+	// read beam angles
+	for(m= 0; m< N_TX; m++) {
+	txt = 'beam_'+ m;
+		theta[m]=parseFloat(document.getElementById(txt).value);
+	}
+
+	
+	RRU = define_RRU(N_RBS,d_RBS,freq);
+	UE = define_UE(N_UE,d_UE,x_UE,y_UE,freq);
+	H = channel_matrix(freq,RRU,UE);
+	W = build_weight_matrix(N_TX,N_RBS,d_RBS,freq,theta,A);
+		E = math.complex(math.eye([N_TX,N_RX])); // identity matrix  of size [N_RBS,N_RX]
+		WH = math.multiply(W,H);
+		tmp = math.multiply(math.transpose(math.conj(WH)),WH);   
+		dE = math.multiply(0.00000001,math.complex(math.eye([N_UE,N_UE])));
+	Q = math.multiply(math.multiply(math.inv(math.add(tmp,dE)),math.transpose(math.conj(WH))),E); // optimal receiver [LMS];
+	
+	// calculate the EVM for each received signal
+	ERR = math.subtract(E, math.multiply(WH,Q));   // E-W*H*Q
+	EVM2 = math.multiply(math.transpose(math.conj(ERR)),ERR);      // (E-W*H*Q)'*(E-W*H*Q)
+	//EVM2 = math.sqrt(math.abs(EVM2));
+	
+	for(n= 0; n< EVM2.length; n++) {
+		EVM[n] = math.floor(10*math.sqrt(math.abs(EVM2[n][n]))*100)/10;
+	}
+	
+	
+	//document.getElementById('EVM').innerHTML='EVM =  ' + String(EVM) + ' %';
+	
+	Write_to_table('EVM_table',EVM,' %');
+	
+	
+	// fill the EVM vector so as to be able to plot when parameters change.
+	for(n= N_RX; n< 100; n++) {    // assume maximum 100 iterations, should be enough .... ?
+		EVM[n] = 0.0;
+	}
+	
+	// collect alll system data in one object
+	system = {RRU:RRU, UE:UE, N_TX:N_TX, N_RX:N_RX, freq:freq, H:H, W:W, EVM:EVM, SLL:SLL};
+	
+	
+	// plot EVM as abar plot	
+	plot_EVM_bars();
+	
+	
+	// plot the radiation patterns
+	plot_beams();
+	
+	
+	// also plot the loci of the RRU antennas and the UE antennas
+	add_RRU_UE_to_plot();
+	
+	
+	return 1;
+	  
+
+}
+
+
+function Write_to_table(Table_id,VEC,unit) {
+    var table = document.getElementById(Table_id);
+    var row = table.insertRow(-1);
+
+	for(n=0; n<VEC.length; n++){
+	row.insertCell(n).innerHTML = String(VEC[n])+unit;
+	}
+	
+}
+
+
+
+function ULA_win(PE){
+	var W=[];
+	for (i=0; i<PE; i++)
+	W[i]=1;
+	return W;
+}
+
+function cheby_win(N,SLL){
+// Source: http://practicalcryptography.com/miscellaneous/machine-learning/implementing-dolph-chebyshev-window/
+    var nn;
+	var i;
+    var M, n, sum = 0, maxx=0;
+    var tg = Math.pow(10,SLL/20);  /* 1/r term [2], 10^gamma [2] */
+    var x0 = cosh((1.0/(N-1))*acosh(tg));
+	var nnn;
+	var PI=3.1415926;
+	var W=[];
+	
+	with (Math){
+		M = (N-1)/2;
+		if (N%2==0)  M = M + 0.5; /* handle even length windows */
+		for (nn=0; nn<(N/2+1); nn++){
+			n = nn-M;
+			sum = 0;
+			for(i=1; i<=M; i++){
+			    if (N%2==0)  {nnn=2*n+1;}  // nnn was introduced by Leonard Rexberg to take care of even number of elements. Did not work otherwise ...
+				else {nnn=2*n;}
+				sum += cheby_poly(N-1,x0*cos(PI*i/N))*cos(nnn*PI*i/N);  
+			}
+			W[nn] = tg + 2*sum;
+			W[N-nn-1] = W[nn];
+			if (W[nn]>maxx) maxx=W[nn];
+		}
+		for(nn=0; nn<N; nn++) W[nn] /= maxx; /* normalise everything */
+	}
+	return W;
+}
+
+
+
+function cheby_poly(n, x){
+    var res;
+	with (Math){
+		if (abs(x) <= 1) res = cos(n*acos(x));
+		else              res = cosh(n*acosh(x));
+		return res;
+	}
+}
+
+
+
+function cosh(z){
+	with (Math){
+		return 0.5*(exp(z)+exp(-z));
+	}
+}
+
+
+function acosh(z){
+	var tmp;
+	with (Math){
+		tmp=log(z+sqrt(pow(z,2)-1))
+	}
+	return tmp;
+}
+
+
+function channel_matrix(freq,RRU,UE){
+
+	var j = math.complex(0,1);
+	var pi = 3.1415926;
+    var lambda = 300/freq;
+    var k = 2*pi/lambda;
+	var n;
+	var m;
+	var R;
+	var arg;
+	var c_arg;
+	var H_col =[];
+	var H=[];
+
+	for(n= 0; n< RRU.N; n++) {
+	H_col = [];
+		for(m= 0; m< UE.N; m++) {
+			R = Math.sqrt(Math.pow(RRU.x[n]-UE.x[m],2) + Math.pow(RRU.y[n]-UE.y[m],2));
+			arg = k*R;
+			c_arg = math.multiply(j,arg);
+			c_arg = math.exp(c_arg);
+            H_col[m] =  math.divide(c_arg,R); 
+        }
+		H[n] = H_col;
+    }
+	
+	return H;
+
+}
+
+
+function define_RRU(N_RBS,d_RBS,freq){
+
+	var lambda = 300/freq;
+	var x=[];
+	var y=[];
+	var n;
+	var RRU;
+
+
+	for(n= 0; n< N_RBS; n++) {
+		x[n] = 0.0;
+		y[n] = n*d_RBS*lambda;
+	}
+			
+
+	var RRU = {N:N_RBS, d:d_RBS, x_pos:0, y_pos:0, x:x, y:y};
+	return RRU
+    
+    
+}
+
+
+function define_UE(N_UE,d_UE,x_UE,y_UE,freq){
+
+	var lambda = 300/freq;
+	var x=[];
+	var y=[];
+	var n;
+	var UE;
+
+
+	for(n= 0; n< N_UE; n++) {
+		x[n] = x_UE;
+		y[n] = y_UE + n*d_UE*lambda;
+	}
+			
+
+	var UE = {N:N_UE, d:d_UE, x_pos:x_UE, y_pos:y_UE, x:x, y:y};
+	return UE
+    
+    
+}
+
+
+function build_weight_matrix(N_sig,N_elements,dy,freq,theta,A){
+
+	var pi = 3.1415926;
+	var j = {re:0, im:1};
+    var lambda = 300/freq;
+    var k = 2*pi/lambda;
+    var d = dy*lambda;
+    var dg = pi/180;
+	var W = [];
+	var W_help = [];
+	var arg_c;
+
+
+    for(n= 0; n< N_sig; n++) {
+	W_help = [];
+        for(m= 0; m< N_elements; m++) {   
+			arg_c = math.complex({re:0, im:k*(m+1)*d*Math.sin(theta[n]*dg)});
+            W_help[m] = math.multiply(A[m],math.exp(arg_c));      //A[m]*exp(j*k*m*d*Math.sin(theta[n]*dg));   
+        }
+		W[n] = W_help;
+    }
+   
+
+	return W
+
+
+}
+
+
+function plot_EVM_bars(){
+
+	var m;
+	var EVM_trace = [];
+	var txt;
+	var ay = []
+	
+
+	//var is_newPoints=document.getElementById('newPoints').checked;
+
+	// plot an ensemble of bars and update the iteration counter. 
+	// Loop over beams transmitted.
+
+	
+	// update the stored EVM-data
+	x_values.push(count);
+	y_values.push(system.EVM);	
+	ay = math.transpose(y_values);
+	
+
+	for(m= 0; m< system.N_RX; m++) {           // loop over the received beams
+		txt = 'Beam '+ m;
+		EVM_trace[m] = {
+					x: x_values,             //		x: [count],    							      
+					y: ay[m],               //     y: y_values.slice(0)[m], 
+					name: txt,
+					type: 'bar'
+	};
+	}
+	
+	// update counter 
+	count = count+1;   
+	
+
+	
+	// Make the actual plotting.
+	Plotly.newPlot('EVM_Div', EVM_trace, layout_EVM);
+
+	
+
+
+
+	
+}
+
+
+
+
+function plot_beams(){
+
+	var Beam_traces=[];
+	var txt;
+	var pat = [];
+	var y_vals = [];
+	var offset = 30;    // just to adjust the plot level
+
+
+	
+	
+
+	
+	
+	for(m= 0; m< system.N_TX; m++) { 
+		txt = 'Beam '+ m;
+			pat = [];
+			for(n= 0; n< 1000; n++) {
+				y_vals[n] = -60+n*(120)/1000;
+				pat[n] = 20*log10(rad_pat(UE.x_pos,y_vals[n],m)) + offset;   // offset is to adjust to the plot
+			}
+		
+		
+		Beam_traces[m] = {
+					x: y_vals,                           							      
+					y: pat,                
+					name: txt,
+					mode: 'lines'
+	};
+	}
+
+
+	// Plot the beam patterns.
+	Plotly.newPlot('Beam_Div', Beam_traces, layout_BEAM);
+	
+
+	
+
+}
+
+
+function rad_pat(x,y,beam_index){
+
+	var W = system.W;
+	var n;
+	var E_field = 0;
+	var R;
+	var freq = system.freq;
+	var pi = 3.1415926;
+	var k = 2*pi*freq/300;
+	var j = math.complex(0,1);  
+	
+	
+	
+	for(n = 0; n< system.RRU.N; n++) { 
+		R = Math.sqrt(Math.pow(y-system.RRU.y[n],2) + Math.pow(x-system.RRU.x[n],2));
+		E_field = math.add(E_field, math.multiply(W[beam_index][n],math.divide(math.exp(math.complex(0,k*R)),R)) );
+	}
+
+	E_field = math.abs(E_field);
+	
+	return E_field;
+	
+
+}
+
+
+
+function add_RRU_UE_to_plot(){
+
+
+		var RRU_loci = {
+			name: 'RRU',
+			x: system.RRU.y,
+			y: system.RRU.x,
+			mode: 'markers',
+			symbol: 'square',
+			type: 'scatter',
+			marker: { size: 6 },
+			yaxis: 'y2'
+		};
+		
+		var UE_loci = {
+			name: 'UE',
+			x: system.UE.y,
+			y: system.UE.x,
+			mode: 'markers',
+			type: 'scatter',
+			marker: { size: 6 },
+			yaxis: 'y2'
+		};
+		
+		var data_loci = [RRU_loci,UE_loci];
+		
+		
+		
+
+		// plot the positions for RRU and UE
+		Plotly.addTraces('Beam_Div', data_loci);
+
+
+
+
+}
+
+
+
+function log10(x) {
+    		return Math.log(x)/Math.log(10.0);
+}
+
+
+
+function flip_array(A){
+	var B;
+	
+	// Not finnished yet .... 
+
+	return B;
+}
+
+
+
+
+
+</script>
+
+
+
+
+</div>
+
+
+<div class="card" style="position:absolute; top:10px; width:70px; height:70px; left:1800px; background-color:white">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.05646 56.09162">
+<title></title>
+<path d="M22.89539,14.92337a3.78649,3.78649,0,1,1-2.6048-7.1109L41.04425.2313a3.744,3.744,0,0,1,4.86621,2.256,3.64463,3.64463,0,0,1-2.2533,4.73932Z" fill="#00285e"/>
+<path d="M22.89539,26.17478a3.78643,3.78643,0,1,1-2.6048-7.11078l20.75366-7.57251a3.73082,3.73082,0,0,1,4.86621,2.248,3.63723,3.63723,0,0,1-2.2533,4.73611Z" fill="#00285e"/>
+<path d="M22.89539,37.42429a3.78631,3.78631,0,1,1-2.6048-7.1105L41.04425,22.7421a3.72937,3.72937,0,0,1,4.86621,2.2457,3.63853,3.63853,0,0,1-2.2533,4.7373Z" fill="#00285e"/>
+<polygon points="0 46.781 6.882 46.781 6.882 48.674 2.379 48.674 2.379 50.214 6.763 50.214 6.763 52.224 2.379 52.224 2.379 53.882 6.999 53.882 6.999 55.902 0 55.902 0 46.781" fill="#00285e"/>
+<rect x="17.79358" y="46.78119" width="2.49701" height="9.12119" fill="#00285e"/>
+<path d="M29.3053,47.01639,29.187,48.90928c-2.0152-1.05908-5.10175-.7063-5.10175,2.256-.11835,3.0795,3.08655,3.55029,5.22009,2.4812l.1178,2.01071c-3.6767,1.069-7.95325,0-7.95325-4.49191C21.46985,46.89878,25.8642,45.7118,29.3053,47.01639Z" fill="#00285e"/>
+<path d="M36.65839,46.89878l-.1178,1.89291c-1.30774-.7063-3.67682-.7063-3.67682.35321,0,1.65729,4.26648.48029,4.26648,3.91318,0,3.315-4.0304,3.43271-6.64569,2.59912l.12793-2.01071c1.65161.716,4.03076.95139,4.03076-.353,0-1.53992-4.27649-.70621-4.27649-3.91351C30.36676,46.66318,33.68958,45.9473,36.65839,46.89878Z" fill="#00285e"/>
+<path d="M44.1286,46.89878l-.11584,1.89291c-1.30646-.7063-3.67957-.7063-3.67957.35321,0,1.65729,4.26691.48029,4.26691,3.91318,0,3.315-4.02722,3.43271-6.63409,2.59912l.11786-2.01071c1.66162.716,4.03113.95139,4.03113-.353,0-1.53992-4.26678-.70621-4.26678-3.91351C37.84821,46.66318,41.16016,45.9473,44.1286,46.89878Z" fill="#00285e"/>
+<polygon points="55.643 46.781 58.719 46.781 61.687 52.587 61.687 46.781 64.056 46.781 64.056 55.902 61.096 55.902 57.892 49.861 57.892 55.902 55.643 55.902 55.643 46.781" fill="#00285e"/>
+<path d="M47.924,51.2829c0,1.42209.5993,2.96188,1.89771,2.96188,1.42633,0,2.01361-1.53979,2.01361-2.96188,0-1.18661-.58728-2.96191-2.01361-2.96191C48.52325,48.321,47.924,49.86069,47.924,51.2829Zm1.89771-4.7373c2.61694,0,4.63049,1.42218,4.63049,4.7373,0,3.1973-2.01355,4.73709-4.63049,4.73709-2.489,0-4.5025-1.53979-4.5025-4.73709C45.31915,47.96778,47.3327,46.5456,49.82166,46.5456Z" fill="#00285e"/>
+<path d="M8.77875,46.78119h4.39441c1.29761,0,2.9588.4707,2.9588,2.36371a2.1819,2.1819,0,0,1-1.66119,2.25558,1.28353,1.28353,0,0,1,.83539.82391c0,.11768,1.30762,3.56027,1.30762,3.678H13.9989l-.944-2.8443a.90869.90869,0,0,0-.83539-.5983c-.47192,0-1.06189-.11771-1.06189,0v3.4426H8.77875Zm2.37885,3.7858H12.4552A1.08689,1.08689,0,0,0,13.645,49.50757c0-.5983-.4718-.95148-1.18976-.95148H11.15759Z" fill="#00285e"/></svg>
+</div>
+
+
+
+
+
+</body>
+</html>
+
