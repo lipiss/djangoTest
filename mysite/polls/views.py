@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from .models import Choice, Question,Person
 from django.db import connection
+from .auxFunctions import dictfetchall
 
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -15,13 +16,15 @@ def index(request):
 def myownview(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
-    # return render(request, 'polls/myownview.html', context)
-    # cursor = connection.cursor()
-    # cursor.execute(''' SELECT * FROM polls_choice ''')
-    # cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
-    # row = cursor.fetchall()
-    Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
-    return render(request, 'polls/myownview.html', {'person': person})
+    return render(request, 'polls/myownview.html', context)
+    cursor = connection.cursor()
+    cursor.execute(''' SELECT * FROM polls_choice ''')
+    cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
+    #row = cursor.fetchall()
+    row = cursor.fetchone()
+    # Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
+    #person = dictfetchall(cursor)
+    return render(request, 'polls/myownview.html', {"row":row})
     # return HttpResponse(row)
 
 def detail(request, question_id):
