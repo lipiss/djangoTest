@@ -15,7 +15,17 @@
 </style>
 </head>
 <body>
-
+/* */
+<form>
+        <fieldset>
+           <legend>Selecting elements</legend>
+           <p>
+              <label>Select list</label>
+              <select id = "myList">
+                <option value = "2">two</option>
+                <option value = "3">three</option>
+                <option value = "4">four</option>
+</form>
 <p>Click the button to create a thead element for the table.</p>
 
 <table id="myTable">
@@ -36,13 +46,28 @@
 </table>
 
 <p><b>Note:</b> The thead element must have one or more tr elements inside of it. Therefore, we use the insertRow() and insertCell() methods to create and insert tr and td elements to the newly created thead element.</p>
+<p id="user">hi</p>
 
-<button onclick="myFunction()">Try it</button>
+<button onclick="jsonbutton()">jsonbutton</button>
 <button onclick="myFunction()">createNewTable</button>
 <button onclick="tableCreate()">tableCreate</button>
 <button onclick="tableCreate1()">tableCreate1</button>
+<br>
+<br>
 
+<script src="js/myfunc.js"></script>
 <script>
+// JSON variable section
+
+function jsonbutton() 
+{
+    var s = '{"first_name" : "Sammy", "last_name" : "Shark", "location" : "Ocean"}';
+    var obj = JSON.parse(s);
+    // appends text info to the <p> clause, also global variable is used. 
+    document.getElementById("user").innerHTML = document.getElementById("user").innerHTML +
+    "Name: " + obj.first_name + "<br>" + "Last Name: " + obj.last_name + "<br>" +
+    "Location: " + obj.location + "<br>" + "Color Code Variable: " + colorCodes.back;
+}
 function myFunction() {
     var table = document.getElementById("myTable");
     var header = table.createTHead();
@@ -181,8 +206,8 @@ for (var i = -1; i <= 13; i++)
         // put <table> in the <body>
         body.appendChild(tbl);
         // Insert line break after table:
-        var roto = document.createElement("br");
-        body.appendChild(roto);
+        var breakLine = document.createElement("br");
+        body.appendChild(breakLine);
         // tbl border attribute to 
         tbl.setAttribute("border", "2");
     }
