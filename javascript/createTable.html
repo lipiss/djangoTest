@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+        table{
+        /* float:left; */
+        margin-right:10px
+        <!-- display: inline-block; -->
+        }
+        table, th, td {
+        border-collapse: collapse;
+        border: 1px solid black;
+        }
+        tr:nth-child(even){background-color: #f2f2f2}
+</style>
+</head>
+<body>
+
+<p>Click the button to create a thead element for the table.</p>
+
+<table id="myTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>seriesname</th>
+      <th>All_network</th> 
+    </tr>
+  </thead>
+  <tr>
+    <td>cell 1</td>
+    <td>cell 2</td>
+  </tr>
+  <tr>
+    <td>cell 3</td>
+    <td>cell 4</td>
+  </tr>
+</table>
+
+<p><b>Note:</b> The thead element must have one or more tr elements inside of it. Therefore, we use the insertRow() and insertCell() methods to create and insert tr and td elements to the newly created thead element.</p>
+
+<button onclick="myFunction()">Try it</button>
+<button onclick="myFunction()">createNewTable</button>
+<button onclick="tableCreate()">tableCreate</button>
+<button onclick="tableCreate1()">tableCreate1</button>
+
+<script>
+function myFunction() {
+    var table = document.getElementById("myTable");
+    var header = table.createTHead();
+    var row = header.insertRow(0);
+    var cell = row.insertCell(0);
+    cell.innerHTML = "<b>This is a table header</b>";
+	var cell = row.insertCell(1);
+    cell.innerHTML = "<b>This is a table header</b>";
+	var cell = row.insertCell(2);
+    cell.innerHTML = "<b>This is a table header</b>";
+}
+ function tableCreate() {
+        //body reference 
+        var body = document.getElementsByTagName("body")[0];
+
+        // create elements <table> and a <tbody>
+        var tbl     = document.createElement("table");
+        var tblBody = document.createElement("tbody");
+        var row = document.createElement("tr");
+        for (var j = -1; j <= 15; j++) {
+            // table row creation
+            if(j==-1)
+            {
+                var cell = document.createElement("td");
+                var cellText = document.createTextNode("________");
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+                //row added to end of table body
+                tblBody.appendChild(row);
+            }
+            else
+            {
+                var cell = document.createElement("td");
+                var cellText = document.createTextNode(j);
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+
+
+            //row added to end of table body
+            tblBody.appendChild(row);
+        }
+
+
+        // append the <tbody> inside the <table>
+        tbl.appendChild(tblBody);
+        // put <table> in the <body>
+        body.appendChild(tbl);
+        // tbl border attribute to 
+        tbl.setAttribute("border", "2");
+    }
+	
+function tableCreate1() {
+       //body reference 
+        var body = document.getElementsByTagName("body")[0];
+
+        // create elements <table> and a <tbody>
+        var tbl     = document.createElement("table");
+		tbl.setAttribute("border", 1);
+        var tblBody = document.createElement("thead");
+        var row = document.createElement("tr");
+		var noColumns = 273;
+        for (var j = -1; j <= noColumns; j++) {
+            // table row creation
+            if(j==-1)
+            {
+                var cell = document.createElement("th");
+                var cellText = document.createTextNode("symbol/Radio Block");
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+                //row added to end of table body
+                tblBody.appendChild(row);
+            }
+            else
+            {
+                var cell = document.createElement("th");
+                var cellText = document.createTextNode(j);
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+
+
+            //row added to end of table body
+            tblBody.appendChild(row);
+        
+		}
+
+        // append the <tbody> inside the <table>
+        tbl.appendChild(tblBody);
+        // put <table> in the <body>
+        body.appendChild(tbl);
+        // tbl border attribute to 
+        tbl.setAttribute("border", "2");
+		
+        <!-- var tblBody = document.createElement("tbody"); -->
+for (var i = -1; i <= 14; i++)
+		{
+        var row = document.createElement("tr");
+        
+        for (var j = -1; j <= noColumns; j++) {
+            // table row creation
+            if(j==-1)
+            {
+                var cell = document.createElement("td");
+                var cellText = document.createTextNode(i+1);
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+                //row added to end of table body
+                tblBody.appendChild(row);
+            }
+            else
+            {
+                var cell = document.createElement("td");
+                var cellText = document.createTextNode(j);
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+
+
+            //row added to end of table body
+            tblBody.appendChild(row);
+        }
+}
+
+        // append the <tbody> inside the <table>
+        tbl.appendChild(tblBody);
+        // put <table> in the <body>
+        body.appendChild(tbl);
+        // Insert line break after table:
+        var roto = document.createElement("br");
+        body.appendChild(roto);
+        // tbl border attribute to 
+        tbl.setAttribute("border", "2");
+    }
+<!-- window.onload = tableCreate; -->
+</script>
+
+</body>
+</html>
