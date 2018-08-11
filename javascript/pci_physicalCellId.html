@@ -73,7 +73,7 @@ function jsonbutton()
     // appends text info to the <p> clause, also global variable is used. 
     document.getElementById("user").innerHTML = document.getElementById("user").innerHTML +
     "Name: " + obj.first_name + "<br>" + "Last Name: " + obj.last_name + "<br>" + "Location: " + obj.location ;
-
+    
     document.getElementById("user").innerHTML = document.getElementById("user").innerHTML 
     + "<br>" + "Global Variable Variable: " + colorCodes.back
     + "<br>" + "Global Variable Variable: " + colorCodes.front
@@ -138,7 +138,8 @@ function tableCreate1() {
 
         // create elements <table> and a <tbody>
         var tbl     = document.createElement("table");
-		tbl.setAttribute("border", 1);
+        tbl.setAttribute("border", 1);
+        tbl.setAttribute("id", "tableid");
         var tblHead = document.createElement("thead");
         var row = document.createElement("tr");
 		var noColumns = 2;
@@ -270,8 +271,14 @@ for (var i = -1; i <= 334; i++)
         // Insert line break after table:
         var breakLine = document.createElement("br");
         body.appendChild(breakLine);
-        // tbl border attribute to 
+        // tbl border attribute to
         tbl.setAttribute("border", "2");
+        //var x = tb1.rows.length;
+        var pElement = document.createElement("p");
+        var node = document.createTextNode("number of rows: " + 
+        document.getElementById('tableid').getElementsByTagName('tr').length);
+        pElement.appendChild(node);
+        body.appendChild(pElement);
     }
 <!-- window.onload = tableCreate; -->
 </script>
