@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+        table{
+        /* float:left; */
+        margin-right:10px
+        <!-- display: inline-block; -->
+        }
+        table, th, td {
+        border-collapse: collapse;
+        border: 1px solid black;
+        }
+        tr:nth-child(even){background-color: #f2f2f2}
+</style>
+</head>
+<body>
+
+
+<p><b>Note:</b>calculate ssln</p><br>
+var ssln = document.getElementById('inputId').value;<br>
+var sfn = Math.floor(((ssln>>1)/10));<br>
+var subframe = ((ssln>>1)%10);<br>
+var slot = (ssln%20);<br>
+var RF = (ssln%1024);<br>
+
+
+<input name="textInputForTitle" id="inputId" type="text" value="13567">
+<button onclick="calculatessln()">calculate ssln</button>
+<p id="psection"></p>
+<br>
+
+
+<script src="js/myfunc.js"></script>
+<script>
+// JSON variable section
+
+function calculatessln() 
+{
+    var ssln = document.getElementById('inputId').value;
+	var sfn = Math.floor(((ssln>>1)/10));
+	//var sfn = Math.ceil(((ssln>>1)/10));
+	var subframe = ((ssln>>1)%10);
+	var slot = (ssln%20);
+	var RF = (ssln%1024);
+    document.getElementById("psection").innerHTML = document.getElementById("psection").innerHTML +
+    "[ssln: " + ssln + "," 
+	+ "SFN:" + sfn + ","
+	+ "subframe:" + subframe + ","
+	+ "slot:" + slot + ","
+	+ "RF:" + RF
+	+ "]" + "<br>";
+}
+
+</script>
+
+</body>
+</html>

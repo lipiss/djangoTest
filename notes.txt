@@ -1,3 +1,15 @@
+python manage.py runserver
+python manage.py runserver 8080
+python manage.py runserver 0:8000
+python manage.py shell
+
+If you make a change at the model, run this to regenerate tables etc...:
+
+python manage.py makemigrations polls
+python manage.py migrate
+
+import polls.models
+from polls.models import Choice, Question, Person, Test
 
 from django.db import connection
 cursor = connection.cursor()
@@ -13,3 +25,6 @@ Raw query must include the primary key (id field at the query)
 Passing parameters into raw()
     Person.objects.raw('SELECT * FROM myapp_person WHERE last_name = %s', [lname])
 
+
+	
+Test.objects.raw('SELECT id, question_text, pub_date FROM polls_question')
