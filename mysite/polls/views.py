@@ -13,17 +13,32 @@ def index(request):
 
 
 def myownview(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    context = {'latest_question_list': latest_question_list}
+    #latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    #context = {'latest_question_list': latest_question_list}
     # return render(request, 'polls/myownview.html', context)
-    # cursor = connection.cursor()
+    cursor = connection.cursor()
     # cursor.execute(''' SELECT * FROM polls_choice ''')
-    # cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
-    # row = cursor.fetchall()
-    Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
-    return render(request, 'polls/myownview.html', {'person': person})
+    cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
+    row = cursor.fetchone()
+    row1 = cursor.fetchone()
+    ##Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
+    return render(request, 'polls/myownview.html', {'field1': row[0],'field2':row[1],'field3':row1[0]})
+def myownview1(request):
+    #latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    #context = {'latest_question_list': latest_question_list}
+    # return render(request, 'polls/myownview.html', context)
+    cursor = connection.cursor()
+    # cursor.execute(''' SELECT * FROM polls_choice ''')
+    cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
+    row = cursor.fetchall()
+    ##Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
+    return render(request, 'polls/myownview1.html', {'result': row})
     # return HttpResponse(row)
-
+# def myownview(request):
+    # latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    # context = {'latest_question_list': latest_question_list}
+    # Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
+    # return render(request, 'polls/myownview.html', {'Person': Person})
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
