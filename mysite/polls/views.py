@@ -24,16 +24,11 @@ def myownview(request):
     ##Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
     return render(request, 'polls/myownview.html', {'field1': row[0],'field2':row[1],'field3':row1[0]})
 def myownview1(request):
-    #latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    #context = {'latest_question_list': latest_question_list}
-    # return render(request, 'polls/myownview.html', context)
     cursor = connection.cursor()
-    # cursor.execute(''' SELECT * FROM polls_choice ''')
     cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
-    row = cursor.fetchall()
-    ##Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
+    row = cursor.fetchall() 
+	# row shows a tuple
     return render(request, 'polls/myownview1.html', {'result': row})
-    # return HttpResponse(row)
 # def myownview(request):
     # latest_question_list = Question.objects.order_by('-pub_date')[:5]
     # context = {'latest_question_list': latest_question_list}
