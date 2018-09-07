@@ -1,6 +1,31 @@
-Myownview2<br>
-Fetchall raw sql from one single SQL, uses tuples to show info at list:
+{% load static %}
 
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+<!-- table { -->
+    <!-- border-collapse: collapse; -->
+<!-- } -->
+
+<!-- table, td, th { -->
+    <!-- border: 1px solid black; -->
+<!-- } -->
+<!-- li { -->
+    <!-- color: red; -->
+<!-- } -->
+
+</style>
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+<!-- <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css"> -->
+</head>
+<body>
+Myownview1
+<br>
+Fetchall raw sql from one single SQL, uses tuples to show info at list:
 <br>
 <br>
 <li>respuestas, id
@@ -8,8 +33,66 @@ Fetchall raw sql from one single SQL, uses tuples to show info at list:
      <li>{{ item.0 }}, {{ item.1 }}
 	 <br>
 {% endfor %}
+<br>
 
+<a href = "https://lte-wiki.rnd.ki.sw.ericsson.se/mediawiki/" target = "_self">https://lte-wiki.rnd.ki.sw.ericsson.se/mediawiki/</a>
+
+<table>
+  <tr>
+  <th>respuestas</th>
+  <th>id</th>
+  </tr>
+{% for item in result %}
+	<tr>
+     <td>{{ item.0 }}</td>
+	 <td>{{ item.1 }}</td>
+	 <br>
+	 </tr>
+{% endfor %}
+</table>
+
+<br>
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
 <br>
 <math>
 	H(s) = ∫<sub>0</sub><sup>∞</sup> e<sup>-st</sup> h(t) dt
 </math>
+
+</body>
+</html>
