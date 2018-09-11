@@ -26,9 +26,10 @@ def myownview(request):
 def myownview1(request):
     cursor = connection.cursor()
     cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
-    row = cursor.fetchall() 
-	# row shows a tuple
-    return render(request, 'polls/myownview1.html', {'result': row})
+    row = cursor.fetchall()
+    columns = [column[0] for column in cursor.description]
+    # row shows a tuple
+    return render(request, 'polls/myownview1.html', {'result': row,'columns': columns})
 # def myownview(request):
     # latest_question_list = Question.objects.order_by('-pub_date')[:5]
     # context = {'latest_question_list': latest_question_list}

@@ -26,9 +26,51 @@
 Myownview1
 <br>
 Fetchall raw sql from one single SQL, uses tuples to show info at list:
+<h1>Tuple of tuples say:</h1>
 <br>
+(('aro que si', 2),
+('ziziziziz', 1),
+('asdasdadadada', 1),
+('Just hacking again', 0))
 <br>
-<li>respuestas, id
+Headers
+<br>
+
+<br>
+<h2>joins elements in list</h2>
+{% verbatim %}
+{{ columns|join:", " }}
+{% endverbatim %}
+
+<br>
+<h2>for item in list</h2>
+
+{% verbatim %}
+{% for item in columns %}
+<br>
+     {{ item}}, 
+<br>
+{% endfor %}
+<br>
+{% endverbatim %}
+<br>
+example:
+{% for item in columns %}
+     {{ item}}, 
+{% endfor %}
+<br>
+
+<h2>for tuple in tuple</h2>
+{% verbatim %}
+{% for item in result %}
+	<br>
+	&ltli&gt{{ item.0 }}, {{ item.1 }}
+	<br>
+{% endfor %}
+<br>
+{% endverbatim %}
+<br>
+example:
 {% for item in result %}
      <li>{{ item.0 }}, {{ item.1 }}
 	 <br>
@@ -36,6 +78,7 @@ Fetchall raw sql from one single SQL, uses tuples to show info at list:
 <br>
 
 <a href = "https://lte-wiki.rnd.ki.sw.ericsson.se/mediawiki/" target = "_self">https://lte-wiki.rnd.ki.sw.ericsson.se/mediawiki/</a>
+
 
 <table>
   <tr>
