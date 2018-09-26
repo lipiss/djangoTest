@@ -87,12 +87,12 @@ DATABASES = {
         'HOST': 'oselimw0206v.int.msdp.ericsson.se',
         'PORT': '3306'
     },
-	'optimi_xdimension_internal': {
+	'oselimw0201v.int.msdp.ericsson.se': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'optimi_xdimension_internal',
+        'NAME': 'operdb_ericsson4g_andromeda',
 		'USER': 'tarsys',
 		'PASSWORD': 'tarsys',
-        'HOST': 'oselimw0206v.int.msdp.ericsson.se',
+        'HOST': 'oselimw0201v.int.msdp.ericsson.se',
         'PORT': '3306'
     }
 }

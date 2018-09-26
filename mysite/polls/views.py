@@ -4,8 +4,8 @@ from django.template import loader
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from .models import Choice, Question,Person
-from django.db import connection
-
+from django.db import connection, connections
+import os, pandas
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
@@ -22,13 +22,72 @@ def myownview(request):
     row = cursor.fetchone()
     row1 = cursor.fetchone()
     ##Person.objects.raw('SELECT id,choice_text,votes FROM polls_choice')[0]
-    return render(request, 'polls/myownview.html', {'field1': row[0],'field2':row[1],'field3':row1[0]})
+    #os.path.join(os.getcwd(),'polls\file')
+    fo = open(os.path.join(os.getcwd(),'polls/xxxxxxxxxxx'), "wb")
+    fo.close()
+    return render(request, 'polls/myownview.html', {'field1': row[0],'field2':row[1],'field3':row1[0],'field4':os.path.join(os.getcwd(),'polls','file')})
+def pullsectorlocation(request):
+    # change default database.
+    with connections['oselimw0201v.int.msdp.ericsson.se'].cursor() as cursor:
+        #cursor = connections.cursor()
+        cursor.execute(''' SELECT
+    o3.name   AS 'BSC/RNC NAME',
+    o2.name AS 'SITE/NODEB NAME',
+    SUBSTRING_INDEX(o2.name, '-',-1) as enodeB,
+    cc.EUtranCellFDDId as EUtranCellFDDId,
+    o1.name  AS 'SECTOR/CELL NAME',
+    cc.GCID                 AS 'SECTOR/CELL GLOBAL ID',
+    '4G'                     AS 'TECHNOLOGY(2G/3G/4G)',
+    o1.vertical_loc/10e6   AS LATITUDE,
+    o1.horizontal_loc/10e6 AS LONGITUDE,
+    cc.azimuth              AS AZIMUTH,
+    cc.BeamWidth            AS BEAM_WIDTH,
+    cc.MTILT                AS MTILT,
+    cc.earfcndl,
+    3*cc.physicalLayerCellIdGroup+physicalLayerSubCellId as PCI
+    FROM
+    c_ecell cc
+    LEFT JOIN
+    timeslice_cm tc
+    ON
+    tc.timeslice_id = cc.timeslice_id
+    LEFT JOIN
+    objects o1
+    ON
+    o1.timeslice_id = tc.timeslice_id
+    AND
+    o1.int_id = cc.int_id
+    LEFT JOIN
+    objects o2
+    ON
+    o2.timeslice_id = tc.timeslice_id
+    AND
+    o1.parent_int_id = o2.int_id
+    LEFT JOIN
+    objects o3
+    ON
+    o3.timeslice_id = tc.timeslice_id
+    AND
+    o2.parent_int_id = o3.int_id
+    WHERE
+    cc.timeslice_id=tc.timeslice_id
+    AND
+    tc.period_start = (SELECT MAX(period_start) FROM timeslice_cm)
+    /*AND cc.EUtranCellFDDId <> o1.name*/
+    ORDER BY 
+    1,2,3 ''')
+        row = cursor.fetchall()
+    columns = [column[0] for column in cursor.description]
+# row shows a tuple
+    os.getcwd()
+    return render(request, 'polls/myownview1.html', {'result': row,'columns': columns})
 def myownview1(request):
     cursor = connection.cursor()
     cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
     row = cursor.fetchall()
     columns = [column[0] for column in cursor.description]
-    # row shows a tuple
+# row shows a tuple
+    os.getcwd()
     return render(request, 'polls/myownview1.html', {'result': row,'columns': columns})
 # def myownview(request):
     # latest_question_list = Question.objects.order_by('-pub_date')[:5]
