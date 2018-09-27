@@ -80,7 +80,7 @@ def pullsectorlocation(request):
     columns = [column[0] for column in cursor.description]
 # row shows a tuple
     os.getcwd()
-    return render(request, 'polls/myownview1.html', {'result': row,'columns': columns})
+    return render(request, 'polls/pullsectorlocation.html', {'result': row,'columns': columns})
 def myownview1(request):
     cursor = connection.cursor()
     cursor.execute(''' SELECT choice_text,votes FROM polls_choice ''')
