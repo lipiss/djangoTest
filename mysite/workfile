@@ -1,0 +1,9509 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+<!-- table { -->
+    <!-- border-collapse: collapse; -->
+<!-- } -->
+
+<!-- table, td, th { -->
+    <!-- border: 1px solid black; -->
+<!-- } -->
+<!-- li { -->
+    <!-- color: red; -->
+<!-- } -->
+
+</style>
+<link rel="stylesheet" type="text/css" href="/static/polls/style.css" />
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+<!-- <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css"> -->
+</head>
+<body>
+Myownview1
+<br>
+<a href = "https://docs.djangoproject.com/en/2.1/intro/" target = "_self">https://docs.djangoproject.com/en/2.1/intro/</a>
+<br>
+
+<form action="/polls/1/vote/" method="get">
+	First name: <input type="text" name="fname"><br>
+	Last name: <input type="text" name="lname"><br>
+	<button type="submit">Submit</button>
+	<br>
+	<button type="submit" formaction="/action_page2.php">Submit to another page</button>
+</form>
+
+<br>
+<a href = "/polls/1/vote/" target = "_self">/polls/1/vote/</a>
+<br>
+Fetchall raw sql from one single SQL, uses tuples to show info at list:
+<h1>Tuple of tuples say:</h1>
+<br>
+(('aro que si', 2),
+('ziziziziz', 1),
+('asdasdadadada', 1),
+('Just hacking again', 0))
+<br>
+Headers
+<br>
+
+<br>
+<h2>joins elements in list</h2>
+
+{{ columns|join:", " }}
+
+
+<br>
+<h2>for item in list</h2>
+
+
+{% for item in columns %}
+<br>
+     {{ item}}, 
+<br>
+{% endfor %}
+<br>
+
+<br>
+example:
+
+     BSC/RNC NAME, 
+
+     SITE/NODEB NAME, 
+
+     enodeB, 
+
+     EUtranCellFDDId, 
+
+     SECTOR/CELL NAME, 
+
+     SECTOR/CELL GLOBAL ID, 
+
+     TECHNOLOGY(2G/3G/4G), 
+
+     LATITUDE, 
+
+     LONGITUDE, 
+
+     AZIMUTH, 
+
+     BEAM_WIDTH, 
+
+     MTILT, 
+
+     earfcndl, 
+
+     PCI, 
+
+<br>
+
+<h2>for tuple in tuple</h2>
+
+{% for item in result %}
+	<br>
+	&ltli&gt{{ item.0 }}, {{ item.1 }}
+	<br>
+{% endfor %}
+<br>
+
+<br>
+example:
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0025_OF-Ost-Muehlheimer-Str-0025_73570283
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0025_OF-Ost-Muehlheimer-Str-0025_73570283
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0025_OF-Ost-Muehlheimer-Str-0025_73570283
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0183_HU-Grossauheim-Silo-0183_73570633
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0183_HU-Grossauheim-Silo-0183_73570633
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0183_HU-Grossauheim-Silo-0183_73570633
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0206_Muehlheim-Laemmerspiel-0206_73570635
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0206_Muehlheim-Laemmerspiel-0206_73570635
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0206_Muehlheim-Laemmerspiel-0206_73570635
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0214_Erlensee-Rueckingen-0214_73570637
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0214_Erlensee-Rueckingen-0214_73570637
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0214_Erlensee-Rueckingen-0214_73570637
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0216_HU-Kesselstadt-Ph-Reis-0216_73570639
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0216_HU-Kesselstadt-Ph-Reis-0216_73570639
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0216_HU-Kesselstadt-Ph-Reis-0216_73570639
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0278_HU-Steinheim-0278_73570641
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0278_HU-Steinheim-0278_73570641
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0278_HU-Steinheim-0278_73570641
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0373_Maintal-Bischofshm-0373_73570645
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0373_Maintal-Bischofshm-0373_73570645
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0404_Muehlheim-Dietesheimer-0404_73570647
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0404_Muehlheim-Dietesheimer-0404_73570647
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0404_Muehlheim-Dietesheimer-0404_73570647
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0404_Muehlheim-Dietesheimer-0404_73570647
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0404_Muehlheim-Dietesheimer-0404_73570647
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0404_Muehlheim-Dietesheimer-0404_73570647
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0536_HU-Kesselstadt-Philips-0536_73570649
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0536_HU-Kesselstadt-Philips-0536_73570649
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0536_HU-Kesselstadt-Philips-0536_73570649
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0546_HU-Wolfgang-A-Bebel-0546_73570651
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0546_HU-Wolfgang-A-Bebel-0546_73570651
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0546_HU-Wolfgang-A-Bebel-0546_73570651
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0604_Muehlheim-Industriestr-0604_73570655
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0604_Muehlheim-Industriestr-0604_73570655
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0604_Muehlheim-Industriestr-0604_73570655
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0614_OF-Tempelsee-Waldstr-0614_73570287
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0677_Muehlheim-Tilsiter-Str-0677_73570657
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0677_Muehlheim-Tilsiter-Str-0677_73570657
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0677_Muehlheim-Tilsiter-Str-0677_73570657
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0677_Muehlheim-Tilsiter-Str-0677_73570657
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0677_Muehlheim-Tilsiter-Str-0677_73570657
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY0677_Muehlheim-Tilsiter-Str-0677_73570657
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1279_Erlensee-Langendiebach-1279_73570659
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1279_Erlensee-Langendiebach-1279_73570659
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1279_Erlensee-Langendiebach-1279_73570659
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1279_Erlensee-Langendiebach-1279_73570659
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1279_Erlensee-Langendiebach-1279_73570659
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1279_Erlensee-Langendiebach-1279_73570659
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1285_HU-City-Nuernberger-1285_73570661
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1285_HU-City-Nuernberger-1285_73570661
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1285_HU-City-Nuernberger-1285_73570661
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1287_HU-Steinheim-Mellensee-1287_73570663
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1287_HU-Steinheim-Mellensee-1287_73570663
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1287_HU-Steinheim-Mellensee-1287_73570663
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1289_HU-KVSt-1289_73570665
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1289_HU-KVSt-1289_73570665
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1289_HU-KVSt-1289_73570665
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1456_OF-VSt81-1456_73570289
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1456_OF-VSt81-1456_73570289
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1456_OF-VSt81-1456_73570289
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1456_OF-VSt81-1456_73570289
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1456_OF-VSt81-1456_73570289
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1456_OF-VSt81-1456_73570289
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1489_Muehlheim-Laemmersp-Str-1489_73570667
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1489_Muehlheim-Laemmersp-Str-1489_73570667
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY1489_Muehlheim-Laemmersp-Str-1489_73570667
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2538_OF-City-Kaiserstr-2538_73570319
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2540_OF-City-Friedrichsring-2540_73570291
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2540_OF-City-Friedrichsring-2540_73570291
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2540_OF-City-Friedrichsring-2540_73570291
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2541_OF-Ost-Obere-Grenzstr-2541_73570292
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2541_OF-Ost-Obere-Grenzstr-2541_73570292
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2541_OF-Ost-Obere-Grenzstr-2541_73570292
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2542_OF-Ost-A-Zitscher-Str-2542_73570294
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2542_OF-Ost-A-Zitscher-Str-2542_73570294
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2542_OF-Ost-A-Zitscher-Str-2542_73570294
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2599_OF-City-Ludwigstr-2599_73570462
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2599_OF-City-Ludwigstr-2599_73570462
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2599_OF-City-Ludwigstr-2599_73570462
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2599_OF-City-Ludwigstr-2599_73570462
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2599_OF-City-Ludwigstr-2599_73570462
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2599_OF-City-Ludwigstr-2599_73570462
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2651_OF-Bieber-Aschaffenbur-2651_73570296
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2651_OF-Bieber-Aschaffenbur-2651_73570296
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2651_OF-Bieber-Aschaffenbur-2651_73570296
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2654_OF-Bieber-WHB-EVO-2654_73570298
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2654_OF-Bieber-WHB-EVO-2654_73570298
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2667_OF-Sued-Jacques-Offenb-2667_73570301
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2667_OF-Sued-Jacques-Offenb-2667_73570301
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2667_OF-Sued-Jacques-Offenb-2667_73570301
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2667_OF-Sued-Jacques-Offenb-2667_73570301
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2667_OF-Sued-Jacques-Offenb-2667_73570301
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2667_OF-Sued-Jacques-Offenb-2667_73570301
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2667_OF-Sued-Jacques-Offenb-2667_73570301
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2667_OF-Sued-Jacques-Offenb-2667_73570301
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2667_OF-Sued-Jacques-Offenb-2667_73570301
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2699_Liederbach-Ts-Hoechster-2699_73571503
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2699_Liederbach-Ts-Hoechster-2699_73571503
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2699_Liederbach-Ts-Hoechster-2699_73571503
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2699_Liederbach-Ts-Hoechster-2699_73571503
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2699_Liederbach-Ts-Hoechster-2699_73571503
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2699_Liederbach-Ts-Hoechster-2699_73571503
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2745_OF-Ost-Hebestr-2745_73570303
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2745_OF-Ost-Hebestr-2745_73570303
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2745_OF-Ost-Hebestr-2745_73570303
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2745_OF-Ost-Hebestr-2745_73570303
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2745_OF-Ost-Hebestr-2745_73570303
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY2745_OF-Ost-Hebestr-2745_73570303
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3001_Maintal-Hochstadt-Wach-3001_73570669
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3001_Maintal-Hochstadt-Wach-3001_73570669
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3001_Maintal-Hochstadt-Wach-3001_73570669
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3005_HU-Steinheim-Maybach-3005_73570671
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3005_HU-Steinheim-Maybach-3005_73570671
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3007_HU-Steinheim-B43a-B45-3007_73570673
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3007_HU-Steinheim-B43a-B45-3007_73570673
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3007_HU-Steinheim-B43a-B45-3007_73570673
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3044_HU-Kesselstadt-Karlsba-3044_73570675
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3044_HU-Kesselstadt-Karlsba-3044_73570675
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3044_HU-Kesselstadt-Karlsba-3044_73570675
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3061_Maintal-Doernighm-Berli-3061_73570677
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3061_Maintal-Doernighm-Berli-3061_73570677
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3061_Maintal-Doernighm-Berli-3061_73570677
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3061_Maintal-Doernighm-Berli-3061_73570677
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3061_Maintal-Doernighm-Berli-3061_73570677
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3061_Maintal-Doernighm-Berli-3061_73570677
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3062_HU-Nord-E-Kaiser-Str-3062_73570679
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3062_HU-Nord-E-Kaiser-Str-3062_73570679
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3062_HU-Nord-E-Kaiser-Str-3062_73570679
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3086_HU-A66-Kesselstaedterst-3086_73570693
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3086_HU-A66-Kesselstaedterst-3086_73570693
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3086_HU-A66-Kesselstaedterst-3086_73570693
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3087_HU-Lamboy-Oderstr-3087_73570695
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3087_HU-Lamboy-Oderstr-3087_73570695
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3087_HU-Lamboy-Oderstr-3087_73570695
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3102_HU-City-Lamboystr-3102_73570697
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3102_HU-City-Lamboystr-3102_73570697
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3102_HU-City-Lamboystr-3102_73570697
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3131_HU-City-Steinheimerstr-3131_73570699
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3131_HU-City-Steinheimerstr-3131_73570699
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3131_HU-City-Steinheimerstr-3131_73570699
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3187_HU-City-Hafenstr-3187_73570701
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3187_HU-City-Hafenstr-3187_73570701
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3187_HU-City-Hafenstr-3187_73570701
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3341_HU-Wolfgang-Rodenbach-3341_73570703
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3341_HU-Wolfgang-Rodenbach-3341_73570703
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3341_HU-Wolfgang-Rodenbach-3341_73570703
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3345_HU-City-Leipziger-Str-3345_73570705
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3345_HU-City-Leipziger-Str-3345_73570705
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3345_HU-City-Leipziger-Str-3345_73570705
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3346_HU-City-Am-Heumarkt-3346_73570707
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3346_HU-City-Am-Heumarkt-3346_73570707
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3346_HU-City-Am-Heumarkt-3346_73570707
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3350_HU-Lamboy-Moselstr-3350_73570709
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3350_HU-Lamboy-Moselstr-3350_73570709
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3350_HU-Lamboy-Moselstr-3350_73570709
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3380_HU-City-G-Hoch-Str-3380_73570711
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3380_HU-City-G-Hoch-Str-3380_73570711
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY3380_HU-City-G-Hoch-Str-3380_73570711
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6053_HU-Steinheim-Vorstadt-6053_73570713
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6053_HU-Steinheim-Vorstadt-6053_73570713
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6053_HU-Steinheim-Vorstadt-6053_73570713
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6077_Erlensee-Langendi-West-6077_73570715
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6077_Erlensee-Langendi-West-6077_73570715
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6077_Erlensee-Langendi-West-6077_73570715
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6167_HU-Lamboy-Wilhelmstr-6167_73570717
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6167_HU-Lamboy-Wilhelmstr-6167_73570717
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6167_HU-Lamboy-Wilhelmstr-6167_73570717
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6168_HU-Kesselstadt-Burgall-6168_73570719
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6168_HU-Kesselstadt-Burgall-6168_73570719
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6168_HU-Kesselstadt-Burgall-6168_73570719
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6333_HU-City-Forum-Hanau-6333_73570721
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6333_HU-City-Forum-Hanau-6333_73570721
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6333_HU-City-Forum-Hanau-6333_73570721
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY6333_HU-City-Forum-Hanau-6333_73570746
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9010_Maintal-Bischofshm-Gut-9010_73570681
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9010_Maintal-Bischofshm-Gut-9010_73570681
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9010_Maintal-Bischofshm-Gut-9010_73570681
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9205_Maintal-Doernighm-M-Planck-9205_73570723
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9205_Maintal-Doernighm-M-Planck-9205_73570723
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9205_Maintal-Doernighm-M-Planck-9205_73570723
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9330_OF-City-Starkenburgrin-9330_73570307
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9330_OF-City-Starkenburgrin-9330_73570307
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9330_OF-City-Starkenburgrin-9330_73570307
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9330_OF-City-Starkenburgrin-9330_73570307
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9330_OF-City-Starkenburgrin-9330_73570307
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9330_OF-City-Starkenburgrin-9330_73570307
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9359_Muehlheim-Bahnhofstr-9359_73570725
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9359_Muehlheim-Bahnhofstr-9359_73570725
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9359_Muehlheim-Bahnhofstr-9359_73570725
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9564_OF-City-Luisenstr-9564_73570321
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9564_OF-City-Luisenstr-9564_73570321
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9564_OF-City-Luisenstr-9564_73570321
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9571_OF-Ost-Dieselstr-9571_73570308
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9571_OF-Ost-Dieselstr-9571_73570308
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9571_OF-Ost-Dieselstr-9571_73570308
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9688_Muehlheim-Hanauer-9688_73570727
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9688_Muehlheim-Hanauer-9688_73570727
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9688_Muehlheim-Hanauer-9688_73570727
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9704_Maintal-Doernighm-Weste-9704_73570729
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9704_Maintal-Doernighm-Weste-9704_73570729
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9704_Maintal-Doernighm-Weste-9704_73570729
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9711_OF-Ost-Landgrafenring-9711_73570311
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9711_OF-Ost-Landgrafenring-9711_73570311
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9711_OF-Ost-Landgrafenring-9711_73570311
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9750_Maintal-Bischofsh-Goe-9750_73570683
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9750_Maintal-Bischofsh-Goe-9750_73570683
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9750_Maintal-Bischofsh-Goe-9750_73570683
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9753_Maintal-Doernighm-M-Curie-9753_73570731
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9753_Maintal-Doernighm-M-Curie-9753_73570731
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9919_OF-City-Waldstr-9919_73570315
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9919_OF-City-Waldstr-9919_73570315
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9919_OF-City-Waldstr-9919_73570315
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9919_OF-City-Waldstr-9919_73570315
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9919_OF-City-Waldstr-9919_73570315
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9919_OF-City-Waldstr-9919_73570315
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9919_OF-City-Waldstr-9919_73570315
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9919_OF-City-Waldstr-9919_73570315
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9919_OF-City-Waldstr-9919_73570315
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9946_HU-Lamboy-Ruhrstr-9946_73570733
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9946_HU-Lamboy-Ruhrstr-9946_73570733
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9946_HU-Lamboy-Ruhrstr-9946_73570733
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9968_OF-Tempelsee-Brunnen-9968_73570316
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9968_OF-Tempelsee-Brunnen-9968_73570316
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FY9968_OF-Tempelsee-Brunnen-9968_73570316
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY2194_Windorf-Otterskirchen-1_73571482
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY2194_Windorf-Otterskirchen-1_73571482
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY2194_Windorf-Otterskirchen-1_73571482
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY2194_Windorf-Otterskirchen-1_73571482
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY2194_Windorf-Otterskirchen-1_73571482
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY2194_Windorf-Otterskirchen-1_73571482
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY1413_Nuernberg-Schweinau-74_73569526
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY1413_Nuernberg-Schweinau-74_73569527
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY1413_Nuernberg-Schweinau-74_73569527
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY1725_Aschaffenburg-50_73571035
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY1725_Aschaffenburg-50_73571035
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY1725_Aschaffenburg-50_73571035
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY5294_Johannesberg-52_73571436
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY5294_Johannesberg-52_73571436
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY5294_Johannesberg-52_73571436
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY5294_Johannesberg-52_73571436
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY5294_Johannesberg-52_73571436
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY5294_Johannesberg-52_73571436
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY5294_Johannesberg-52_73571436
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY5294_Johannesberg-52_73571436
+	 <br>
+
+     <li>Baseband_FY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NY5294_Johannesberg-52_73571436
+	 <br>
+
+<br>
+
+<a href = "https://lte-wiki.rnd.ki.sw.ericsson.se/mediawiki/" target = "_self">https://lte-wiki.rnd.ki.sw.ericsson.se/mediawiki/</a>
+
+
+<table>
+  <tr>
+    
+    <th>BSC/RNC NAME</th>
+    
+    <th>SITE/NODEB NAME</th>
+    
+    <th>enodeB</th>
+    
+    <th>EUtranCellFDDId</th>
+    
+    <th>SECTOR/CELL NAME</th>
+    
+    <th>SECTOR/CELL GLOBAL ID</th>
+    
+    <th>TECHNOLOGY(2G/3G/4G)</th>
+    
+    <th>LATITUDE</th>
+    
+    <th>LONGITUDE</th>
+    
+    <th>AZIMUTH</th>
+    
+    <th>BEAM_WIDTH</th>
+    
+    <th>MTILT</th>
+    
+    <th>earfcndl</th>
+    
+    <th>PCI</th>
+    
+  </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0025_OF-Ost-Muehlheimer-Str-0025_73570283</td>
+    
+    <td>0025_73570283</td>
+    
+    <td>FY0025_OF-Ost-Muehlheimer-Str-0025_LA3_64030584</td>
+    
+    <td>FY0025_OF-Ost-Muehlheimer-Str-0025_LA3_64030584</td>
+    
+    <td>262-01-106730-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.108192</td>
+    
+    <td>8.7927888</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>228.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0025_OF-Ost-Muehlheimer-Str-0025_73570283</td>
+    
+    <td>0025_73570283</td>
+    
+    <td>FY0025_OF-Ost-Muehlheimer-Str-0025_LA1_64019458</td>
+    
+    <td>FY0025_OF-Ost-Muehlheimer-Str-0025_LA1_64019458</td>
+    
+    <td>262-01-106730-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.108192</td>
+    
+    <td>8.7927888</td>
+    
+    <td>60.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>229.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0025_OF-Ost-Muehlheimer-Str-0025_73570283</td>
+    
+    <td>0025_73570283</td>
+    
+    <td>FY0025_OF-Ost-Muehlheimer-Str-0025_LA2_64030583</td>
+    
+    <td>FY0025_OF-Ost-Muehlheimer-Str-0025_LA2_64030583</td>
+    
+    <td>262-01-106730-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.108192</td>
+    
+    <td>8.7927888</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>230.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0183_HU-Grossauheim-Silo-0183_73570633</td>
+    
+    <td>0183_73570633</td>
+    
+    <td>FY0183_HU-Grossauheim-Silo-0183_LA3_64036089</td>
+    
+    <td>FY0183_HU-Grossauheim-Silo-0183_LA3_64036089</td>
+    
+    <td>262-01-106885-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.108704</td>
+    
+    <td>8.9352192</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>154.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0183_HU-Grossauheim-Silo-0183_73570633</td>
+    
+    <td>0183_73570633</td>
+    
+    <td>FY0183_HU-Grossauheim-Silo-0183_LA1_64019540</td>
+    
+    <td>FY0183_HU-Grossauheim-Silo-0183_LA1_64019540</td>
+    
+    <td>262-01-106885-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.108704</td>
+    
+    <td>8.9352192</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>153.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0183_HU-Grossauheim-Silo-0183_73570633</td>
+    
+    <td>0183_73570633</td>
+    
+    <td>FY0183_HU-Grossauheim-Silo-0183_LA2_64036088</td>
+    
+    <td>FY0183_HU-Grossauheim-Silo-0183_LA2_64036088</td>
+    
+    <td>262-01-106885-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.108704</td>
+    
+    <td>8.9352192</td>
+    
+    <td>140.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>155.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0206_Muehlheim-Laemmerspiel-0206_73570635</td>
+    
+    <td>0206_73570635</td>
+    
+    <td>FY0206_Muehlheim-Laemmerspiel_0206_LA2_64072021</td>
+    
+    <td>FY0206_Muehlheim-Laemmerspiel_0206_LA2_64072021</td>
+    
+    <td>262-01-118953-1</td>
+    
+    <td>4G</td>
+    
+    <td>0.0</td>
+    
+    <td>0.0</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>478.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0206_Muehlheim-Laemmerspiel-0206_73570635</td>
+    
+    <td>0206_73570635</td>
+    
+    <td>FY0206_Muehlheim-Laemmerspiel_0206_LA3_64072022</td>
+    
+    <td>FY0206_Muehlheim-Laemmerspiel_0206_LA3_64072022</td>
+    
+    <td>262-01-118953-2</td>
+    
+    <td>4G</td>
+    
+    <td>0.0</td>
+    
+    <td>0.0</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>479.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0206_Muehlheim-Laemmerspiel-0206_73570635</td>
+    
+    <td>0206_73570635</td>
+    
+    <td>FY0206_Muehlheim-Laemmerspiel_0206_LA1_64069384</td>
+    
+    <td>FY0206_Muehlheim-Laemmerspiel_0206_LA1_64069384</td>
+    
+    <td>262-01-118953-0</td>
+    
+    <td>4G</td>
+    
+    <td>0.0</td>
+    
+    <td>0.0</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>477.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0214_Erlensee-Rueckingen-0214_73570637</td>
+    
+    <td>0214_73570637</td>
+    
+    <td>FY0214_Erlensee-Rueckingen-0214_LA2_64054463</td>
+    
+    <td>FY0214_Erlensee-Rueckingen-0214_LA2_64054463</td>
+    
+    <td>262-01-114493-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1557824</td>
+    
+    <td>8.9840144</td>
+    
+    <td>140.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>72.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0214_Erlensee-Rueckingen-0214_73570637</td>
+    
+    <td>0214_73570637</td>
+    
+    <td>FY0214_Erlensee-Rueckingen-0214_LA1_64052057</td>
+    
+    <td>FY0214_Erlensee-Rueckingen-0214_LA1_64052057</td>
+    
+    <td>262-01-114493-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1557824</td>
+    
+    <td>8.9840144</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>74.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0214_Erlensee-Rueckingen-0214_73570637</td>
+    
+    <td>0214_73570637</td>
+    
+    <td>FY0214_Erlensee-Rueckingen-0214_LA3_64054465</td>
+    
+    <td>FY0214_Erlensee-Rueckingen-0214_LA3_64054465</td>
+    
+    <td>262-01-114493-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1557824</td>
+    
+    <td>8.9840144</td>
+    
+    <td>280.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>73.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0216_HU-Kesselstadt-Ph-Reis-0216_73570639</td>
+    
+    <td>0216_73570639</td>
+    
+    <td>FY0216_HU-Kesselstadt-Ph-Reis-0216_LA3_64036136</td>
+    
+    <td>FY0216_HU-Kesselstadt-Ph-Reis-0216_LA3_64036136</td>
+    
+    <td>262-01-110503-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1288608</td>
+    
+    <td>8.8800032</td>
+    
+    <td>280.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>280.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0216_HU-Kesselstadt-Ph-Reis-0216_73570639</td>
+    
+    <td>0216_73570639</td>
+    
+    <td>FY0216_HU-Kesselstadt-Ph-Reis-0216_LA2_64036135</td>
+    
+    <td>FY0216_HU-Kesselstadt-Ph-Reis-0216_LA2_64036135</td>
+    
+    <td>262-01-110503-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1288608</td>
+    
+    <td>8.8800032</td>
+    
+    <td>160.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>279.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0216_HU-Kesselstadt-Ph-Reis-0216_73570639</td>
+    
+    <td>0216_73570639</td>
+    
+    <td>FY0216_HU-Kesselstadt-Ph-Reis-0216_LA1_64028114</td>
+    
+    <td>FY0216_HU-Kesselstadt-Ph-Reis-0216_LA1_64028114</td>
+    
+    <td>262-01-110503-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1288608</td>
+    
+    <td>8.8800032</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>281.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0278_HU-Steinheim-0278_73570641</td>
+    
+    <td>0278_73570641</td>
+    
+    <td>FY0278_HU-Steinheim-0278_LA2_64036090</td>
+    
+    <td>FY0278_HU-Steinheim-0278_LA2_64036090</td>
+    
+    <td>262-01-106367-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.121552</td>
+    
+    <td>8.9057328</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>488.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0278_HU-Steinheim-0278_73570641</td>
+    
+    <td>0278_73570641</td>
+    
+    <td>FY0278_HU-Steinheim-0278_LA3_64036091</td>
+    
+    <td>FY0278_HU-Steinheim-0278_LA3_64036091</td>
+    
+    <td>262-01-106367-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.121552</td>
+    
+    <td>8.9057328</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>486.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0278_HU-Steinheim-0278_73570641</td>
+    
+    <td>0278_73570641</td>
+    
+    <td>FY0278_HU-Steinheim-0278_LA1_64019541</td>
+    
+    <td>FY0278_HU-Steinheim-0278_LA1_64019541</td>
+    
+    <td>262-01-106367-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.121552</td>
+    
+    <td>8.9057328</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>487.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0373_Maintal-Bischofshm-0373_73570645</td>
+    
+    <td>0373_73570645</td>
+    
+    <td>FY0373_Maintal-Bischofshm-0373_LA2_64077827</td>
+    
+    <td>FY0373_Maintal-Bischofshm-0373_LA2_64077827</td>
+    
+    <td>262-01-122474-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.15264</td>
+    
+    <td>8.8100784</td>
+    
+    <td>240.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>274.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0373_Maintal-Bischofshm-0373_73570645</td>
+    
+    <td>0373_73570645</td>
+    
+    <td>FY0373_Maintal-Bischofshm-0373_LA1_64077826</td>
+    
+    <td>FY0373_Maintal-Bischofshm-0373_LA1_64077826</td>
+    
+    <td>262-01-122474-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.15264</td>
+    
+    <td>8.8100784</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>273.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_73570647</td>
+    
+    <td>0404_73570647</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LG3_64073585</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LG3_64073585</td>
+    
+    <td>262-01-119979-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.1248576</td>
+    
+    <td>8.8407216</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>346.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_73570647</td>
+    
+    <td>0404_73570647</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LG1_64073583</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LG1_64073583</td>
+    
+    <td>262-01-119979-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.1248576</td>
+    
+    <td>8.8407216</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>347.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_73570647</td>
+    
+    <td>0404_73570647</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LA3_64073582</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LA3_64073582</td>
+    
+    <td>262-01-119979-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1248576</td>
+    
+    <td>8.8407216</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>158.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_73570647</td>
+    
+    <td>0404_73570647</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LG2_64073584</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LG2_64073584</td>
+    
+    <td>262-01-119979-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.1248576</td>
+    
+    <td>8.8407216</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>345.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_73570647</td>
+    
+    <td>0404_73570647</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LA2_64073581</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LA2_64073581</td>
+    
+    <td>262-01-119979-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1248576</td>
+    
+    <td>8.8407216</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>156.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_73570647</td>
+    
+    <td>0404_73570647</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LA1_64073580</td>
+    
+    <td>FY0404_Muehlheim-Dietesheimer-0404_LA1_64073580</td>
+    
+    <td>262-01-119979-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1248576</td>
+    
+    <td>8.8407216</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>157.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0536_HU-Kesselstadt-Philips-0536_73570649</td>
+    
+    <td>0536_73570649</td>
+    
+    <td>FY0536_HU-Kesselstadt-Philips-0536_LA3_64079818</td>
+    
+    <td>FY0536_HU-Kesselstadt-Philips-0536_LA3_64079818</td>
+    
+    <td>262-01-130034-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1295296</td>
+    
+    <td>8.8999584</td>
+    
+    <td>340.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>408.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0536_HU-Kesselstadt-Philips-0536_73570649</td>
+    
+    <td>0536_73570649</td>
+    
+    <td>FY0536_HU-Kesselstadt-Philips-0536_LA2_64079817</td>
+    
+    <td>FY0536_HU-Kesselstadt-Philips-0536_LA2_64079817</td>
+    
+    <td>262-01-130034-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1295296</td>
+    
+    <td>8.8999584</td>
+    
+    <td>250.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>410.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0536_HU-Kesselstadt-Philips-0536_73570649</td>
+    
+    <td>0536_73570649</td>
+    
+    <td>FY0536_HU-Kesselstadt-Philips-0536_LA1_64079816</td>
+    
+    <td>FY0536_HU-Kesselstadt-Philips-0536_LA1_64079816</td>
+    
+    <td>262-01-130034-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1295296</td>
+    
+    <td>8.8999584</td>
+    
+    <td>70.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>409.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0546_HU-Wolfgang-A-Bebel-0546_73570651</td>
+    
+    <td>0546_73570651</td>
+    
+    <td>FY0546_HU-Wolfgang-A-Bebel-0546_LA1_64028115</td>
+    
+    <td>FY0546_HU-Wolfgang-A-Bebel-0546_LA1_64028115</td>
+    
+    <td>262-01-110516-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.122976</td>
+    
+    <td>8.9601328</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>228.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0546_HU-Wolfgang-A-Bebel-0546_73570651</td>
+    
+    <td>0546_73570651</td>
+    
+    <td>FY0546_HU-Wolfgang-A-Bebel-0546_LA3_64036101</td>
+    
+    <td>FY0546_HU-Wolfgang-A-Bebel-0546_LA3_64036101</td>
+    
+    <td>262-01-110516-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.122976</td>
+    
+    <td>8.9601328</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>230.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0546_HU-Wolfgang-A-Bebel-0546_73570651</td>
+    
+    <td>0546_73570651</td>
+    
+    <td>FY0546_HU-Wolfgang-A-Bebel-0546_LA2_64036100</td>
+    
+    <td>FY0546_HU-Wolfgang-A-Bebel-0546_LA2_64036100</td>
+    
+    <td>262-01-110516-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.122976</td>
+    
+    <td>8.9601328</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>229.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0604_Muehlheim-Industriestr-0604_73570655</td>
+    
+    <td>0604_73570655</td>
+    
+    <td>FY0604_Muehlheim-Industriestr-0604_LA2_64072140</td>
+    
+    <td>FY0604_Muehlheim-Industriestr-0604_LA2_64072140</td>
+    
+    <td>262-01-118971-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1187936</td>
+    
+    <td>8.8474328</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>236.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0604_Muehlheim-Industriestr-0604_73570655</td>
+    
+    <td>0604_73570655</td>
+    
+    <td>FY0604_Muehlheim-Industriestr-0604_LA3_64072141</td>
+    
+    <td>FY0604_Muehlheim-Industriestr-0604_LA3_64072141</td>
+    
+    <td>262-01-118971-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1187936</td>
+    
+    <td>8.8474328</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>235.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0604_Muehlheim-Industriestr-0604_73570655</td>
+    
+    <td>0604_73570655</td>
+    
+    <td>FY0604_Muehlheim-Industriestr-0604_LA1_64069454</td>
+    
+    <td>FY0604_Muehlheim-Industriestr-0604_LA1_64069454</td>
+    
+    <td>262-01-118971-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1187936</td>
+    
+    <td>8.8474328</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>234.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LA1_64027580</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LA1_64027580</td>
+    
+    <td>262-01-121532-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>110.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LK2_64301919</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LK2_64301919</td>
+    
+    <td>262-01-121532-7</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3749.0</td>
+    
+    <td>47.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LG2_64042909</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LG2_64042909</td>
+    
+    <td>262-01-121532-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>70.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LG3_64042910</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LG3_64042910</td>
+    
+    <td>262-01-121532-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>71.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LA2_64030259</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LA2_64030259</td>
+    
+    <td>262-01-121532-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>109.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LK3_64301920</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LK3_64301920</td>
+    
+    <td>262-01-121532-8</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3749.0</td>
+    
+    <td>46.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LB1_64333384</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LB1_64333384</td>
+    
+    <td>262-01-121532-12</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>131.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LB3_64337317</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LB3_64337317</td>
+    
+    <td>262-01-121532-14</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>129.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LB2_64333385</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LB2_64333385</td>
+    
+    <td>262-01-121532-13</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>130.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LG1_64042908</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LG1_64042908</td>
+    
+    <td>262-01-121532-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>69.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LA3_64030260</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LA3_64030260</td>
+    
+    <td>262-01-121532-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>108.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_73570287</td>
+    
+    <td>0614_73570287</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LK1_64301918</td>
+    
+    <td>FY0614_OF-Tempelsee-Waldstr-0614_LK1_64301918</td>
+    
+    <td>262-01-121532-6</td>
+    
+    <td>4G</td>
+    
+    <td>50.0854176</td>
+    
+    <td>8.7700112</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3749.0</td>
+    
+    <td>45.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_73570657</td>
+    
+    <td>0677_73570657</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LG1_64071365</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LG1_64071365</td>
+    
+    <td>262-01-118975-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.120192</td>
+    
+    <td>8.8195808</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>40.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_73570657</td>
+    
+    <td>0677_73570657</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LA3_64072149</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LA3_64072149</td>
+    
+    <td>262-01-118975-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.120192</td>
+    
+    <td>8.8195808</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>430.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_73570657</td>
+    
+    <td>0677_73570657</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LG2_64072150</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LG2_64072150</td>
+    
+    <td>262-01-118975-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.120192</td>
+    
+    <td>8.8195808</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>39.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_73570657</td>
+    
+    <td>0677_73570657</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LG3_64072151</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LG3_64072151</td>
+    
+    <td>262-01-118975-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.120192</td>
+    
+    <td>8.8195808</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>41.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_73570657</td>
+    
+    <td>0677_73570657</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LA2_64072148</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LA2_64072148</td>
+    
+    <td>262-01-118975-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.120192</td>
+    
+    <td>8.8195808</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>431.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_73570657</td>
+    
+    <td>0677_73570657</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LA1_64069457</td>
+    
+    <td>FY0677_Muehlheim-Tilsiter-Str-0677_LA1_64069457</td>
+    
+    <td>262-01-118975-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.120192</td>
+    
+    <td>8.8195808</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>429.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_73570659</td>
+    
+    <td>1279_73570659</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LA2_64054478</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LA2_64054478</td>
+    
+    <td>262-01-115073-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.169744</td>
+    
+    <td>8.9859104</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>206.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_73570659</td>
+    
+    <td>1279_73570659</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LA3_64054481</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LA3_64054481</td>
+    
+    <td>262-01-115073-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.169744</td>
+    
+    <td>8.9859104</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>204.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_73570659</td>
+    
+    <td>1279_73570659</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LG1_64054483</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LG1_64054483</td>
+    
+    <td>262-01-115073-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.169744</td>
+    
+    <td>8.9859104</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>337.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_73570659</td>
+    
+    <td>1279_73570659</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LG3_64054487</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LG3_64054487</td>
+    
+    <td>262-01-115073-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.169744</td>
+    
+    <td>8.9859104</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>336.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_73570659</td>
+    
+    <td>1279_73570659</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LA1_64054094</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LA1_64054094</td>
+    
+    <td>262-01-115073-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.169744</td>
+    
+    <td>8.9859104</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>205.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_73570659</td>
+    
+    <td>1279_73570659</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LG2_64054485</td>
+    
+    <td>FY1279_Erlensee-Langendiebach-1279_LG2_64054485</td>
+    
+    <td>262-01-115073-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.169744</td>
+    
+    <td>8.9859104</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>338.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1285_HU-City-Nuernberger-1285_73570661</td>
+    
+    <td>1285_73570661</td>
+    
+    <td>FY1285_HU-City-Nuernberger-1285_LA3_64021943</td>
+    
+    <td>FY1285_HU-City-Nuernberger-1285_LA3_64021943</td>
+    
+    <td>262-01-105349-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1324544</td>
+    
+    <td>8.9200872</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>243.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1285_HU-City-Nuernberger-1285_73570661</td>
+    
+    <td>1285_73570661</td>
+    
+    <td>FY1285_HU-City-Nuernberger-1285_LA1_64017819</td>
+    
+    <td>FY1285_HU-City-Nuernberger-1285_LA1_64017819</td>
+    
+    <td>262-01-105349-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1324544</td>
+    
+    <td>8.9200872</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>244.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1285_HU-City-Nuernberger-1285_73570661</td>
+    
+    <td>1285_73570661</td>
+    
+    <td>FY1285_HU-City-Nuernberger-1285_LA2_64021942</td>
+    
+    <td>FY1285_HU-City-Nuernberger-1285_LA2_64021942</td>
+    
+    <td>262-01-105349-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1324544</td>
+    
+    <td>8.9200872</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>245.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1287_HU-Steinheim-Mellensee-1287_73570663</td>
+    
+    <td>1287_73570663</td>
+    
+    <td>FY1287_HU-Steinheim-Mellensee-1287_LA1_64017820</td>
+    
+    <td>FY1287_HU-Steinheim-Mellensee-1287_LA1_64017820</td>
+    
+    <td>262-01-106038-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1097344</td>
+    
+    <td>8.9064808</td>
+    
+    <td>40.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>344.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1287_HU-Steinheim-Mellensee-1287_73570663</td>
+    
+    <td>1287_73570663</td>
+    
+    <td>FY1287_HU-Steinheim-Mellensee-1287_LA3_64021532</td>
+    
+    <td>FY1287_HU-Steinheim-Mellensee-1287_LA3_64021532</td>
+    
+    <td>262-01-106038-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1097344</td>
+    
+    <td>8.9064808</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>342.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1287_HU-Steinheim-Mellensee-1287_73570663</td>
+    
+    <td>1287_73570663</td>
+    
+    <td>FY1287_HU-Steinheim-Mellensee-1287_LA2_64021531</td>
+    
+    <td>FY1287_HU-Steinheim-Mellensee-1287_LA2_64021531</td>
+    
+    <td>262-01-106038-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1097344</td>
+    
+    <td>8.9064808</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>343.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1289_HU-KVSt-1289_73570665</td>
+    
+    <td>1289_73570665</td>
+    
+    <td>FY1289_HU-KVSt-1289_LA2_64021940</td>
+    
+    <td>FY1289_HU-KVSt-1289_LA2_64021940</td>
+    
+    <td>262-01-105351-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1452288</td>
+    
+    <td>8.9198088</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>5.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1289_HU-KVSt-1289_73570665</td>
+    
+    <td>1289_73570665</td>
+    
+    <td>FY1289_HU-KVSt-1289_LA1_64017821</td>
+    
+    <td>FY1289_HU-KVSt-1289_LA1_64017821</td>
+    
+    <td>262-01-105351-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1452288</td>
+    
+    <td>8.9198088</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>3.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1289_HU-KVSt-1289_73570665</td>
+    
+    <td>1289_73570665</td>
+    
+    <td>FY1289_HU-KVSt-1289_LA3_64021941</td>
+    
+    <td>FY1289_HU-KVSt-1289_LA3_64021941</td>
+    
+    <td>262-01-105351-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1452288</td>
+    
+    <td>8.9198088</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>4.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1456_OF-VSt81-1456_73570289</td>
+    
+    <td>1456_73570289</td>
+    
+    <td>FY1456_OF-VSt81-1456_LT3_64118483</td>
+    
+    <td>FY1456_OF-VSt81-1456_LT3_64118483</td>
+    
+    <td>262-01-105347-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.1041216</td>
+    
+    <td>8.7615032</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>102.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1456_OF-VSt81-1456_73570289</td>
+    
+    <td>1456_73570289</td>
+    
+    <td>FY1456_OF-VSt81-1456_LA3_64025445</td>
+    
+    <td>FY1456_OF-VSt81-1456_LA3_64025445</td>
+    
+    <td>262-01-105347-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1041216</td>
+    
+    <td>8.7615032</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>20.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1456_OF-VSt81-1456_73570289</td>
+    
+    <td>1456_73570289</td>
+    
+    <td>FY1456_OF-VSt81-1456_LA1_64017822</td>
+    
+    <td>FY1456_OF-VSt81-1456_LA1_64017822</td>
+    
+    <td>262-01-105347-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1041216</td>
+    
+    <td>8.7615032</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>19.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1456_OF-VSt81-1456_73570289</td>
+    
+    <td>1456_73570289</td>
+    
+    <td>FY1456_OF-VSt81-1456_LT1_64118481</td>
+    
+    <td>FY1456_OF-VSt81-1456_LT1_64118481</td>
+    
+    <td>262-01-105347-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.1041216</td>
+    
+    <td>8.7615032</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>104.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1456_OF-VSt81-1456_73570289</td>
+    
+    <td>1456_73570289</td>
+    
+    <td>FY1456_OF-VSt81-1456_LA2_64025444</td>
+    
+    <td>FY1456_OF-VSt81-1456_LA2_64025444</td>
+    
+    <td>262-01-105347-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1041216</td>
+    
+    <td>8.7615032</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>18.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1456_OF-VSt81-1456_73570289</td>
+    
+    <td>1456_73570289</td>
+    
+    <td>FY1456_OF-VSt81-1456_LT2_64118482</td>
+    
+    <td>FY1456_OF-VSt81-1456_LT2_64118482</td>
+    
+    <td>262-01-105347-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.1041216</td>
+    
+    <td>8.7615032</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>103.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1489_Muehlheim-Laemmersp-Str-1489_73570667</td>
+    
+    <td>1489_73570667</td>
+    
+    <td>FY1489_Muehlheim-Laemmersp-Str-1489_LA3_64065891</td>
+    
+    <td>FY1489_Muehlheim-Laemmersp-Str-1489_LA3_64065891</td>
+    
+    <td>262-01-117708-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1161888</td>
+    
+    <td>8.838192</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>456.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1489_Muehlheim-Laemmersp-Str-1489_73570667</td>
+    
+    <td>1489_73570667</td>
+    
+    <td>FY1489_Muehlheim-Laemmersp-Str-1489_LA2_64065890</td>
+    
+    <td>FY1489_Muehlheim-Laemmersp-Str-1489_LA2_64065890</td>
+    
+    <td>262-01-117708-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1161888</td>
+    
+    <td>8.838192</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>458.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY1489_Muehlheim-Laemmersp-Str-1489_73570667</td>
+    
+    <td>1489_73570667</td>
+    
+    <td>FY1489_Muehlheim-Laemmersp-Str-1489_LA1_64064865</td>
+    
+    <td>FY1489_Muehlheim-Laemmersp-Str-1489_LA1_64064865</td>
+    
+    <td>262-01-117708-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1161888</td>
+    
+    <td>8.838192</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>457.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LK3_64301831</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LK3_64301831</td>
+    
+    <td>262-01-106259-11</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3749.0</td>
+    
+    <td>48.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LT2_64118479</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LT2_64118479</td>
+    
+    <td>262-01-106259-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>58.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LK1_64301829</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LK1_64301829</td>
+    
+    <td>262-01-106259-9</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3749.0</td>
+    
+    <td>50.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LA3_64030305</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LA3_64030305</td>
+    
+    <td>262-01-106259-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>386.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LB3_64333391</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LB3_64333391</td>
+    
+    <td>262-01-106259-8</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>138.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LA1_64019767</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LA1_64019767</td>
+    
+    <td>262-01-106259-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>384.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LT1_64118478</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LT1_64118478</td>
+    
+    <td>262-01-106259-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>59.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LT3_64118480</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LT3_64118480</td>
+    
+    <td>262-01-106259-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>57.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LB2_64333390</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LB2_64333390</td>
+    
+    <td>262-01-106259-7</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>139.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LA2_64030304</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LA2_64030304</td>
+    
+    <td>262-01-106259-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>385.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_73570319</td>
+    
+    <td>2538_73570319</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LB1_64333389</td>
+    
+    <td>FY2538_OF-City-Kaiserstr-2538_LB1_64333389</td>
+    
+    <td>262-01-106259-6</td>
+    
+    <td>4G</td>
+    
+    <td>50.1079968</td>
+    
+    <td>8.757888</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>140.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2540_OF-City-Friedrichsring-2540_73570291</td>
+    
+    <td>2540_73570291</td>
+    
+    <td>FY2540_OF-City-Friedrichsring-2540_LA2_64030585</td>
+    
+    <td>FY2540_OF-City-Friedrichsring-2540_LA2_64030585</td>
+    
+    <td>262-01-106268-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0943712</td>
+    
+    <td>8.7680672</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>77.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2540_OF-City-Friedrichsring-2540_73570291</td>
+    
+    <td>2540_73570291</td>
+    
+    <td>FY2540_OF-City-Friedrichsring-2540_LA1_64019772</td>
+    
+    <td>FY2540_OF-City-Friedrichsring-2540_LA1_64019772</td>
+    
+    <td>262-01-106268-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0943712</td>
+    
+    <td>8.7680672</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>75.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2540_OF-City-Friedrichsring-2540_73570291</td>
+    
+    <td>2540_73570291</td>
+    
+    <td>FY2540_OF-City-Friedrichsring-2540_LA3_64030586</td>
+    
+    <td>FY2540_OF-City-Friedrichsring-2540_LA3_64030586</td>
+    
+    <td>262-01-106268-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.0943712</td>
+    
+    <td>8.7680672</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>76.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2541_OF-Ost-Obere-Grenzstr-2541_73570292</td>
+    
+    <td>2541_73570292</td>
+    
+    <td>FY2541_OF-Ost-Obere-Grenzstr-2541_LA1_64078401</td>
+    
+    <td>FY2541_OF-Ost-Obere-Grenzstr-2541_LA1_64078401</td>
+    
+    <td>262-01-121155-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0952704</td>
+    
+    <td>8.7870576</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>256.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2541_OF-Ost-Obere-Grenzstr-2541_73570292</td>
+    
+    <td>2541_73570292</td>
+    
+    <td>FY2541_OF-Ost-Obere-Grenzstr-2541_LA3_64078403</td>
+    
+    <td>FY2541_OF-Ost-Obere-Grenzstr-2541_LA3_64078403</td>
+    
+    <td>262-01-121155-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.0952704</td>
+    
+    <td>8.7870576</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>255.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2541_OF-Ost-Obere-Grenzstr-2541_73570292</td>
+    
+    <td>2541_73570292</td>
+    
+    <td>FY2541_OF-Ost-Obere-Grenzstr-2541_LA2_64078402</td>
+    
+    <td>FY2541_OF-Ost-Obere-Grenzstr-2541_LA2_64078402</td>
+    
+    <td>262-01-121155-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0952704</td>
+    
+    <td>8.7870576</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>257.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2542_OF-Ost-A-Zitscher-Str-2542_73570294</td>
+    
+    <td>2542_73570294</td>
+    
+    <td>FY2542_OF-Ost-A-Zitscher-Str-2542_LA1_64082810</td>
+    
+    <td>FY2542_OF-Ost-A-Zitscher-Str-2542_LA1_64082810</td>
+    
+    <td>262-01-122020-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1064672</td>
+    
+    <td>8.7745216</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>289.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2542_OF-Ost-A-Zitscher-Str-2542_73570294</td>
+    
+    <td>2542_73570294</td>
+    
+    <td>FY2542_OF-Ost-A-Zitscher-Str-2542_LA2_64082811</td>
+    
+    <td>FY2542_OF-Ost-A-Zitscher-Str-2542_LA2_64082811</td>
+    
+    <td>262-01-122020-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1064672</td>
+    
+    <td>8.7745216</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>290.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2542_OF-Ost-A-Zitscher-Str-2542_73570294</td>
+    
+    <td>2542_73570294</td>
+    
+    <td>FY2542_OF-Ost-A-Zitscher-Str-2542_LA3_64082812</td>
+    
+    <td>FY2542_OF-Ost-A-Zitscher-Str-2542_LA3_64082812</td>
+    
+    <td>262-01-122020-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1064672</td>
+    
+    <td>8.7745216</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>288.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_73570462</td>
+    
+    <td>2599_73570462</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LG2_64077520</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LG2_64077520</td>
+    
+    <td>262-01-119029-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.0991552</td>
+    
+    <td>8.7560608</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>323.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_73570462</td>
+    
+    <td>2599_73570462</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LG3_64077522</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LG3_64077522</td>
+    
+    <td>262-01-119029-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.0991552</td>
+    
+    <td>8.7560608</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>321.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_73570462</td>
+    
+    <td>2599_73570462</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LA3_64077517</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LA3_64077517</td>
+    
+    <td>262-01-119029-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.0991552</td>
+    
+    <td>8.7560608</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>315.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_73570462</td>
+    
+    <td>2599_73570462</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LA1_64069673</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LA1_64069673</td>
+    
+    <td>262-01-119029-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0991552</td>
+    
+    <td>8.7560608</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>316.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_73570462</td>
+    
+    <td>2599_73570462</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LA2_64077516</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LA2_64077516</td>
+    
+    <td>262-01-119029-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0991552</td>
+    
+    <td>8.7560608</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>317.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_73570462</td>
+    
+    <td>2599_73570462</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LG1_64071416</td>
+    
+    <td>FY2599_OF-City-Ludwigstr-2599_LG1_64071416</td>
+    
+    <td>262-01-119029-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.0991552</td>
+    
+    <td>8.7560608</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>322.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2651_OF-Bieber-Aschaffenbur-2651_73570296</td>
+    
+    <td>2651_73570296</td>
+    
+    <td>FY2651_OF-Bieber-Aschaffenbur-2651_LA1_64028770</td>
+    
+    <td>FY2651_OF-Bieber-Aschaffenbur-2651_LA1_64028770</td>
+    
+    <td>262-01-110576-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.089632</td>
+    
+    <td>8.8038224</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>97.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2651_OF-Bieber-Aschaffenbur-2651_73570296</td>
+    
+    <td>2651_73570296</td>
+    
+    <td>FY2651_OF-Bieber-Aschaffenbur-2651_LA2_64032440</td>
+    
+    <td>FY2651_OF-Bieber-Aschaffenbur-2651_LA2_64032440</td>
+    
+    <td>262-01-110576-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.089632</td>
+    
+    <td>8.8038224</td>
+    
+    <td>120.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>98.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2651_OF-Bieber-Aschaffenbur-2651_73570296</td>
+    
+    <td>2651_73570296</td>
+    
+    <td>FY2651_OF-Bieber-Aschaffenbur-2651_LA3_64032441</td>
+    
+    <td>FY2651_OF-Bieber-Aschaffenbur-2651_LA3_64032441</td>
+    
+    <td>262-01-110576-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.089632</td>
+    
+    <td>8.8038224</td>
+    
+    <td>300.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>96.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2654_OF-Bieber-WHB-EVO-2654_73570298</td>
+    
+    <td>2654_73570298</td>
+    
+    <td>FY2654_OF-Bieber-WHB-EVO-2654_LA2_64093569</td>
+    
+    <td>FY2654_OF-Bieber-WHB-EVO-2654_LA2_64093569</td>
+    
+    <td>262-01-128726-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0981664</td>
+    
+    <td>8.8034</td>
+    
+    <td>190.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>362.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2654_OF-Bieber-WHB-EVO-2654_73570298</td>
+    
+    <td>2654_73570298</td>
+    
+    <td>FY2654_OF-Bieber-WHB-EVO-2654_LA1_64093568</td>
+    
+    <td>FY2654_OF-Bieber-WHB-EVO-2654_LA1_64093568</td>
+    
+    <td>262-01-128726-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0981664</td>
+    
+    <td>8.8034</td>
+    
+    <td>100.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>360.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_73570301</td>
+    
+    <td>2667_73570301</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LB2_64337327</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LB2_64337327</td>
+    
+    <td>262-01-105215-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.0866592</td>
+    
+    <td>8.7623248</td>
+    
+    <td>180.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>197.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_73570301</td>
+    
+    <td>2667_73570301</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LA3_64024205</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LA3_64024205</td>
+    
+    <td>262-01-105215-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.0866592</td>
+    
+    <td>8.7623248</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>91.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_73570301</td>
+    
+    <td>2667_73570301</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LK2_64302200</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LK2_64302200</td>
+    
+    <td>262-01-105215-7</td>
+    
+    <td>4G</td>
+    
+    <td>50.0866592</td>
+    
+    <td>8.7623248</td>
+    
+    <td>180.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3749.0</td>
+    
+    <td>42.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_73570301</td>
+    
+    <td>2667_73570301</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LB3_64337328</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LB3_64337328</td>
+    
+    <td>262-01-105215-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.0866592</td>
+    
+    <td>8.7623248</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>195.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_73570301</td>
+    
+    <td>2667_73570301</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LK3_64302201</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LK3_64302201</td>
+    
+    <td>262-01-105215-8</td>
+    
+    <td>4G</td>
+    
+    <td>50.0866592</td>
+    
+    <td>8.7623248</td>
+    
+    <td>300.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3749.0</td>
+    
+    <td>43.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_73570301</td>
+    
+    <td>2667_73570301</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LB1_64337326</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LB1_64337326</td>
+    
+    <td>262-01-105215-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.0866592</td>
+    
+    <td>8.7623248</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>196.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_73570301</td>
+    
+    <td>2667_73570301</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LA2_64024204</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LA2_64024204</td>
+    
+    <td>262-01-105215-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0866592</td>
+    
+    <td>8.7623248</td>
+    
+    <td>180.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>92.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_73570301</td>
+    
+    <td>2667_73570301</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LK1_64302199</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LK1_64302199</td>
+    
+    <td>262-01-105215-6</td>
+    
+    <td>4G</td>
+    
+    <td>50.0866592</td>
+    
+    <td>8.7623248</td>
+    
+    <td>60.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3749.0</td>
+    
+    <td>44.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_73570301</td>
+    
+    <td>2667_73570301</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LA1_64018509</td>
+    
+    <td>FY2667_OF-Sued-Jacques-Offenb-2667_LA1_64018509</td>
+    
+    <td>262-01-105215-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0866592</td>
+    
+    <td>8.7623248</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>90.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_73571503</td>
+    
+    <td>2699_73571503</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LB3_64336203</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LB3_64336203</td>
+    
+    <td>262-01-128725-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.0658848</td>
+    
+    <td>8.3009536</td>
+    
+    <td>290.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>500.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_73571503</td>
+    
+    <td>2699_73571503</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LA1_64093551</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LA1_64093551</td>
+    
+    <td>262-01-128725-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0658848</td>
+    
+    <td>8.3009536</td>
+    
+    <td>100.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>498.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_73571503</td>
+    
+    <td>2699_73571503</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LA2_64093553</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LA2_64093553</td>
+    
+    <td>262-01-128725-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0658848</td>
+    
+    <td>8.3009536</td>
+    
+    <td>190.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>499.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_73571503</td>
+    
+    <td>2699_73571503</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LB2_64336201</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LB2_64336201</td>
+    
+    <td>262-01-128725-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.0658848</td>
+    
+    <td>8.3009536</td>
+    
+    <td>190.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>499.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_73571503</td>
+    
+    <td>2699_73571503</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LA3_64093555</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LA3_64093555</td>
+    
+    <td>262-01-128725-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.0658848</td>
+    
+    <td>8.3009536</td>
+    
+    <td>290.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>500.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_73571503</td>
+    
+    <td>2699_73571503</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LB1_64336198</td>
+    
+    <td>FY2699_Liederbach-Ts-Hoechster-2699_LB1_64336198</td>
+    
+    <td>262-01-128725-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.0658848</td>
+    
+    <td>8.3009536</td>
+    
+    <td>100.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>498.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_73570303</td>
+    
+    <td>2745_73570303</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LA1_64018554</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LA1_64018554</td>
+    
+    <td>262-01-105172-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1024544</td>
+    
+    <td>8.7783808</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>367.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_73570303</td>
+    
+    <td>2745_73570303</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LA2_64023394</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LA2_64023394</td>
+    
+    <td>262-01-105172-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1024544</td>
+    
+    <td>8.7783808</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>366.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_73570303</td>
+    
+    <td>2745_73570303</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LT3_64118492</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LT3_64118492</td>
+    
+    <td>262-01-105172-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.1024544</td>
+    
+    <td>8.7783808</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>476.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_73570303</td>
+    
+    <td>2745_73570303</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LA3_64023396</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LA3_64023396</td>
+    
+    <td>262-01-105172-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1024544</td>
+    
+    <td>8.7783808</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>368.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_73570303</td>
+    
+    <td>2745_73570303</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LT1_64118490</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LT1_64118490</td>
+    
+    <td>262-01-105172-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.1024544</td>
+    
+    <td>8.7783808</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>475.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_73570303</td>
+    
+    <td>2745_73570303</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LT2_64118491</td>
+    
+    <td>FY2745_OF-Ost-Hebestr-2745_LT2_64118491</td>
+    
+    <td>262-01-105172-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.1024544</td>
+    
+    <td>8.7783808</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>474.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3001_Maintal-Hochstadt-Wach-3001_73570669</td>
+    
+    <td>3001_73570669</td>
+    
+    <td>FY3001_Maintal-Hochstadt-Wach-3001_LA2_64074551</td>
+    
+    <td>FY3001_Maintal-Hochstadt-Wach-3001_LA2_64074551</td>
+    
+    <td>262-01-120190-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1549504</td>
+    
+    <td>8.8405608</td>
+    
+    <td>210.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>233.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3001_Maintal-Hochstadt-Wach-3001_73570669</td>
+    
+    <td>3001_73570669</td>
+    
+    <td>FY3001_Maintal-Hochstadt-Wach-3001_LA1_64074550</td>
+    
+    <td>FY3001_Maintal-Hochstadt-Wach-3001_LA1_64074550</td>
+    
+    <td>262-01-120190-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1549504</td>
+    
+    <td>8.8405608</td>
+    
+    <td>40.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>232.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3001_Maintal-Hochstadt-Wach-3001_73570669</td>
+    
+    <td>3001_73570669</td>
+    
+    <td>FY3001_Maintal-Hochstadt-Wach-3001_LA3_64074552</td>
+    
+    <td>FY3001_Maintal-Hochstadt-Wach-3001_LA3_64074552</td>
+    
+    <td>262-01-120190-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1549504</td>
+    
+    <td>8.8405608</td>
+    
+    <td>290.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>231.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3005_HU-Steinheim-Maybach-3005_73570671</td>
+    
+    <td>3005_73570671</td>
+    
+    <td>FY3005_HU-Steinheim-Maybach-3005_LA2_64073587</td>
+    
+    <td>FY3005_HU-Steinheim-Maybach-3005_LA2_64073587</td>
+    
+    <td>262-01-119980-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1135648</td>
+    
+    <td>8.8923128</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>493.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3005_HU-Steinheim-Maybach-3005_73570671</td>
+    
+    <td>3005_73570671</td>
+    
+    <td>FY3005_HU-Steinheim-Maybach-3005_LA1_64073586</td>
+    
+    <td>FY3005_HU-Steinheim-Maybach-3005_LA1_64073586</td>
+    
+    <td>262-01-119980-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1135648</td>
+    
+    <td>8.8923128</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>494.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3007_HU-Steinheim-B43a-B45-3007_73570673</td>
+    
+    <td>3007_73570673</td>
+    
+    <td>FY3007_HU-Steinheim-B43a-B45-3007_LG1_64093791</td>
+    
+    <td>FY3007_HU-Steinheim-B43a-B45-3007_LG1_64093791</td>
+    
+    <td>262-01-126623-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0950976</td>
+    
+    <td>8.8996888</td>
+    
+    <td>90.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>6.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3007_HU-Steinheim-B43a-B45-3007_73570673</td>
+    
+    <td>3007_73570673</td>
+    
+    <td>FY3007_HU-Steinheim-B43a-B45-3007_LG2_64093792</td>
+    
+    <td>FY3007_HU-Steinheim-B43a-B45-3007_LG2_64093792</td>
+    
+    <td>262-01-126623-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0950976</td>
+    
+    <td>8.8996888</td>
+    
+    <td>210.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>7.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3007_HU-Steinheim-B43a-B45-3007_73570673</td>
+    
+    <td>3007_73570673</td>
+    
+    <td>FY3007_HU-Steinheim-B43a-B45-3007_LG3_64093793</td>
+    
+    <td>FY3007_HU-Steinheim-B43a-B45-3007_LG3_64093793</td>
+    
+    <td>262-01-126623-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.0950976</td>
+    
+    <td>8.8996888</td>
+    
+    <td>350.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>8.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3044_HU-Kesselstadt-Karlsba-3044_73570675</td>
+    
+    <td>3044_73570675</td>
+    
+    <td>FY3044_HU-Kesselstadt-Karlsba-3044_LA1_64019780</td>
+    
+    <td>FY3044_HU-Kesselstadt-Karlsba-3044_LA1_64019780</td>
+    
+    <td>262-01-106216-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1304768</td>
+    
+    <td>8.8893888</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>370.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3044_HU-Kesselstadt-Karlsba-3044_73570675</td>
+    
+    <td>3044_73570675</td>
+    
+    <td>FY3044_HU-Kesselstadt-Karlsba-3044_LA3_64036105</td>
+    
+    <td>FY3044_HU-Kesselstadt-Karlsba-3044_LA3_64036105</td>
+    
+    <td>262-01-106216-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1304768</td>
+    
+    <td>8.8893888</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>369.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3044_HU-Kesselstadt-Karlsba-3044_73570675</td>
+    
+    <td>3044_73570675</td>
+    
+    <td>FY3044_HU-Kesselstadt-Karlsba-3044_LA2_64036104</td>
+    
+    <td>FY3044_HU-Kesselstadt-Karlsba-3044_LA2_64036104</td>
+    
+    <td>262-01-106216-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1304768</td>
+    
+    <td>8.8893888</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>371.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_73570677</td>
+    
+    <td>3061_73570677</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LA3_64074546</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LA3_64074546</td>
+    
+    <td>262-01-120189-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1352288</td>
+    
+    <td>8.8462088</td>
+    
+    <td>240.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>50.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_73570677</td>
+    
+    <td>3061_73570677</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LG3_64074549</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LG3_64074549</td>
+    
+    <td>262-01-120189-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.1352288</td>
+    
+    <td>8.8462088</td>
+    
+    <td>240.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>202.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_73570677</td>
+    
+    <td>3061_73570677</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LA1_64074544</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LA1_64074544</td>
+    
+    <td>262-01-120189-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1352288</td>
+    
+    <td>8.8462088</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>48.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_73570677</td>
+    
+    <td>3061_73570677</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LG2_64074548</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LG2_64074548</td>
+    
+    <td>262-01-120189-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.1352288</td>
+    
+    <td>8.8462088</td>
+    
+    <td>130.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>201.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_73570677</td>
+    
+    <td>3061_73570677</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LA2_64074545</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LA2_64074545</td>
+    
+    <td>262-01-120189-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1352288</td>
+    
+    <td>8.8462088</td>
+    
+    <td>130.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>49.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_73570677</td>
+    
+    <td>3061_73570677</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LG1_64074547</td>
+    
+    <td>FY3061_Maintal-Doernighm-Berli-3061_LG1_64074547</td>
+    
+    <td>262-01-120189-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.1352288</td>
+    
+    <td>8.8462088</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>203.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3062_HU-Nord-E-Kaiser-Str-3062_73570679</td>
+    
+    <td>3062_73570679</td>
+    
+    <td>FY3062_HU-Nord-E-Kaiser-Str-3062_LA2_64036112</td>
+    
+    <td>FY3062_HU-Nord-E-Kaiser-Str-3062_LA2_64036112</td>
+    
+    <td>262-01-106686-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1387776</td>
+    
+    <td>8.9137776</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>323.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3062_HU-Nord-E-Kaiser-Str-3062_73570679</td>
+    
+    <td>3062_73570679</td>
+    
+    <td>FY3062_HU-Nord-E-Kaiser-Str-3062_LA3_64036113</td>
+    
+    <td>FY3062_HU-Nord-E-Kaiser-Str-3062_LA3_64036113</td>
+    
+    <td>262-01-106686-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1387776</td>
+    
+    <td>8.9137776</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>321.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3062_HU-Nord-E-Kaiser-Str-3062_73570679</td>
+    
+    <td>3062_73570679</td>
+    
+    <td>FY3062_HU-Nord-E-Kaiser-Str-3062_LA1_64019844</td>
+    
+    <td>FY3062_HU-Nord-E-Kaiser-Str-3062_LA1_64019844</td>
+    
+    <td>262-01-106686-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1387776</td>
+    
+    <td>8.9137776</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>322.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3086_HU-A66-Kesselstaedterst-3086_73570693</td>
+    
+    <td>3086_73570693</td>
+    
+    <td>FY3086_HU-A66-Kesselstaedterst-3086_LA3_64093784</td>
+    
+    <td>FY3086_HU-A66-Kesselstaedterst-3086_LA3_64093784</td>
+    
+    <td>262-01-127856-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1555072</td>
+    
+    <td>8.8857856</td>
+    
+    <td>280.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>440.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3086_HU-A66-Kesselstaedterst-3086_73570693</td>
+    
+    <td>3086_73570693</td>
+    
+    <td>FY3086_HU-A66-Kesselstaedterst-3086_LA2_64093783</td>
+    
+    <td>FY3086_HU-A66-Kesselstaedterst-3086_LA2_64093783</td>
+    
+    <td>262-01-127856-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1555072</td>
+    
+    <td>8.8857856</td>
+    
+    <td>170.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>439.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3086_HU-A66-Kesselstaedterst-3086_73570693</td>
+    
+    <td>3086_73570693</td>
+    
+    <td>FY3086_HU-A66-Kesselstaedterst-3086_LA1_64093782</td>
+    
+    <td>FY3086_HU-A66-Kesselstaedterst-3086_LA1_64093782</td>
+    
+    <td>262-01-127856-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1555072</td>
+    
+    <td>8.8857856</td>
+    
+    <td>70.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>438.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3087_HU-Lamboy-Oderstr-3087_73570695</td>
+    
+    <td>3087_73570695</td>
+    
+    <td>FY3087_HU-Lamboy-Oderstr-3087_LA3_64077843</td>
+    
+    <td>FY3087_HU-Lamboy-Oderstr-3087_LA3_64077843</td>
+    
+    <td>262-01-120959-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1473728</td>
+    
+    <td>8.9514688</td>
+    
+    <td>320.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>188.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3087_HU-Lamboy-Oderstr-3087_73570695</td>
+    
+    <td>3087_73570695</td>
+    
+    <td>FY3087_HU-Lamboy-Oderstr-3087_LA2_64077841</td>
+    
+    <td>FY3087_HU-Lamboy-Oderstr-3087_LA2_64077841</td>
+    
+    <td>262-01-120959-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1473728</td>
+    
+    <td>8.9514688</td>
+    
+    <td>210.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>187.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3087_HU-Lamboy-Oderstr-3087_73570695</td>
+    
+    <td>3087_73570695</td>
+    
+    <td>FY3087_HU-Lamboy-Oderstr-3087_LA1_64077840</td>
+    
+    <td>FY3087_HU-Lamboy-Oderstr-3087_LA1_64077840</td>
+    
+    <td>262-01-120959-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1473728</td>
+    
+    <td>8.9514688</td>
+    
+    <td>100.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>186.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3102_HU-City-Lamboystr-3102_73570697</td>
+    
+    <td>3102_73570697</td>
+    
+    <td>FY3102_HU-City-Lamboystr-3102_LA1_64019876</td>
+    
+    <td>FY3102_HU-City-Lamboystr-3102_LA1_64019876</td>
+    
+    <td>262-01-106289-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1424512</td>
+    
+    <td>8.9339736</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>246.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3102_HU-City-Lamboystr-3102_73570697</td>
+    
+    <td>3102_73570697</td>
+    
+    <td>FY3102_HU-City-Lamboystr-3102_LA2_64036114</td>
+    
+    <td>FY3102_HU-City-Lamboystr-3102_LA2_64036114</td>
+    
+    <td>262-01-106289-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1424512</td>
+    
+    <td>8.9339736</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>248.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3102_HU-City-Lamboystr-3102_73570697</td>
+    
+    <td>3102_73570697</td>
+    
+    <td>FY3102_HU-City-Lamboystr-3102_LA3_64036115</td>
+    
+    <td>FY3102_HU-City-Lamboystr-3102_LA3_64036115</td>
+    
+    <td>262-01-106289-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1424512</td>
+    
+    <td>8.9339736</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>247.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3131_HU-City-Steinheimerstr-3131_73570699</td>
+    
+    <td>3131_73570699</td>
+    
+    <td>FY3131_HU-City-Steinheimerstr-3131_LA1_64019911</td>
+    
+    <td>FY3131_HU-City-Steinheimerstr-3131_LA1_64019911</td>
+    
+    <td>262-01-106874-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1299488</td>
+    
+    <td>8.9131392</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>414.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3131_HU-City-Steinheimerstr-3131_73570699</td>
+    
+    <td>3131_73570699</td>
+    
+    <td>FY3131_HU-City-Steinheimerstr-3131_LA3_64036120</td>
+    
+    <td>FY3131_HU-City-Steinheimerstr-3131_LA3_64036120</td>
+    
+    <td>262-01-106874-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1299488</td>
+    
+    <td>8.9131392</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>415.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3131_HU-City-Steinheimerstr-3131_73570699</td>
+    
+    <td>3131_73570699</td>
+    
+    <td>FY3131_HU-City-Steinheimerstr-3131_LA2_64036119</td>
+    
+    <td>FY3131_HU-City-Steinheimerstr-3131_LA2_64036119</td>
+    
+    <td>262-01-106874-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1299488</td>
+    
+    <td>8.9131392</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>416.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3187_HU-City-Hafenstr-3187_73570701</td>
+    
+    <td>3187_73570701</td>
+    
+    <td>FY3187_HU-City-Hafenstr-3187_LA3_64036124</td>
+    
+    <td>FY3187_HU-City-Hafenstr-3187_LA3_64036124</td>
+    
+    <td>262-01-106873-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1185984</td>
+    
+    <td>8.920436</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>377.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3187_HU-City-Hafenstr-3187_73570701</td>
+    
+    <td>3187_73570701</td>
+    
+    <td>FY3187_HU-City-Hafenstr-3187_LA1_64019781</td>
+    
+    <td>FY3187_HU-City-Hafenstr-3187_LA1_64019781</td>
+    
+    <td>262-01-106873-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1185984</td>
+    
+    <td>8.920436</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>375.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3187_HU-City-Hafenstr-3187_73570701</td>
+    
+    <td>3187_73570701</td>
+    
+    <td>FY3187_HU-City-Hafenstr-3187_LA2_64036122</td>
+    
+    <td>FY3187_HU-City-Hafenstr-3187_LA2_64036122</td>
+    
+    <td>262-01-106873-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1185984</td>
+    
+    <td>8.920436</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>376.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3341_HU-Wolfgang-Rodenbach-3341_73570703</td>
+    
+    <td>3341_73570703</td>
+    
+    <td>FY3341_HU-Wolfgang-Rodenbach-3341_LA1_64027965</td>
+    
+    <td>FY3341_HU-Wolfgang-Rodenbach-3341_LA1_64027965</td>
+    
+    <td>262-01-110586-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1230112</td>
+    
+    <td>8.9698016</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>161.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3341_HU-Wolfgang-Rodenbach-3341_73570703</td>
+    
+    <td>3341_73570703</td>
+    
+    <td>FY3341_HU-Wolfgang-Rodenbach-3341_LA3_64036152</td>
+    
+    <td>FY3341_HU-Wolfgang-Rodenbach-3341_LA3_64036152</td>
+    
+    <td>262-01-110586-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1230112</td>
+    
+    <td>8.9698016</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>160.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3341_HU-Wolfgang-Rodenbach-3341_73570703</td>
+    
+    <td>3341_73570703</td>
+    
+    <td>FY3341_HU-Wolfgang-Rodenbach-3341_LA2_64036151</td>
+    
+    <td>FY3341_HU-Wolfgang-Rodenbach-3341_LA2_64036151</td>
+    
+    <td>262-01-110586-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1230112</td>
+    
+    <td>8.9698016</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>159.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3345_HU-City-Leipziger-Str-3345_73570705</td>
+    
+    <td>3345_73570705</td>
+    
+    <td>FY3345_HU-City-Leipziger-Str-3345_LA2_64021422</td>
+    
+    <td>FY3345_HU-City-Leipziger-Str-3345_LA2_64021422</td>
+    
+    <td>262-01-146102-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.1297984</td>
+    
+    <td>8.924556</td>
+    
+    <td>160.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>391.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3345_HU-City-Leipziger-Str-3345_73570705</td>
+    
+    <td>3345_73570705</td>
+    
+    <td>FY3345_HU-City-Leipziger-Str-3345_LA1_64018835</td>
+    
+    <td>FY3345_HU-City-Leipziger-Str-3345_LA1_64018835</td>
+    
+    <td>262-01-146102-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.1297984</td>
+    
+    <td>8.924556</td>
+    
+    <td>40.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>392.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3345_HU-City-Leipziger-Str-3345_73570705</td>
+    
+    <td>3345_73570705</td>
+    
+    <td>FY3345_HU-City-Leipziger-Str-3345_LA3_64021423</td>
+    
+    <td>FY3345_HU-City-Leipziger-Str-3345_LA3_64021423</td>
+    
+    <td>262-01-146102-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.1297984</td>
+    
+    <td>8.924556</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>390.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3346_HU-City-Am-Heumarkt-3346_73570707</td>
+    
+    <td>3346_73570707</td>
+    
+    <td>FY3346_HU-City-Am-Heumarkt-3346_LA1_64018836</td>
+    
+    <td>FY3346_HU-City-Am-Heumarkt-3346_LA1_64018836</td>
+    
+    <td>262-01-106083-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.133008</td>
+    
+    <td>8.9136992</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>71.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3346_HU-City-Am-Heumarkt-3346_73570707</td>
+    
+    <td>3346_73570707</td>
+    
+    <td>FY3346_HU-City-Am-Heumarkt-3346_LA3_64021560</td>
+    
+    <td>FY3346_HU-City-Am-Heumarkt-3346_LA3_64021560</td>
+    
+    <td>262-01-106083-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.133008</td>
+    
+    <td>8.9136992</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>69.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3346_HU-City-Am-Heumarkt-3346_73570707</td>
+    
+    <td>3346_73570707</td>
+    
+    <td>FY3346_HU-City-Am-Heumarkt-3346_LA2_64021559</td>
+    
+    <td>FY3346_HU-City-Am-Heumarkt-3346_LA2_64021559</td>
+    
+    <td>262-01-106083-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.133008</td>
+    
+    <td>8.9136992</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>70.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3350_HU-Lamboy-Moselstr-3350_73570709</td>
+    
+    <td>3350_73570709</td>
+    
+    <td>FY3350_HU-Lamboy-Moselstr-3350_LA2_64072246</td>
+    
+    <td>FY3350_HU-Lamboy-Moselstr-3350_LA2_64072246</td>
+    
+    <td>262-01-119052-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1500928</td>
+    
+    <td>8.933736</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>263.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3350_HU-Lamboy-Moselstr-3350_73570709</td>
+    
+    <td>3350_73570709</td>
+    
+    <td>FY3350_HU-Lamboy-Moselstr-3350_LA1_64069733</td>
+    
+    <td>FY3350_HU-Lamboy-Moselstr-3350_LA1_64069733</td>
+    
+    <td>262-01-119052-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1500928</td>
+    
+    <td>8.933736</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>262.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3350_HU-Lamboy-Moselstr-3350_73570709</td>
+    
+    <td>3350_73570709</td>
+    
+    <td>FY3350_HU-Lamboy-Moselstr-3350_LA3_64072247</td>
+    
+    <td>FY3350_HU-Lamboy-Moselstr-3350_LA3_64072247</td>
+    
+    <td>262-01-119052-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1500928</td>
+    
+    <td>8.933736</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>261.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3380_HU-City-G-Hoch-Str-3380_73570711</td>
+    
+    <td>3380_73570711</td>
+    
+    <td>FY3380_HU-City-G-Hoch-Str-3380_LA1_64020124</td>
+    
+    <td>FY3380_HU-City-G-Hoch-Str-3380_LA1_64020124</td>
+    
+    <td>262-01-106683-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1400704</td>
+    
+    <td>8.9023752</td>
+    
+    <td>40.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>217.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3380_HU-City-G-Hoch-Str-3380_73570711</td>
+    
+    <td>3380_73570711</td>
+    
+    <td>FY3380_HU-City-G-Hoch-Str-3380_LA2_64036127</td>
+    
+    <td>FY3380_HU-City-G-Hoch-Str-3380_LA2_64036127</td>
+    
+    <td>262-01-106683-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1400704</td>
+    
+    <td>8.9023752</td>
+    
+    <td>160.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>218.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY3380_HU-City-G-Hoch-Str-3380_73570711</td>
+    
+    <td>3380_73570711</td>
+    
+    <td>FY3380_HU-City-G-Hoch-Str-3380_LA3_64036128</td>
+    
+    <td>FY3380_HU-City-G-Hoch-Str-3380_LA3_64036128</td>
+    
+    <td>262-01-106683-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1400704</td>
+    
+    <td>8.9023752</td>
+    
+    <td>280.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>216.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6053_HU-Steinheim-Vorstadt-6053_73570713</td>
+    
+    <td>6053_73570713</td>
+    
+    <td>FY6053_HU-Steinheim-Vorstadt-6053_LA2_64073870</td>
+    
+    <td>FY6053_HU-Steinheim-Vorstadt-6053_LA2_64073870</td>
+    
+    <td>262-01-119119-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1046784</td>
+    
+    <td>8.9156432</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>428.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6053_HU-Steinheim-Vorstadt-6053_73570713</td>
+    
+    <td>6053_73570713</td>
+    
+    <td>FY6053_HU-Steinheim-Vorstadt-6053_LA3_64073871</td>
+    
+    <td>FY6053_HU-Steinheim-Vorstadt-6053_LA3_64073871</td>
+    
+    <td>262-01-119119-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1046784</td>
+    
+    <td>8.9156432</td>
+    
+    <td>280.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>426.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6053_HU-Steinheim-Vorstadt-6053_73570713</td>
+    
+    <td>6053_73570713</td>
+    
+    <td>FY6053_HU-Steinheim-Vorstadt-6053_LA1_64069930</td>
+    
+    <td>FY6053_HU-Steinheim-Vorstadt-6053_LA1_64069930</td>
+    
+    <td>262-01-119119-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1046784</td>
+    
+    <td>8.9156432</td>
+    
+    <td>20.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>427.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6077_Erlensee-Langendi-West-6077_73570715</td>
+    
+    <td>6077_73570715</td>
+    
+    <td>FY6077_Erlensee-Langendi-West-6077_LA3_64073256</td>
+    
+    <td>FY6077_Erlensee-Langendi-West-6077_LA3_64073256</td>
+    
+    <td>262-01-119954-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1635456</td>
+    
+    <td>8.9789672</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>303.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6077_Erlensee-Langendi-West-6077_73570715</td>
+    
+    <td>6077_73570715</td>
+    
+    <td>FY6077_Erlensee-Langendi-West-6077_LA1_64073254</td>
+    
+    <td>FY6077_Erlensee-Langendi-West-6077_LA1_64073254</td>
+    
+    <td>262-01-119954-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1635456</td>
+    
+    <td>8.9789672</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>305.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6077_Erlensee-Langendi-West-6077_73570715</td>
+    
+    <td>6077_73570715</td>
+    
+    <td>FY6077_Erlensee-Langendi-West-6077_LA2_64073255</td>
+    
+    <td>FY6077_Erlensee-Langendi-West-6077_LA2_64073255</td>
+    
+    <td>262-01-119954-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1635456</td>
+    
+    <td>8.9789672</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>304.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6167_HU-Lamboy-Wilhelmstr-6167_73570717</td>
+    
+    <td>6167_73570717</td>
+    
+    <td>FY6167_HU-Lamboy-Wilhelmstr-6167_LA2_64093352</td>
+    
+    <td>FY6167_HU-Lamboy-Wilhelmstr-6167_LA2_64093352</td>
+    
+    <td>262-01-128732-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1405248</td>
+    
+    <td>8.923428</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>258.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6167_HU-Lamboy-Wilhelmstr-6167_73570717</td>
+    
+    <td>6167_73570717</td>
+    
+    <td>FY6167_HU-Lamboy-Wilhelmstr-6167_LA3_64093353</td>
+    
+    <td>FY6167_HU-Lamboy-Wilhelmstr-6167_LA3_64093353</td>
+    
+    <td>262-01-128732-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1405248</td>
+    
+    <td>8.923428</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>260.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6167_HU-Lamboy-Wilhelmstr-6167_73570717</td>
+    
+    <td>6167_73570717</td>
+    
+    <td>FY6167_HU-Lamboy-Wilhelmstr-6167_LA1_64093351</td>
+    
+    <td>FY6167_HU-Lamboy-Wilhelmstr-6167_LA1_64093351</td>
+    
+    <td>262-01-128732-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1405248</td>
+    
+    <td>8.923428</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>199.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6168_HU-Kesselstadt-Burgall-6168_73570719</td>
+    
+    <td>6168_73570719</td>
+    
+    <td>FY6168_HU-Kesselstadt-Burgall-6168_LA1_64050417</td>
+    
+    <td>FY6168_HU-Kesselstadt-Burgall-6168_LA1_64050417</td>
+    
+    <td>262-01-118612-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1435392</td>
+    
+    <td>8.8810424</td>
+    
+    <td>10.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>195.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6168_HU-Kesselstadt-Burgall-6168_73570719</td>
+    
+    <td>6168_73570719</td>
+    
+    <td>FY6168_HU-Kesselstadt-Burgall-6168_LA2_64050418</td>
+    
+    <td>FY6168_HU-Kesselstadt-Burgall-6168_LA2_64050418</td>
+    
+    <td>262-01-118612-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1435392</td>
+    
+    <td>8.8810424</td>
+    
+    <td>100.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>196.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6168_HU-Kesselstadt-Burgall-6168_73570719</td>
+    
+    <td>6168_73570719</td>
+    
+    <td>FY6168_HU-Kesselstadt-Burgall-6168_LA3_64050419</td>
+    
+    <td>FY6168_HU-Kesselstadt-Burgall-6168_LA3_64050419</td>
+    
+    <td>262-01-118612-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1435392</td>
+    
+    <td>8.8810424</td>
+    
+    <td>260.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>197.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_73570721</td>
+    
+    <td>6333_73570721</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_LA1_64139635</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_LA1_64139635</td>
+    
+    <td>262-01-132741-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1347232</td>
+    
+    <td>8.9161112</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>373.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_73570721</td>
+    
+    <td>6333_73570721</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_LA3_64139640</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_LA3_64139640</td>
+    
+    <td>262-01-132741-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1347232</td>
+    
+    <td>8.916112</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>372.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_73570721</td>
+    
+    <td>6333_73570721</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_LA2_64139639</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_LA2_64139639</td>
+    
+    <td>262-01-132741-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1347232</td>
+    
+    <td>8.916112</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>374.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_73570746</td>
+    
+    <td>6333_73570746</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_LA4_64144363</td>
+    
+    <td>FY6333_HU-City-Forum-Hanau-6333_LA4_64144363</td>
+    
+    <td>262-01-133854-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1347232</td>
+    
+    <td>8.9161112</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>68.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9010_Maintal-Bischofshm-Gut-9010_73570681</td>
+    
+    <td>9010_73570681</td>
+    
+    <td>FY9010_Maintal-Bischofshm-Gut-9010_LA3_64078395</td>
+    
+    <td>FY9010_Maintal-Bischofshm-Gut-9010_LA3_64078395</td>
+    
+    <td>262-01-121153-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1423552</td>
+    
+    <td>8.8036192</td>
+    
+    <td>330.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>164.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9010_Maintal-Bischofshm-Gut-9010_73570681</td>
+    
+    <td>9010_73570681</td>
+    
+    <td>FY9010_Maintal-Bischofshm-Gut-9010_LA1_64078393</td>
+    
+    <td>FY9010_Maintal-Bischofshm-Gut-9010_LA1_64078393</td>
+    
+    <td>262-01-121153-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1423552</td>
+    
+    <td>8.8036192</td>
+    
+    <td>90.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>162.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9010_Maintal-Bischofshm-Gut-9010_73570681</td>
+    
+    <td>9010_73570681</td>
+    
+    <td>FY9010_Maintal-Bischofshm-Gut-9010_LA2_64078394</td>
+    
+    <td>FY9010_Maintal-Bischofshm-Gut-9010_LA2_64078394</td>
+    
+    <td>262-01-121153-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1423552</td>
+    
+    <td>8.8036192</td>
+    
+    <td>250.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>421.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9205_Maintal-Doernighm-M-Planck-9205_73570723</td>
+    
+    <td>9205_73570723</td>
+    
+    <td>FY9205_Maintal-Doernighm-M-Planck-9205_LA1_64020270</td>
+    
+    <td>FY9205_Maintal-Doernighm-M-Planck-9205_LA1_64020270</td>
+    
+    <td>262-01-106996-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.142736</td>
+    
+    <td>8.8348312</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>309.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9205_Maintal-Doernighm-M-Planck-9205_73570723</td>
+    
+    <td>9205_73570723</td>
+    
+    <td>FY9205_Maintal-Doernighm-M-Planck-9205_LA3_64032635</td>
+    
+    <td>FY9205_Maintal-Doernighm-M-Planck-9205_LA3_64032635</td>
+    
+    <td>262-01-106996-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.142736</td>
+    
+    <td>8.8348312</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>14.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9205_Maintal-Doernighm-M-Planck-9205_73570723</td>
+    
+    <td>9205_73570723</td>
+    
+    <td>FY9205_Maintal-Doernighm-M-Planck-9205_LA2_64032634</td>
+    
+    <td>FY9205_Maintal-Doernighm-M-Planck-9205_LA2_64032634</td>
+    
+    <td>262-01-106996-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.142736</td>
+    
+    <td>8.8348312</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>310.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_73570307</td>
+    
+    <td>9330_73570307</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LA2_64030587</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LA2_64030587</td>
+    
+    <td>262-01-107008-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.095168</td>
+    
+    <td>8.7589392</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>179.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_73570307</td>
+    
+    <td>9330_73570307</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LA3_64030588</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LA3_64030588</td>
+    
+    <td>262-01-107008-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.095168</td>
+    
+    <td>8.7589392</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>178.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_73570307</td>
+    
+    <td>9330_73570307</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LA1_64020303</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LA1_64020303</td>
+    
+    <td>262-01-107008-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.095168</td>
+    
+    <td>8.7589392</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>177.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_73570307</td>
+    
+    <td>9330_73570307</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LT1_64118493</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LT1_64118493</td>
+    
+    <td>262-01-107008-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.095168</td>
+    
+    <td>8.7589392</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>204.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_73570307</td>
+    
+    <td>9330_73570307</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LT2_64118494</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LT2_64118494</td>
+    
+    <td>262-01-107008-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.095168</td>
+    
+    <td>8.7589392</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>205.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_73570307</td>
+    
+    <td>9330_73570307</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LT3_64118495</td>
+    
+    <td>FY9330_OF-City-Starkenburgrin-9330_LT3_64118495</td>
+    
+    <td>262-01-107008-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.095168</td>
+    
+    <td>8.7589392</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>206.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9359_Muehlheim-Bahnhofstr-9359_73570725</td>
+    
+    <td>9359_73570725</td>
+    
+    <td>FY9359_Muehlheim-Bahnhofstr-9359_LA3_64077831</td>
+    
+    <td>FY9359_Muehlheim-Bahnhofstr-9359_LA3_64077831</td>
+    
+    <td>262-01-119134-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1243456</td>
+    
+    <td>8.832956</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>320.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9359_Muehlheim-Bahnhofstr-9359_73570725</td>
+    
+    <td>9359_73570725</td>
+    
+    <td>FY9359_Muehlheim-Bahnhofstr-9359_LA2_64077830</td>
+    
+    <td>FY9359_Muehlheim-Bahnhofstr-9359_LA2_64077830</td>
+    
+    <td>262-01-119134-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1243456</td>
+    
+    <td>8.832956</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>318.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9359_Muehlheim-Bahnhofstr-9359_73570725</td>
+    
+    <td>9359_73570725</td>
+    
+    <td>FY9359_Muehlheim-Bahnhofstr-9359_LA1_64069983</td>
+    
+    <td>FY9359_Muehlheim-Bahnhofstr-9359_LA1_64069983</td>
+    
+    <td>262-01-119134-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1243456</td>
+    
+    <td>8.832956</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>319.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9564_OF-City-Luisenstr-9564_73570321</td>
+    
+    <td>9564_73570321</td>
+    
+    <td>FY9564_OF-City-Luisenstr-9564_LA2_64030292</td>
+    
+    <td>FY9564_OF-City-Luisenstr-9564_LA2_64030292</td>
+    
+    <td>262-01-106904-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.104448</td>
+    
+    <td>8.7561064</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>61.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9564_OF-City-Luisenstr-9564_73570321</td>
+    
+    <td>9564_73570321</td>
+    
+    <td>FY9564_OF-City-Luisenstr-9564_LA1_64020069</td>
+    
+    <td>FY9564_OF-City-Luisenstr-9564_LA1_64020069</td>
+    
+    <td>262-01-106904-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.104448</td>
+    
+    <td>8.7561064</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>60.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9564_OF-City-Luisenstr-9564_73570321</td>
+    
+    <td>9564_73570321</td>
+    
+    <td>FY9564_OF-City-Luisenstr-9564_LA3_64030293</td>
+    
+    <td>FY9564_OF-City-Luisenstr-9564_LA3_64030293</td>
+    
+    <td>262-01-106904-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.104448</td>
+    
+    <td>8.7561064</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>239.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9571_OF-Ost-Dieselstr-9571_73570308</td>
+    
+    <td>9571_73570308</td>
+    
+    <td>FY9571_OF-Ost-Dieselstr-9571_LA3_64023648</td>
+    
+    <td>FY9571_OF-Ost-Dieselstr-9571_LA3_64023648</td>
+    
+    <td>262-01-105771-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.101872</td>
+    
+    <td>8.7928832</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>253.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9571_OF-Ost-Dieselstr-9571_73570308</td>
+    
+    <td>9571_73570308</td>
+    
+    <td>FY9571_OF-Ost-Dieselstr-9571_LA2_64023646</td>
+    
+    <td>FY9571_OF-Ost-Dieselstr-9571_LA2_64023646</td>
+    
+    <td>262-01-105771-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.101872</td>
+    
+    <td>8.7928832</td>
+    
+    <td>200.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>252.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9571_OF-Ost-Dieselstr-9571_73570308</td>
+    
+    <td>9571_73570308</td>
+    
+    <td>FY9571_OF-Ost-Dieselstr-9571_LA1_64019043</td>
+    
+    <td>FY9571_OF-Ost-Dieselstr-9571_LA1_64019043</td>
+    
+    <td>262-01-105771-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.101872</td>
+    
+    <td>8.7928832</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>254.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9688_Muehlheim-Hanauer-9688_73570727</td>
+    
+    <td>9688_73570727</td>
+    
+    <td>FY9688_Muehlheim-Hanauer-9688_LA2_64073915</td>
+    
+    <td>FY9688_Muehlheim-Hanauer-9688_LA2_64073915</td>
+    
+    <td>262-01-120049-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1229344</td>
+    
+    <td>8.8569584</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>267.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9688_Muehlheim-Hanauer-9688_73570727</td>
+    
+    <td>9688_73570727</td>
+    
+    <td>FY9688_Muehlheim-Hanauer-9688_LA1_64073914</td>
+    
+    <td>FY9688_Muehlheim-Hanauer-9688_LA1_64073914</td>
+    
+    <td>262-01-120049-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1229344</td>
+    
+    <td>8.8569584</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>269.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9688_Muehlheim-Hanauer-9688_73570727</td>
+    
+    <td>9688_73570727</td>
+    
+    <td>FY9688_Muehlheim-Hanauer-9688_LA3_64073916</td>
+    
+    <td>FY9688_Muehlheim-Hanauer-9688_LA3_64073916</td>
+    
+    <td>262-01-120049-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1229344</td>
+    
+    <td>8.8569584</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>268.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9704_Maintal-Doernighm-Weste-9704_73570729</td>
+    
+    <td>9704_73570729</td>
+    
+    <td>FY9704_Maintal-Doernighm-Weste-9704_LA3_64034364</td>
+    
+    <td>FY9704_Maintal-Doernighm-Weste-9704_LA3_64034364</td>
+    
+    <td>262-01-106826-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1344576</td>
+    
+    <td>8.8303688</td>
+    
+    <td>180.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>113.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9704_Maintal-Doernighm-Weste-9704_73570729</td>
+    
+    <td>9704_73570729</td>
+    
+    <td>FY9704_Maintal-Doernighm-Weste-9704_LA2_64034363</td>
+    
+    <td>FY9704_Maintal-Doernighm-Weste-9704_LA2_64034363</td>
+    
+    <td>262-01-106826-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1344576</td>
+    
+    <td>8.8303688</td>
+    
+    <td>90.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>111.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9704_Maintal-Doernighm-Weste-9704_73570729</td>
+    
+    <td>9704_73570729</td>
+    
+    <td>FY9704_Maintal-Doernighm-Weste-9704_LA1_64020201</td>
+    
+    <td>FY9704_Maintal-Doernighm-Weste-9704_LA1_64020201</td>
+    
+    <td>262-01-106826-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1344576</td>
+    
+    <td>8.8303688</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>112.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9711_OF-Ost-Landgrafenring-9711_73570311</td>
+    
+    <td>9711_73570311</td>
+    
+    <td>FY9711_OF-Ost-Landgrafenring-9711_LA2_64030590</td>
+    
+    <td>FY9711_OF-Ost-Landgrafenring-9711_LA2_64030590</td>
+    
+    <td>262-01-151276-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.097856</td>
+    
+    <td>8.7779888</td>
+    
+    <td>180.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>298.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9711_OF-Ost-Landgrafenring-9711_73570311</td>
+    
+    <td>9711_73570311</td>
+    
+    <td>FY9711_OF-Ost-Landgrafenring-9711_LA3_64030592</td>
+    
+    <td>FY9711_OF-Ost-Landgrafenring-9711_LA3_64030592</td>
+    
+    <td>262-01-151276-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.097856</td>
+    
+    <td>8.7779888</td>
+    
+    <td>300.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>299.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9711_OF-Ost-Landgrafenring-9711_73570311</td>
+    
+    <td>9711_73570311</td>
+    
+    <td>FY9711_OF-Ost-Landgrafenring-9711_LA1_64020203</td>
+    
+    <td>FY9711_OF-Ost-Landgrafenring-9711_LA1_64020203</td>
+    
+    <td>262-01-151276-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.097856</td>
+    
+    <td>8.7779888</td>
+    
+    <td>60.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>297.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9750_Maintal-Bischofsh-Goe-9750_73570683</td>
+    
+    <td>9750_73570683</td>
+    
+    <td>FY9750_Maintal-Bischofsh-Goe-9750_LA1_64019223</td>
+    
+    <td>FY9750_Maintal-Bischofsh-Goe-9750_LA1_64019223</td>
+    
+    <td>262-01-106100-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1490304</td>
+    
+    <td>8.8171672</td>
+    
+    <td>90.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>174.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9750_Maintal-Bischofsh-Goe-9750_73570683</td>
+    
+    <td>9750_73570683</td>
+    
+    <td>FY9750_Maintal-Bischofsh-Goe-9750_LA3_64023998</td>
+    
+    <td>FY9750_Maintal-Bischofsh-Goe-9750_LA3_64023998</td>
+    
+    <td>262-01-106100-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1490304</td>
+    
+    <td>8.8171672</td>
+    
+    <td>330.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>176.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9750_Maintal-Bischofsh-Goe-9750_73570683</td>
+    
+    <td>9750_73570683</td>
+    
+    <td>FY9750_Maintal-Bischofsh-Goe-9750_LA2_64023997</td>
+    
+    <td>FY9750_Maintal-Bischofsh-Goe-9750_LA2_64023997</td>
+    
+    <td>262-01-106100-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1490304</td>
+    
+    <td>8.8171672</td>
+    
+    <td>210.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>175.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9753_Maintal-Doernighm-M-Curie-9753_73570731</td>
+    
+    <td>9753_73570731</td>
+    
+    <td>FY9753_Maintal-Doernighm-M-Curie-9753_LA2_64078386</td>
+    
+    <td>FY9753_Maintal-Doernighm-M-Curie-9753_LA2_64078386</td>
+    
+    <td>262-01-121150-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1343968</td>
+    
+    <td>8.8663936</td>
+    
+    <td>220.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>184.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9753_Maintal-Doernighm-M-Curie-9753_73570731</td>
+    
+    <td>9753_73570731</td>
+    
+    <td>FY9753_Maintal-Doernighm-M-Curie-9753_LA1_64078385</td>
+    
+    <td>FY9753_Maintal-Doernighm-M-Curie-9753_LA1_64078385</td>
+    
+    <td>262-01-121150-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1343968</td>
+    
+    <td>8.8663936</td>
+    
+    <td>130.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>185.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_73570315</td>
+    
+    <td>9919_73570315</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LT3_64135397</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LT3_64135397</td>
+    
+    <td>262-01-131238-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.1015616</td>
+    
+    <td>8.7656888</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>218.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_73570315</td>
+    
+    <td>9919_73570315</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LT1_64135395</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LT1_64135395</td>
+    
+    <td>262-01-131238-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.1015616</td>
+    
+    <td>8.7656888</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>217.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_73570315</td>
+    
+    <td>9919_73570315</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LT2_64135396</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LT2_64135396</td>
+    
+    <td>262-01-131238-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.1015616</td>
+    
+    <td>8.7656888</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3050.0</td>
+    
+    <td>216.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_73570315</td>
+    
+    <td>9919_73570315</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LG2_64133363</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LG2_64133363</td>
+    
+    <td>262-01-131238-7</td>
+    
+    <td>4G</td>
+    
+    <td>50.1015616</td>
+    
+    <td>8.7656888</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>389.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_73570315</td>
+    
+    <td>9919_73570315</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LA3_64133362</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LA3_64133362</td>
+    
+    <td>262-01-131238-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1015616</td>
+    
+    <td>8.7656888</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>433.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_73570315</td>
+    
+    <td>9919_73570315</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LA2_64133361</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LA2_64133361</td>
+    
+    <td>262-01-131238-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1015616</td>
+    
+    <td>8.7656888</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>432.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_73570315</td>
+    
+    <td>9919_73570315</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LG3_64133364</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LG3_64133364</td>
+    
+    <td>262-01-131238-8</td>
+    
+    <td>4G</td>
+    
+    <td>50.1015616</td>
+    
+    <td>8.7656888</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>388.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_73570315</td>
+    
+    <td>9919_73570315</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LG1_64132604</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LG1_64132604</td>
+    
+    <td>262-01-131238-6</td>
+    
+    <td>4G</td>
+    
+    <td>50.1015616</td>
+    
+    <td>8.7656888</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>387.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_73570315</td>
+    
+    <td>9919_73570315</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LA1_64132605</td>
+    
+    <td>FY9919_OF-City-Waldstr-9919_LA1_64132605</td>
+    
+    <td>262-01-131238-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1015616</td>
+    
+    <td>8.7656888</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>434.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9946_HU-Lamboy-Ruhrstr-9946_73570733</td>
+    
+    <td>9946_73570733</td>
+    
+    <td>FY9946_HU-Lamboy-Ruhrstr-9946_LA2_64140742</td>
+    
+    <td>FY9946_HU-Lamboy-Ruhrstr-9946_LA2_64140742</td>
+    
+    <td>262-01-132198-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.1475712</td>
+    
+    <td>8.9369312</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>496.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9946_HU-Lamboy-Ruhrstr-9946_73570733</td>
+    
+    <td>9946_73570733</td>
+    
+    <td>FY9946_HU-Lamboy-Ruhrstr-9946_LA1_64137478</td>
+    
+    <td>FY9946_HU-Lamboy-Ruhrstr-9946_LA1_64137478</td>
+    
+    <td>262-01-132198-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.1475712</td>
+    
+    <td>8.9369312</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>495.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9946_HU-Lamboy-Ruhrstr-9946_73570733</td>
+    
+    <td>9946_73570733</td>
+    
+    <td>FY9946_HU-Lamboy-Ruhrstr-9946_LA3_64140743</td>
+    
+    <td>FY9946_HU-Lamboy-Ruhrstr-9946_LA3_64140743</td>
+    
+    <td>262-01-132198-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.1475712</td>
+    
+    <td>8.9369312</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>497.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9968_OF-Tempelsee-Brunnen-9968_73570316</td>
+    
+    <td>9968_73570316</td>
+    
+    <td>FY9968_OF-Tempelsee-Brunnen-9968_LA2_64144402</td>
+    
+    <td>FY9968_OF-Tempelsee-Brunnen-9968_LA2_64144402</td>
+    
+    <td>262-01-134061-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0835264</td>
+    
+    <td>8.7826608</td>
+    
+    <td>150.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>65.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9968_OF-Tempelsee-Brunnen-9968_73570316</td>
+    
+    <td>9968_73570316</td>
+    
+    <td>FY9968_OF-Tempelsee-Brunnen-9968_LA1_64144401</td>
+    
+    <td>FY9968_OF-Tempelsee-Brunnen-9968_LA1_64144401</td>
+    
+    <td>262-01-134061-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0835264</td>
+    
+    <td>8.7826608</td>
+    
+    <td>30.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>64.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>FY9968_OF-Tempelsee-Brunnen-9968_73570316</td>
+    
+    <td>9968_73570316</td>
+    
+    <td>FY9968_OF-Tempelsee-Brunnen-9968_LA3_64144403</td>
+    
+    <td>FY9968_OF-Tempelsee-Brunnen-9968_LA3_64144403</td>
+    
+    <td>262-01-134061-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.0835264</td>
+    
+    <td>8.7826608</td>
+    
+    <td>270.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>63.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_73571482</td>
+    
+    <td>1_73571482</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LB1_64252259</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LB1_64252259</td>
+    
+    <td>262-01-146475-6</td>
+    
+    <td>4G</td>
+    
+    <td>48.383152</td>
+    
+    <td>13.1739144</td>
+    
+    <td>60.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>498.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_73571482</td>
+    
+    <td>1_73571482</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LB2_64252260</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LB2_64252260</td>
+    
+    <td>262-01-146475-7</td>
+    
+    <td>4G</td>
+    
+    <td>48.383152</td>
+    
+    <td>13.1739144</td>
+    
+    <td>160.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>499.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_73571482</td>
+    
+    <td>1_73571482</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LA2_64252257</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LA2_64252257</td>
+    
+    <td>262-01-146475-4</td>
+    
+    <td>4G</td>
+    
+    <td>48.383152</td>
+    
+    <td>13.1739144</td>
+    
+    <td>160.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>499.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_73571482</td>
+    
+    <td>1_73571482</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LA1_64252256</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LA1_64252256</td>
+    
+    <td>262-01-146475-3</td>
+    
+    <td>4G</td>
+    
+    <td>48.383152</td>
+    
+    <td>13.1739144</td>
+    
+    <td>60.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>498.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_73571482</td>
+    
+    <td>1_73571482</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LA3_64252258</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LA3_64252258</td>
+    
+    <td>262-01-146475-5</td>
+    
+    <td>4G</td>
+    
+    <td>48.383152</td>
+    
+    <td>13.1739144</td>
+    
+    <td>320.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>500.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_73571482</td>
+    
+    <td>1_73571482</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LB3_64252261</td>
+    
+    <td>MY2194_Windorf-Otterskirchen-1_LB3_64252261</td>
+    
+    <td>262-01-146475-8</td>
+    
+    <td>4G</td>
+    
+    <td>48.383152</td>
+    
+    <td>13.1739144</td>
+    
+    <td>320.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>500.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY1413_Nuernberg-Schweinau-74_73569526</td>
+    
+    <td>74_73569526</td>
+    
+    <td>64321913</td>
+    
+    <td>64321913</td>
+    
+    <td>262-01-154412-3</td>
+    
+    <td>4G</td>
+    
+    <td>49.2544672</td>
+    
+    <td>11.0212872</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>3625.0</td>
+    
+    <td>87.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY1413_Nuernberg-Schweinau-74_73569527</td>
+    
+    <td>74_73569527</td>
+    
+    <td>64321911</td>
+    
+    <td>64321911</td>
+    
+    <td>262-01-154411-1</td>
+    
+    <td>4G</td>
+    
+    <td>49.2544672</td>
+    
+    <td>11.0212872</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>87.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY1413_Nuernberg-Schweinau-74_73569527</td>
+    
+    <td>74_73569527</td>
+    
+    <td>64321912</td>
+    
+    <td>64321912</td>
+    
+    <td>262-01-154411-2</td>
+    
+    <td>4G</td>
+    
+    <td>49.2544672</td>
+    
+    <td>11.0212872</td>
+    
+    <td>0.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>88.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY1725_Aschaffenburg-50_73571035</td>
+    
+    <td>50_73571035</td>
+    
+    <td>NY1725_Aschaffenburg-50_LG3_64085136</td>
+    
+    <td>NY1725_Aschaffenburg-50_LG3_64085136</td>
+    
+    <td>262-01-150444-2</td>
+    
+    <td>4G</td>
+    
+    <td>49.5959616</td>
+    
+    <td>9.1129712</td>
+    
+    <td>300.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>500.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY1725_Aschaffenburg-50_73571035</td>
+    
+    <td>50_73571035</td>
+    
+    <td>NY1725_Aschaffenburg-50_LG2_64085135</td>
+    
+    <td>NY1725_Aschaffenburg-50_LG2_64085135</td>
+    
+    <td>262-01-150444-1</td>
+    
+    <td>4G</td>
+    
+    <td>49.5959616</td>
+    
+    <td>9.1129712</td>
+    
+    <td>185.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>499.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY1725_Aschaffenburg-50_73571035</td>
+    
+    <td>50_73571035</td>
+    
+    <td>NY1725_Aschaffenburg-50_LG1_64085134</td>
+    
+    <td>NY1725_Aschaffenburg-50_LG1_64085134</td>
+    
+    <td>262-01-150444-0</td>
+    
+    <td>4G</td>
+    
+    <td>49.5959616</td>
+    
+    <td>9.1129712</td>
+    
+    <td>70.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>498.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY5294_Johannesberg-52_73571436</td>
+    
+    <td>52_73571436</td>
+    
+    <td>NY5294_Johannesberg-52_LB2_64248953</td>
+    
+    <td>NY5294_Johannesberg-52_LB2_64248953</td>
+    
+    <td>262-01-155833-7</td>
+    
+    <td>4G</td>
+    
+    <td>50.0149664</td>
+    
+    <td>9.0816632</td>
+    
+    <td>210.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>499.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY5294_Johannesberg-52_73571436</td>
+    
+    <td>52_73571436</td>
+    
+    <td>NY5294_Johannesberg-52_LA1_64153963</td>
+    
+    <td>NY5294_Johannesberg-52_LA1_64153963</td>
+    
+    <td>262-01-155833-3</td>
+    
+    <td>4G</td>
+    
+    <td>50.0149664</td>
+    
+    <td>9.0816632</td>
+    
+    <td>80.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>498.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY5294_Johannesberg-52_73571436</td>
+    
+    <td>52_73571436</td>
+    
+    <td>NY5294_Johannesberg-52_LG2_64248973</td>
+    
+    <td>NY5294_Johannesberg-52_LG2_64248973</td>
+    
+    <td>262-01-155833-1</td>
+    
+    <td>4G</td>
+    
+    <td>50.0149664</td>
+    
+    <td>9.0816632</td>
+    
+    <td>210.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>499.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY5294_Johannesberg-52_73571436</td>
+    
+    <td>52_73571436</td>
+    
+    <td>NY5294_Johannesberg-52_LA2_64248955</td>
+    
+    <td>NY5294_Johannesberg-52_LA2_64248955</td>
+    
+    <td>262-01-155833-4</td>
+    
+    <td>4G</td>
+    
+    <td>50.0149664</td>
+    
+    <td>9.0816632</td>
+    
+    <td>210.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>499.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY5294_Johannesberg-52_73571436</td>
+    
+    <td>52_73571436</td>
+    
+    <td>NY5294_Johannesberg-52_LG3_64248974</td>
+    
+    <td>NY5294_Johannesberg-52_LG3_64248974</td>
+    
+    <td>262-01-155833-2</td>
+    
+    <td>4G</td>
+    
+    <td>50.0149664</td>
+    
+    <td>9.0816632</td>
+    
+    <td>340.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>500.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY5294_Johannesberg-52_73571436</td>
+    
+    <td>52_73571436</td>
+    
+    <td>NY5294_Johannesberg-52_LA3_64248956</td>
+    
+    <td>NY5294_Johannesberg-52_LA3_64248956</td>
+    
+    <td>262-01-155833-5</td>
+    
+    <td>4G</td>
+    
+    <td>50.0149664</td>
+    
+    <td>9.0816632</td>
+    
+    <td>340.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1300.0</td>
+    
+    <td>500.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY5294_Johannesberg-52_73571436</td>
+    
+    <td>52_73571436</td>
+    
+    <td>NY5294_Johannesberg-52_LB1_64248952</td>
+    
+    <td>NY5294_Johannesberg-52_LB1_64248952</td>
+    
+    <td>262-01-155833-6</td>
+    
+    <td>4G</td>
+    
+    <td>50.0149664</td>
+    
+    <td>9.0816632</td>
+    
+    <td>80.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>498.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY5294_Johannesberg-52_73571436</td>
+    
+    <td>52_73571436</td>
+    
+    <td>NY5294_Johannesberg-52_LB3_64248954</td>
+    
+    <td>NY5294_Johannesberg-52_LB3_64248954</td>
+    
+    <td>262-01-155833-8</td>
+    
+    <td>4G</td>
+    
+    <td>50.0149664</td>
+    
+    <td>9.0816632</td>
+    
+    <td>340.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>1444.0</td>
+    
+    <td>500.0</td>
+    
+	 </tr>
+
+	<tr>
+    
+    <td>Baseband_FY</td>
+    
+    <td>NY5294_Johannesberg-52_73571436</td>
+    
+    <td>52_73571436</td>
+    
+    <td>NY5294_Johannesberg-52_LG1_64066931</td>
+    
+    <td>NY5294_Johannesberg-52_LG1_64066931</td>
+    
+    <td>262-01-155833-0</td>
+    
+    <td>4G</td>
+    
+    <td>50.0149664</td>
+    
+    <td>9.0816632</td>
+    
+    <td>80.0</td>
+    
+    <td>None</td>
+    
+    <td>None</td>
+    
+    <td>6400.0</td>
+    
+    <td>498.0</td>
+    
+	 </tr>
+
+</table>
+
+<br>
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
+<br>
+<math>
+	H(s) = ∫<sub>0</sub><sup>∞</sup> e<sup>-st</sup> h(t) dt
+</math>
+
+</body>
+</html>

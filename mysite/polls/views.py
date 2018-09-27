@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import Http404
 from django.template import loader
+from django.template.loader import render_to_string
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from .models import Choice, Question,Person
@@ -77,9 +78,14 @@ def pullsectorlocation(request):
     ORDER BY 
     1,2,3 ''')
         row = cursor.fetchall()
+    
     columns = [column[0] for column in cursor.description]
 # row shows a tuple
     os.getcwd()
+    rendered = render_to_string('polls/pullsectorlocation.html', {'result': row,'columns': columns})
+    f = open('polls/rendered.html', 'w',encoding="utf-8")
+    f.write(rendered)
+    f.close()
     return render(request, 'polls/pullsectorlocation.html', {'result': row,'columns': columns})
 def myownview1(request):
     cursor = connection.cursor()
