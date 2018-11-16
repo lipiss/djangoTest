@@ -4,5 +4,6 @@
 if WinExist("Untitled - Notepad")
     WinActivate
 else
-    Run Notepad
+    /*Run Notepad*/
+	Run Notepad++
 return

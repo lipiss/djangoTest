@@ -16,7 +16,7 @@ func cpich_rscp(t) {
    var= t - 115
    }
    return var;  
-  }
+}
 func rssi(t) {
     if (t=="EVENT_VALUE_INVALID"){
 	var=""

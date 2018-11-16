@@ -14,7 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -67,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -87,12 +89,12 @@ DATABASES = {
         'HOST': 'oselimw0206v.int.msdp.ericsson.se',
         'PORT': '3306'
     },
-	'oselimw0201v.int.msdp.ericsson.se': {
+	'oselimw0204v.int.msdp.ericsson.se': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'operdb_ericsson4g_andromeda',
+        'NAME': 'operdb_e4g_mm1',
 		'USER': 'tarsys',
 		'PASSWORD': 'tarsys',
-        'HOST': 'oselimw0201v.int.msdp.ericsson.se',
+        'HOST': 'oselimw0204v.int.msdp.ericsson.se',
         'PORT': '3306'
     }
 }

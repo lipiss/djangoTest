@@ -4,14 +4,27 @@ from django.template import loader
 from django.template.loader import render_to_string
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
-from .models import Choice, Question,Person
+from django.core.files.storage import FileSystemStorage
+from .forms import UploadFileForm
 from django.db import connection, connections
+from .models import Choice, Question,Person
 import os, pandas
+
+
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
-
+def simple_upload(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        uploaded_file_url = fs.url(filename)
+        return render(request, 'polls/simple_upload.html', {
+            'uploaded_file_url': uploaded_file_url
+        })
+    return render(request, 'polls/simple_upload.html')
 
 def myownview(request):
     #latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -28,8 +41,8 @@ def myownview(request):
     fo.close()
     return render(request, 'polls/myownview.html', {'field1': row[0],'field2':row[1],'field3':row1[0],'field4':os.path.join(os.getcwd(),'polls','file')})
 def pullsectorlocation(request):
-    # change default database.
-    with connections['oselimw0201v.int.msdp.ericsson.se'].cursor() as cursor:
+    # change default database to other non-default database.
+    with connections['oselimw0204v.int.msdp.ericsson.se'].cursor() as cursor:
         #cursor = connections.cursor()
         cursor.execute('''
         SELECT

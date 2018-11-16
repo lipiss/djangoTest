@@ -1,9 +1,11 @@
+jupyter notebook
+
 python manage.py runserver
 python manage.py shell
 python -m django --version
 
 http://www.derricksherrill.com/
-
+check django rest + 
 example 01:
 
 from django.template import Template, Context
