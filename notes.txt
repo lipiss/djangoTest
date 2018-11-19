@@ -3,7 +3,7 @@ python manage.py runserver
 python manage.py runserver 8080
 python manage.py runserver 0:8000
 python manage.py shell
-
+#hi
 If you make a change at the model, run this to regenerate tables etc...:
 
 python manage.py makemigrations polls
