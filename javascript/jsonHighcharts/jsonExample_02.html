@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Highcharts JSON example</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="http://code.jquery.com/jquery-1.9.1.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+
+    
+var JSON = [
+      {name: 'LCS012A',data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,3.00,0.00,8.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,5.00,0.00,0.00,0.00,0.00,0.00,0.00,2.00,0.00,0.00,0.00,0.00,0.00]},
+      {name: 'LCS012B',data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,13.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,7.00,3.00,12.00,2.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,4.00,0.00,0.00,0.00,0.00,0.00]},
+      {name: 'LCS012C',data: [0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,14.00,0.00,4.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,19.00,4.00,11.00,3.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,3.00,0.00,0.00,0.00,0.00,0.00,0.00,11.00,0.00,0.00,0.00,0.00,0.00]}
+];
+var xson = [
+        {
+          tickInterval: 1 * 4,
+          categories: ['Feb-20-Mon 00h','Feb-20-Mon 01h','Feb-20-Mon 02h','Feb-20-Mon 03h','Feb-20-Mon 04h','Feb-20-Mon 05h','Feb-20-Mon 06h','Feb-20-Mon 07h','Feb-20-Mon 08h','Feb-20-Mon 09h','Feb-20-Mon 10h','Feb-20-Mon 11h','Feb-20-Mon 12h','Feb-20-Mon 13h','Feb-20-Mon 14h','Feb-20-Mon 15h','Feb-20-Mon 16h','Feb-20-Mon 17h','Feb-20-Mon 18h','Feb-20-Mon 19h','Feb-20-Mon 20h','Feb-20-Mon 21h','Feb-20-Mon 22h','Feb-20-Mon 23h','Feb-21-Tue 00h','Feb-21-Tue 01h','Feb-21-Tue 02h','Feb-21-Tue 03h','Feb-21-Tue 04h','Feb-21-Tue 05h','Feb-21-Tue 06h','Feb-21-Tue 07h','Feb-21-Tue 08h','Feb-21-Tue 09h','Feb-21-Tue 10h','Feb-21-Tue 11h','Feb-21-Tue 12h','Feb-21-Tue 13h','Feb-21-Tue 14h','Feb-21-Tue 15h','Feb-21-Tue 16h','Feb-21-Tue 17h','Feb-21-Tue 18h','Feb-21-Tue 19h','Feb-21-Tue 20h','Feb-21-Tue 21h','Feb-21-Tue 22h','Feb-21-Tue 23h','Feb-22-Wed 00h','Feb-22-Wed 01h','Feb-22-Wed 02h','Feb-22-Wed 03h','Feb-22-Wed 04h','Feb-22-Wed 05h','Feb-22-Wed 06h','Feb-22-Wed 07h','Feb-22-Wed 08h','Feb-22-Wed 09h','Feb-22-Wed 10h','Feb-22-Wed 11h','Feb-22-Wed 12h','Feb-22-Wed 13h','Feb-22-Wed 14h','Feb-22-Wed 15h','Feb-22-Wed 16h','Feb-22-Wed 17h','Feb-22-Wed 18h','Feb-22-Wed 19h','Feb-22-Wed 20h','Feb-22-Wed 21h','Feb-22-Wed 22h','Feb-22-Wed 23h','Mar- 6-Mon 00h','Mar- 6-Mon 01h','Mar- 6-Mon 02h','Mar- 6-Mon 03h','Mar- 6-Mon 04h','Mar- 6-Mon 05h','Mar- 6-Mon 06h','Mar- 6-Mon 07h','Mar- 6-Mon 08h','Mar- 6-Mon 09h','Mar- 6-Mon 10h','Mar- 6-Mon 11h','Mar- 6-Mon 12h','Mar- 6-Mon 13h','Mar- 6-Mon 14h','Mar- 6-Mon 15h','Mar- 6-Mon 16h','Mar- 6-Mon 17h','Mar- 6-Mon 18h','Mar- 6-Mon 19h','Mar- 6-Mon 20h','Mar- 6-Mon 21h','Mar- 6-Mon 22h','Mar- 6-Mon 23h','Mar- 7-Tue 00h','Mar- 7-Tue 01h','Mar- 7-Tue 02h','Mar- 7-Tue 03h','Mar- 7-Tue 04h','Mar- 7-Tue 05h','Mar- 7-Tue 06h','Mar- 7-Tue 07h','Mar- 7-Tue 08h','Mar- 7-Tue 09h','Mar- 7-Tue 10h','Mar- 7-Tue 11h','Mar- 7-Tue 12h','Mar- 7-Tue 13h','Mar- 7-Tue 14h','Mar- 7-Tue 15h','Mar- 7-Tue 16h','Mar- 7-Tue 17h','Mar- 7-Tue 18h','Mar- 7-Tue 19h','Mar- 7-Tue 20h','Mar- 7-Tue 21h','Mar- 7-Tue 22h','Mar- 7-Tue 23h','Mar- 8-Wed 00h','Mar- 8-Wed 01h','Mar- 8-Wed 02h','Mar- 8-Wed 03h','Mar- 8-Wed 04h','Mar- 8-Wed 05h','Mar- 8-Wed 06h','Mar- 8-Wed 07h','Mar- 8-Wed 08h','Mar- 8-Wed 09h','Mar- 8-Wed 10h','Mar- 8-Wed 11h','Mar- 8-Wed 12h','Mar- 8-Wed 13h','Mar- 8-Wed 14h','Mar- 8-Wed 15h','Mar- 8-Wed 16h','Mar- 8-Wed 17h','Mar- 8-Wed 18h','Mar- 8-Wed 19h','Mar- 8-Wed 20h','Mar- 8-Wed 21h','Mar- 8-Wed 22h','Mar- 8-Wed 23h'],
+          plotBands: [],
+          labels: {rotation: -45},}
+];
+$(document).ready(function() {
+  var options = {
+      chart: {
+          renderTo: 'container',
+          type: 'line'
+          },
+    title: {
+        text: 'PayOff Curve'
+    },
+    legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+    },
+    series: []
+  };
+    
+    options.series = JSON;
+
+           // Create the chart
+    var chart = new Highcharts.Chart(options);
+  }); 
+
+
+</script>
+
+</head>
+<body>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+
+  
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "ck00snhf"
+      }], "*")
+    }
+  </script>
+</body>
+</html>

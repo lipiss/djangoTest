@@ -1,0 +1,2444 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <style>
+        table{
+        <!-- float:left; -->
+        clear: left;
+        <!-- margin-right:10px -->
+        <!-- display: inline-block; -->
+        }
+        table, th, td {
+        border-collapse: collapse;
+        border: 1px solid black;
+        }
+        tr:nth-child(even){background-color: #f2f2f2}
+    </style>
+    <title>
+      
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+    var jsonSeries =[
+      {name: 'LCS012A',data: [1.00,5.00,3.00,0.00]},
+      {name: 'LCS012B',data: [0.00,0.00,0.00,0.00]},
+      {name: 'LCS012C',data: [0.00,0.00,0.00,0.00]}
+    ];
+
+    var jsonCategories = ['Feb-20-Mon 00h','Feb-20-Mon 01h','Feb-20-Mon 02h','Feb-20-Mon 03h'];
+
+
+        $(function() {
+            $('#container').highcharts({
+                chart: {
+                    type: 'line',
+                    zoomType: 'xy'
+                    },
+                title: {
+                    text: 'Telecom Personal (LTE RAN) [NODEB=LCS012]',
+                    x: -20 //center
+                },
+                credits: {
+                    enabled: false
+                },
+                subtitle: {
+                    text: 'fp_numberdrbspacketfwddl',
+                    x: -20
+                },
+                xAxis: {
+                    tickInterval: 1 * 4,
+                    categories: jsonCategories,
+                    plotBands: [],
+                    labels: {rotation: -45},
+                },
+                yAxis: {
+                title: {
+                    text: ''
+                },
+                plotLines: [],
+                },
+                tooltip: {
+                    positioner: function () { return { x: 0, y: 0 };},
+                    crosshairs: true,
+                    shared: true,
+                    valueSuffix: ''
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                series: jsonSeries
+
+
+            });
+
+
+            // Create the chart
+            // var chart = new Highcharts.Chart(options);
+
+            $("#textarea1").html(" ");
+            var chart = $('#container').highcharts(),$button = $('#button'),$button1 = $('#chartButton');
+            chart.setTitle({text: "pipe pipon"});
+            // Hide Series / Show Series
+			      $button.click(function() {
+                var series = chart.series[0];
+                $("#textarea1").html(chart.series[0].color+" uola");
+                if (series.visible) {
+                    $(chart.series).each(function(){
+                        //this.hide();
+                        this.setVisible(false, false);
+                    });
+                    chart.redraw();
+                    $button.html('Show series');
+                } else {
+                    $(chart.series).each(function(){
+                        //this.show();
+                        this.setVisible(true, false);
+                    });
+                    chart.redraw();
+                    <!-- chart.setTitle({text: "jander"}); -->
+                    $button.html('Hide series');
+                }
+            });
+			$button1.click(function() {
+				<!-- document.getElementById('textbox_id').value -->
+				chart.setTitle({text: document.getElementById('inputId').value});
+        chart.setSubtitle({text: document.getElementById('inputId').value});
+        
+            });
+        });
+    </script>
+  </head>
+  <body>
+<form action="/action_page.php">
+  <input type="text" name="fname" placeholder="First name"><br>
+  <input type="submit" value="Submit">
+</form>
+<br>
+
+
+<input name="textInputForTitle" id="inputId" type="text" value="default">
+<button id="chartButton">chartButton</button>
+
+<br>
+<br>
+    <div id="container" style="float: left;width: 1040px; height: 520px; margin: 0 auto"></div>
+     <textarea id="textarea1" rows="10" cols="120">#textArea</textarea>
+     <br>
+     <a href="#Quantiles (5th, 25th, 50th, 95th Percentile)">Quantiles (5th, 25th, 50th, 95th Percentile)</a>
+<a href="#Kpi table">Kpi table</a>
+<a href="#Delta N-1">Delta N-1</a>
+<a href="#Histograms and CDFs">Histograms and CDFs</a>
+     <br>
+    <button id="button">Hide series</button>
+    <br>
+<h1>Quantiles (5th, 25th, 50th, 95th Percentile)</h1>
+<section id="Quantiles (5th, 25th, 50th, 95th Percentile)"></section>
+<table border="1" class="dataframe pivotDescribe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sector</th>
+      <th>LCS012A</th>
+      <th>LCS012B</th>
+      <th>LCS012C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>144.000000</td>
+      <td>144.000000</td>
+      <td>144.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.125000</td>
+      <td>0.284722</td>
+      <td>0.479167</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.835196</td>
+      <td>1.628690</td>
+      <td>2.388694</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>5%</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>95%</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>2.550000</td>
+    </tr>
+    <tr>
+      <th>98%</th>
+      <td>2.140000</td>
+      <td>4.420000</td>
+      <td>11.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.000000</td>
+      <td>13.000000</td>
+      <td>19.000000</td>
+    </tr>
+  </tbody>
+</table>
+<h1>Kpi table</h1>
+<section id="Kpi table"></section>
+<table border="1" class="dataframe pivotTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sector</th>
+      <th>LCS012A</th>
+      <th>LCS012B</th>
+      <th>LCS012C</th>
+    </tr>
+    <tr>
+      <th>date_time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-02-20 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 12:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 16:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 18:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 12:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 16:00:00</th>
+      <td>3.0</td>
+      <td>13.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 18:00:00</th>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 12:00:00</th>
+      <td>0.0</td>
+      <td>7.0</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 13:00:00</th>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 14:00:00</th>
+      <td>0.0</td>
+      <td>12.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 15:00:00</th>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 16:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 18:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 12:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 16:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 18:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 12:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 16:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 18:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 11:00:00</th>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 12:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 16:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 18:00:00</th>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<h1>Delta N-1</h1>
+<section id="Delta N-1"></section>
+<table border="1" class="dataframe deltaN1Describe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>sector</th>
+      <th>LCS012A</th>
+      <th>LCS012B</th>
+      <th>LCS012C</th>
+    </tr>
+    <tr>
+      <th>date_time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-02-20 00:00:00</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 12:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 16:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 18:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-20 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 12:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 16:00:00</th>
+      <td>3.0</td>
+      <td>13.0</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 17:00:00</th>
+      <td>-3.0</td>
+      <td>-13.0</td>
+      <td>-14.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 18:00:00</th>
+      <td>8.0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 19:00:00</th>
+      <td>-8.0</td>
+      <td>0.0</td>
+      <td>-4.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-21 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 12:00:00</th>
+      <td>0.0</td>
+      <td>7.0</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 13:00:00</th>
+      <td>0.0</td>
+      <td>-4.0</td>
+      <td>-15.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 14:00:00</th>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 15:00:00</th>
+      <td>0.0</td>
+      <td>-10.0</td>
+      <td>-8.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 16:00:00</th>
+      <td>0.0</td>
+      <td>-2.0</td>
+      <td>-3.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 18:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-02-22 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 12:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 16:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 18:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-06 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 11:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 12:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 16:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 18:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 19:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-07 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 00:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 01:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 02:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 03:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 04:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 05:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 06:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 07:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 08:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 09:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 10:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 11:00:00</th>
+      <td>5.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 12:00:00</th>
+      <td>-5.0</td>
+      <td>0.0</td>
+      <td>-3.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 13:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 14:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 15:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 16:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 17:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 18:00:00</th>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 19:00:00</th>
+      <td>-2.0</td>
+      <td>-4.0</td>
+      <td>-11.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 20:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 21:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 22:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2017-03-08 23:00:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<h1>Histograms and CDFs</h1>
+<section id="Histograms and CDFs"></section>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>LCS012A hist</th>
+      <th>LCS012A cdf</th>
+      <th>LCS012B hist</th>
+      <th>LCS012B cdf</th>
+      <th>LCS012C hist</th>
+      <th>LCS012C cdf</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.00</th>
+      <td>140</td>
+      <td>0.972222</td>
+      <td>138</td>
+      <td>0.958333</td>
+      <td>136</td>
+      <td>0.951049</td>
+    </tr>
+    <tr>
+      <th>0.38</th>
+      <td>0</td>
+      <td>0.972222</td>
+      <td>0</td>
+      <td>0.958333</td>
+      <td>0</td>
+      <td>0.951049</td>
+    </tr>
+    <tr>
+      <th>0.76</th>
+      <td>0</td>
+      <td>0.972222</td>
+      <td>0</td>
+      <td>0.958333</td>
+      <td>0</td>
+      <td>0.951049</td>
+    </tr>
+    <tr>
+      <th>1.14</th>
+      <td>0</td>
+      <td>0.972222</td>
+      <td>0</td>
+      <td>0.958333</td>
+      <td>0</td>
+      <td>0.951049</td>
+    </tr>
+    <tr>
+      <th>1.52</th>
+      <td>0</td>
+      <td>0.972222</td>
+      <td>0</td>
+      <td>0.958333</td>
+      <td>0</td>
+      <td>0.951049</td>
+    </tr>
+    <tr>
+      <th>1.90</th>
+      <td>1</td>
+      <td>0.979167</td>
+      <td>1</td>
+      <td>0.965278</td>
+      <td>0</td>
+      <td>0.951049</td>
+    </tr>
+    <tr>
+      <th>2.28</th>
+      <td>0</td>
+      <td>0.979167</td>
+      <td>0</td>
+      <td>0.965278</td>
+      <td>0</td>
+      <td>0.951049</td>
+    </tr>
+    <tr>
+      <th>2.66</th>
+      <td>1</td>
+      <td>0.986111</td>
+      <td>1</td>
+      <td>0.972222</td>
+      <td>2</td>
+      <td>0.965035</td>
+    </tr>
+    <tr>
+      <th>3.04</th>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.972222</td>
+      <td>0</td>
+      <td>0.965035</td>
+    </tr>
+    <tr>
+      <th>3.42</th>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.972222</td>
+      <td>0</td>
+      <td>0.965035</td>
+    </tr>
+    <tr>
+      <th>3.80</th>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>1</td>
+      <td>0.979167</td>
+      <td>2</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>4.18</th>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979167</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>4.56</th>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979167</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>4.94</th>
+      <td>1</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.979167</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>5.32</th>
+      <td>0</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.979167</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>5.70</th>
+      <td>0</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.979167</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>6.08</th>
+      <td>0</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.979167</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>6.46</th>
+      <td>0</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.979167</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>6.84</th>
+      <td>0</td>
+      <td>0.993056</td>
+      <td>1</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>7.22</th>
+      <td>0</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>7.60</th>
+      <td>0</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>7.98</th>
+      <td>1</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>8.36</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>8.74</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>9.12</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>9.50</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>9.88</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>10.26</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.979021</td>
+    </tr>
+    <tr>
+      <th>10.64</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>2</td>
+      <td>0.993007</td>
+    </tr>
+    <tr>
+      <th>11.02</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.993007</td>
+    </tr>
+    <tr>
+      <th>11.40</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.986111</td>
+      <td>0</td>
+      <td>0.993007</td>
+    </tr>
+    <tr>
+      <th>11.78</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>1</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.993007</td>
+    </tr>
+    <tr>
+      <th>12.16</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.993007</td>
+    </tr>
+    <tr>
+      <th>12.54</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.993056</td>
+      <td>0</td>
+      <td>0.993007</td>
+    </tr>
+    <tr>
+      <th>12.92</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>1</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.993007</td>
+    </tr>
+    <tr>
+      <th>13.30</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>0.993007</td>
+    </tr>
+    <tr>
+      <th>13.68</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>1</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>14.06</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>14.44</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>14.82</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>15.20</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>15.58</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>15.96</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>16.34</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>16.72</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>17.10</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>17.48</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>17.86</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>18.24</th>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+      <td>0</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+
+  </body>
+</html>
